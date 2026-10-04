@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Details — Data Visualization Portfolio</title>
+  <meta name="description" content="Detailed analytical breakdown, metrics, dataset overview, and key visualizations of Power BI academic dashboards." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Navigation Bar
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DataViz Portfolio Home">
+        <div class="brand-icon">
+          <i class="fa-solid fa-chart-column"></i>
+        </div>
+        <span>DataViz Portfolio</span>
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="index.html#dashboards" class="nav-link active"><i class="fa-solid fa-border-all"></i> Dashboards</a></li>
+          <li><a href="index.html#about" class="nav-link"><i class="fa-solid fa-user-graduate"></i> About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Back Navigation Header
+       ========================================================================== -->
+  <div class="container detail-header-nav">
+    <a href="index.html" class="btn-back" aria-label="Return to dashboard gallery">
+      <i class="fa-solid fa-arrow-left"></i> Back to Dashboards
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       Dashboard Detail Main Content
+       ========================================================================== -->
+  <main class="container detail-main" id="detail-content">
+    
+    <!-- Title & Meta Header -->
+    <div class="detail-title-section">
+      <div class="detail-title-tags">
+        <span class="detail-tool-tag" id="detail-tool">
+          <i class="fa-solid fa-chart-line"></i> Power BI
+        </span>
+        <span class="detail-category-tag" id="detail-category">
+          Academic Analytics
+        </span>
+      </div>
+      <h1 class="detail-title" id="detail-title">Loading Dashboard Title...</h1>
+    </div>
+
+    <!-- Complete Dashboard Screenshot Showcase Container -->
+    <section class="screenshot-card">
+      <div class="screenshot-header-bar">
+        <div class="screenshot-title-mini">
+          <i class="fa-solid fa-desktop"></i> Complete Power BI Report Screenshot Preview
+        </div>
+        <button class="btn-fullscreen" id="btn-fullscreen" aria-label="Expand image in full screen lightbox">
+          <i class="fa-solid fa-up-right-and-down-left-from-center"></i> View Full Dashboard
+        </button>
+      </div>
+
+      <div class="screenshot-viewport" title="Click to view full screen">
+        <img id="detail-img" src="images/examination-dashboard.png" alt="Dashboard Complete Screenshot" class="screenshot-img" />
+      </div>
+
+      <!-- Clear replacement guide for user -->
+      <div class="replace-notice">
+        <div>
+          <i class="fa-solid fa-circle-info"></i>
+          <strong>Screenshot Location:</strong> Place your high-resolution Power BI screenshot at: <code id="img-path-code">images/examination-dashboard.png</code>
+        </div>
+        <div>
+          <span style="font-size: 0.8rem; opacity: 0.85;">Maintain 16:9 ratio for best results</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Information Grid -->
+    <div class="detail-info-grid">
+      
+      <!-- Primary Column: Objective, Visualizations, Insights -->
+      <div class="primary-info-col">
+        
+        <!-- Objective -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-bullseye"></i> Objective
+          </h2>
+          <div class="block-body" id="detail-objective">
+            Loading objective content...
+          </div>
+        </article>
+
+        <!-- Key Visualizations -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-chart-pie"></i> Key Visualizations
+          </h2>
+          <ul class="viz-list" id="detail-visualizations">
+            <!-- Populated via script.js -->
+          </ul>
+        </article>
+
+        <!-- Key Insights -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-lightbulb"></i> Key Insights
+          </h2>
+          <div class="insights-list" id="detail-insights">
+            <!-- Populated via script.js -->
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Secondary Column: Specifications & Sidebar Panel -->
+      <aside class="sidebar-panel">
+        
+        <!-- Specs Card -->
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">
+            <i class="fa-solid fa-sliders"></i> Technical Overview
+          </h3>
+          <div class="spec-list">
+            <div class="spec-item">
+              <span class="spec-label">Visualization Tool</span>
+              <span class="spec-value" style="color: var(--powerbi-text); font-weight: 700;">
+                <i class="fa-solid fa-bolt" style="color: var(--powerbi-yellow);"></i> Microsoft Power BI
+              </span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Dataset Type</span>
+              <span class="spec-value" id="sidebar-dataset-type">Structured Institutional Data</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Interactivity Level</span>
+              <span class="spec-value">Cross-filtering, DAX Measures &amp; Slicers</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Report Layout</span>
+              <span class="spec-value">16:9 HD Executive Canvas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dataset Summary Card -->
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">
+            <i class="fa-solid fa-database"></i> Dataset Description
+          </h3>
+          <p class="block-body" style="font-size: 0.9rem;" id="detail-dataset">
+            Loading dataset details...
+          </p>
+        </div>
+
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       Fullscreen Image Lightbox Modal Overlay
+       ========================================================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Dashboard screenshot lightbox modal">
+    <div class="lightbox-header">
+      <span class="lightbox-title" id="lightbox-title">Dashboard Screenshot</span>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="lightbox-img-container">
+      <img id="lightbox-img" src="" alt="Full Resolution Dashboard Screenshot" class="lightbox-img" />
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="fa-solid fa-chart-column"></i> Data Visualization Portfolio
+        </div>
+        <div class="footer-copyright">
+          © 2026 | Data Visualization Portfolio
+        </div>
+        <button class="btn-scroll-top" aria-label="Scroll to top of page">
+          <i class="fa-solid fa-arrow-up"></i> Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

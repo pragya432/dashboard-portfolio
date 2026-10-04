@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Data Visualization Dashboards — Academic Portfolio</title>
+  <meta name="description" content="A professional academic data visualization portfolio presenting Power BI dashboards for examination analytics, student academic performance, and paper leak investigation." />
+  <meta name="author" content="Data Visualization Student" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Navigation Bar
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DataViz Portfolio Home">
+        <div class="brand-icon">
+          <i class="fa-solid fa-chart-column"></i>
+        </div>
+        <span>DataViz Portfolio</span>
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#dashboards" class="nav-link"><i class="fa-solid fa-border-all"></i> Dashboards</a></li>
+          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-graduate"></i> About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Gallery Hero Section
+       ========================================================================== -->
+  <main>
+    <section class="gallery-hero">
+      <div class="container">
+        <div class="hero-title-badge">
+          <i class="fa-solid fa-graduation-cap"></i> Academic &amp; Business Intelligence Portfolio
+        </div>
+
+        <h1 class="hero-title">My Data Visualization Dashboards</h1>
+        <p class="hero-subtitle">
+          A collection of dashboards created for academic data analysis and visualization.
+        </p>
+
+        <!-- Extra Feature Badges -->
+        <div class="meta-stats-bar">
+          <span class="stat-chip count-chip" id="dashboard-count">
+            <i class="fa-solid fa-chart-pie"></i> 3 Dashboards
+          </span>
+          <span class="stat-chip tool-chip">
+            <i class="fa-solid fa-bolt"></i> Power BI
+          </span>
+          <span class="stat-chip domain-chip">
+            <i class="fa-solid fa-circle-check"></i> Academic Analytics
+          </span>
+        </div>
+
+        <!-- Controls: Search & Category Filters -->
+        <div class="controls-bar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input 
+              type="text" 
+              id="search-input" 
+              class="search-input" 
+              placeholder="Search dashboards by title, tool, or keyword (e.g. Attendance, Leaks, Marks)..." 
+              aria-label="Search dashboards"
+            />
+          </div>
+
+          <div class="filter-tags">
+            <button class="filter-btn active" data-category="all">All Dashboards</button>
+            <button class="filter-btn" data-category="academic-analytics">Academic Analytics</button>
+            <button class="filter-btn" data-category="performance-tracking">Performance Tracking</button>
+            <button class="filter-btn" data-category="investigative-analytics">Investigative</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Dashboard Card Gallery Grid
+         ========================================================================== -->
+    <section class="container" id="dashboards">
+      <div class="dashboard-grid" id="dashboard-grid">
+        <!-- Rendered dynamically via js/script.js -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         About Section
+         ========================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="about-header-tag"><i class="fa-solid fa-circle-info"></i> About This Portfolio</span>
+            <h2 class="about-title">Academic Data Analysis &amp; Business Intelligence</h2>
+            <p class="about-text">
+              This portfolio showcases data visualization and business intelligence projects developed during my academic coursework. Utilizing <strong>Microsoft Power BI</strong>, these dashboards transform complex education databases into actionable insights—from predicting student academic performance to analyzing examination security anomalies.
+            </p>
+            <p class="about-text">
+              Each project demonstrates core data engineering skills, including data modeling (Star schema), DAX measures, interactive drill-downs, dynamic filters, and clean visual storytelling designed for academic decision-makers.
+            </p>
+          </div>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="highlight-content">
+                <h4>Power BI Specialist</h4>
+                <p>Interactive KPIs, ribbon charts, decomposition trees, and drill-through matrices.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-database"></i></div>
+              <div class="highlight-content">
+                <h4>Data Modeling &amp; DAX</h4>
+                <p>Calculated columns, dynamic measures, and optimized data relationships.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-lightbulb"></i></div>
+              <div class="highlight-content">
+                <h4>Actionable Insights</h4>
+                <p>Translating analytical findings into concrete academic strategy recommendations.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-expand"></i></div>
+              <div class="highlight-content">
+                <h4>Flexible Architecture</h4>
+                <p>Modular showcase designed to easily incorporate future visualization projects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="fa-solid fa-chart-column"></i> Data Visualization Portfolio
+        </div>
+        <div class="footer-copyright">
+          © 2026 | Data Visualization Portfolio
+        </div>
+        <button class="btn-scroll-top" aria-label="Scroll to top of page">
+          <i class="fa-solid fa-arrow-up"></i> Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>
