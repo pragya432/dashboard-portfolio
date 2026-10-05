@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Details — Data Visualization Portfolio</title>
-  <meta name="description" content="Detailed analytical breakdown, metrics, dataset overview, and key visualizations of Power BI academic dashboards." />
+  <title>Dashboard Details — Analytics Portfolio</title>
+  <meta name="description" content="Detailed analytical breakdown, KPIs, dataset specifications, visualizations, and key insights." />
   
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,89 +46,86 @@
   </header>
 
   <!-- ==========================================================================
-       Back Navigation Header
+       Back Navigation Button
        ========================================================================== -->
   <div class="container detail-header-nav">
-    <a href="index.html" class="btn-back" aria-label="Return to dashboard gallery">
+    <a href="index.html#dashboards" class="btn-back" aria-label="Return to main dashboard page">
       <i class="fa-solid fa-arrow-left"></i> Back to Dashboards
     </a>
   </div>
 
   <!-- ==========================================================================
-       Dashboard Detail Main Content
+       Dashboard Detail Main Section
        ========================================================================== -->
   <main class="container detail-main" id="detail-content">
     
-    <!-- Title & Meta Header -->
+    <!-- Header Title & Badges -->
     <div class="detail-title-section">
       <div class="detail-title-tags">
         <span class="detail-tool-tag" id="detail-tool">
-          <i class="fa-solid fa-chart-line"></i> Power BI
+          <i class="fa-solid fa-screwdriver-wrench"></i> Tool
         </span>
         <span class="detail-category-tag" id="detail-category">
-          Academic Analytics
+          Category
         </span>
       </div>
       <h1 class="detail-title" id="detail-title">Loading Dashboard Title...</h1>
     </div>
 
-    <!-- Complete Dashboard Screenshot Showcase Container -->
-    <section class="screenshot-card">
+    <!-- Screenshots Showcase Container -->
+    <section class="screenshot-section-card">
       <div class="screenshot-header-bar">
         <div class="screenshot-title-mini">
-          <i class="fa-solid fa-desktop"></i> Complete Power BI Report Screenshot Preview
+          <i class="fa-solid fa-desktop"></i> Dashboard Screenshots &amp; Visual Interface
         </div>
-        <button class="btn-fullscreen" id="btn-fullscreen" aria-label="Expand image in full screen lightbox">
-          <i class="fa-solid fa-up-right-and-down-left-from-center"></i> View Full Dashboard
-        </button>
+        <span style="font-size: 0.8rem; color: #94a3b8;"><i class="fa-solid fa-magnifying-glass-plus"></i> Click any screenshot to view full screen</span>
       </div>
 
-      <div class="screenshot-viewport" title="Click to view full screen">
-        <img id="detail-img" src="images/examination-dashboard.png" alt="Dashboard Complete Screenshot" class="screenshot-img" />
-      </div>
-
-      <!-- Clear replacement guide for user -->
-      <div class="replace-notice">
-        <div>
-          <i class="fa-solid fa-circle-info"></i>
-          <strong>Screenshot Location:</strong> Place your high-resolution Power BI screenshot at: <code id="img-path-code">images/examination-dashboard.png</code>
-        </div>
-        <div>
-          <span style="font-size: 0.8rem; opacity: 0.85;">Maintain 16:9 ratio for best results</span>
-        </div>
+      <div class="screenshots-gallery-grid" id="screenshots-gallery-grid">
+        <!-- Screenshots rendered dynamically via js/script.js -->
       </div>
     </section>
 
     <!-- Dashboard Information Grid -->
     <div class="detail-info-grid">
       
-      <!-- Primary Column: Objective, Visualizations, Insights -->
+      <!-- Primary Column: Objective, KPIs, Visualizations, Insights -->
       <div class="primary-info-col">
         
-        <!-- Objective -->
+        <!-- Objective & Overview -->
         <article class="detail-block">
           <h2 class="block-heading">
-            <i class="fa-solid fa-bullseye"></i> Objective
+            <i class="fa-solid fa-bullseye"></i> Dashboard Overview &amp; Objective
           </h2>
           <div class="block-body" id="detail-objective">
             Loading objective content...
           </div>
         </article>
 
-        <!-- Key Visualizations -->
-        <article class="detail-block">
+        <!-- KPIs & Key Metrics (Rendered dynamically if available) -->
+        <article class="detail-block" id="detail-kpi-block" style="display: none;">
           <h2 class="block-heading">
-            <i class="fa-solid fa-chart-pie"></i> Key Visualizations
+            <i class="fa-solid fa-gauge-high"></i> KPIs &amp; Core Metrics
+          </h2>
+          <div class="kpi-cards-grid" id="detail-kpis">
+            <!-- Populated via script.js -->
+          </div>
+        </article>
+
+        <!-- Charts & Visualizations Used -->
+        <article class="detail-block" id="detail-viz-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-chart-pie"></i> Visualizations &amp; Charts Used
           </h2>
           <ul class="viz-list" id="detail-visualizations">
             <!-- Populated via script.js -->
           </ul>
         </article>
 
-        <!-- Key Insights -->
-        <article class="detail-block">
+        <!-- Key Insights & Findings (Rendered dynamically if available) -->
+        <article class="detail-block" id="detail-insights-block" style="display: none;">
           <h2 class="block-heading">
-            <i class="fa-solid fa-lightbulb"></i> Key Insights
+            <i class="fa-solid fa-lightbulb"></i> Key Insights &amp; Findings
           </h2>
           <div class="insights-list" id="detail-insights">
             <!-- Populated via script.js -->
@@ -137,35 +134,30 @@
 
       </div>
 
-      <!-- Secondary Column: Specifications & Sidebar Panel -->
+      <!-- Secondary Column: Technical Overview & Dataset Specs -->
       <aside class="sidebar-panel">
         
-        <!-- Specs Card -->
+        <!-- Tools & Technical Overview Card -->
         <div class="sidebar-card">
           <h3 class="sidebar-title">
-            <i class="fa-solid fa-sliders"></i> Technical Overview
+            <i class="fa-solid fa-sliders"></i> Tools &amp; Technologies
           </h3>
           <div class="spec-list">
             <div class="spec-item">
-              <span class="spec-label">Visualization Tool</span>
-              <span class="spec-value" style="color: var(--powerbi-text); font-weight: 700;">
-                <i class="fa-solid fa-bolt" style="color: var(--powerbi-yellow);"></i> Microsoft Power BI
+              <span class="spec-label">Analytics Tool</span>
+              <span class="spec-value" id="sidebar-tool" style="font-weight: 700; color: var(--primary-accent);">
+                Loading Tool...
               </span>
             </div>
 
             <div class="spec-item">
-              <span class="spec-label">Dataset Type</span>
-              <span class="spec-value" id="sidebar-dataset-type">Structured Institutional Data</span>
+              <span class="spec-label">Dashboard View</span>
+              <span class="spec-value">Interactive Multi-Visual Canvas</span>
             </div>
 
             <div class="spec-item">
-              <span class="spec-label">Interactivity Level</span>
-              <span class="spec-value">Cross-filtering, DAX Measures &amp; Slicers</span>
-            </div>
-
-            <div class="spec-item">
-              <span class="spec-label">Report Layout</span>
-              <span class="spec-value">16:9 HD Executive Canvas</span>
+              <span class="spec-label">Navigation</span>
+              <span class="spec-value">Cross-Filtering &amp; Parameter Drill-down</span>
             </div>
           </div>
         </div>
@@ -173,7 +165,7 @@
         <!-- Dataset Summary Card -->
         <div class="sidebar-card">
           <h3 class="sidebar-title">
-            <i class="fa-solid fa-database"></i> Dataset Description
+            <i class="fa-solid fa-database"></i> Dataset &amp; Data Source
           </h3>
           <p class="block-body" style="font-size: 0.9rem;" id="detail-dataset">
             Loading dataset details...

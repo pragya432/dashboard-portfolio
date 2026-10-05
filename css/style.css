@@ -1,16 +1,15 @@
 /* ==========================================================================
-   Academic Data Visualization Portfolio - Stylesheet
-   Modern, Clean, Responsive CSS System
+   Academic & Business Analytics Portfolio - Stylesheet
+   Modern, Clean, Modular CSS System for Multi-Tool Dashboards
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. Design System & CSS Variables
    -------------------------------------------------------------------------- */
 :root {
-  /* Color Palette - Modern Slate & Deep Navy with Power BI Accent */
+  /* Color Palette - Modern Slate & Deep Navy */
   --bg-main: #f8fafc;
   --bg-card: #ffffff;
-  --bg-card-hover: #ffffff;
   --bg-secondary: #f1f5f9;
   --bg-accent-light: #eff6ff;
 
@@ -25,13 +24,22 @@
   /* Accent Colors */
   --primary-accent: #2563eb;
   --primary-dark: #1d4ed8;
-  --powerbi-yellow: #f2c811;
+
+  /* Tool-Specific Badges */
   --powerbi-bg: #fffbeb;
   --powerbi-border: #fef08a;
   --powerbi-text: #92400e;
+  --powerbi-accent: #f2c811;
 
-  --accent-teal: #0d9488;
-  --accent-purple: #7c3aed;
+  --looker-bg: #eff6ff;
+  --looker-border: #bfdbfe;
+  --looker-text: #1e40af;
+  --looker-accent: #4285f4;
+
+  --tableau-bg: #fff7ed;
+  --tableau-border: #ffedd5;
+  --tableau-text: #9a3412;
+  --tableau-accent: #e97627;
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
@@ -52,7 +60,6 @@
   /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Container */
   --container-max-width: 1240px;
@@ -113,7 +120,7 @@ button, input, select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.88);
+  background-color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
@@ -131,7 +138,7 @@ button, input, select {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.25rem;
   color: var(--text-primary);
 }
@@ -152,20 +159,20 @@ button, input, select {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
   list-style: none;
 }
 
 .nav-link {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
   color: var(--text-secondary);
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.85rem;
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -184,7 +191,7 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   4. Hero Section & Filters (Gallery Page)
+   4. Main Page Hero & Controls
    -------------------------------------------------------------------------- */
 .gallery-hero {
   padding: 3.5rem 0 2rem 0;
@@ -197,16 +204,12 @@ button, input, select {
   gap: 0.5rem;
   background-color: #f1f5f9;
   border: 1px solid var(--border-color);
-  padding: 0.35rem 0.9rem;
+  padding: 0.35rem 0.95rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 1.25rem;
-}
-
-.hero-title-badge i {
-  color: var(--primary-accent);
 }
 
 .hero-title {
@@ -230,7 +233,7 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
 }
@@ -238,30 +241,17 @@ button, input, select {
 .stat-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
 }
 
-.stat-chip.count-chip {
-  background-color: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
-}
-
-.stat-chip.tool-chip {
-  background-color: var(--powerbi-bg);
-  color: var(--powerbi-text);
-  border: 1px solid var(--powerbi-border);
-}
-
-.stat-chip.domain-chip {
-  background-color: #f0fdf4;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
-}
+.stat-chip.count-chip { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+.stat-chip.powerbi-chip { background-color: var(--powerbi-bg); color: var(--powerbi-text); border: 1px solid var(--powerbi-border); }
+.stat-chip.looker-chip { background-color: var(--looker-bg); color: var(--looker-text); border: 1px solid var(--looker-border); }
+.stat-chip.tableau-chip { background-color: var(--tableau-bg); color: var(--tableau-text); border: 1px solid var(--tableau-border); }
 
 /* Controls Bar (Search & Filter) */
 .controls-bar {
@@ -319,7 +309,7 @@ button, input, select {
   padding: 0.45rem 1rem;
   border-radius: var(--radius-full);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: var(--transition-fast);
 }
@@ -336,8 +326,18 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   5. Dashboard Gallery Grid & Cards
+   5. Dashboard Gallery Cards Grid
    -------------------------------------------------------------------------- */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -383,25 +383,37 @@ button, input, select {
   transform: scale(1.06);
 }
 
-.card-badge {
+.card-tool-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(4px);
-  color: #ffffff;
-  padding: 0.25rem 0.65rem;
+  padding: 0.3rem 0.75rem;
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-sm);
 }
 
-.card-badge i {
-  color: var(--powerbi-yellow);
+/* Tool badge variants */
+.card-tool-badge.power-bi {
+  background-color: #0f172a;
+  color: #f2c811;
+  border: 1px solid rgba(242, 200, 17, 0.4);
+}
+
+.card-tool-badge.looker-studio {
+  background-color: #0f172a;
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.card-tool-badge.tableau {
+  background-color: #0f172a;
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.4);
 }
 
 .card-body {
@@ -453,7 +465,7 @@ button, input, select {
   align-items: center;
   gap: 0.4rem;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary-accent);
   transition: var(--transition-fast);
 }
@@ -479,7 +491,7 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   6. About Section (Gallery Page)
+   6. About Section
    -------------------------------------------------------------------------- */
 .about-section {
   padding: 4.5rem 0;
@@ -606,23 +618,24 @@ button, input, select {
 }
 
 .detail-tool-tag {
-  background-color: var(--powerbi-bg);
-  color: var(--powerbi-text);
-  border: 1px solid var(--powerbi-border);
-  padding: 0.3rem 0.8rem;
+  padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
+.detail-tool-tag.power-bi { background-color: var(--powerbi-bg); color: var(--powerbi-text); border: 1px solid var(--powerbi-border); }
+.detail-tool-tag.looker-studio { background-color: var(--looker-bg); color: var(--looker-text); border: 1px solid var(--looker-border); }
+.detail-tool-tag.tableau { background-color: var(--tableau-bg); color: var(--tableau-text); border: 1px solid var(--tableau-border); }
+
 .detail-category-tag {
-  background-color: #eff6ff;
-  color: var(--primary-accent);
-  border: 1px solid #bfdbfe;
-  padding: 0.3rem 0.8rem;
+  background-color: #f1f5f9;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
@@ -635,8 +648,8 @@ button, input, select {
   line-height: 1.25;
 }
 
-/* Screenshot Display Container */
-.screenshot-card {
+/* Screenshot Showcase & Gallery */
+.screenshot-section-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -664,64 +677,71 @@ button, input, select {
   color: #cbd5e1;
 }
 
-.btn-fullscreen {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.4rem 0.9rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: var(--transition-fast);
+.screenshots-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #090d16;
 }
 
-.btn-fullscreen:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+.screenshot-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  cursor: zoom-in;
+  background-color: #0f172a;
+  transition: transform var(--transition-normal);
+}
+
+.screenshot-item:hover {
   transform: scale(1.02);
 }
 
-.screenshot-viewport {
-  position: relative;
-  width: 100%;
-  background-color: #090d16;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: zoom-in;
-}
-
-.screenshot-img {
+.screenshot-item img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
-  max-height: 85vh;
 }
 
-/* Replacement notice */
-.replace-notice {
+.screenshot-caption {
+  padding: 0.65rem 1rem;
+  background-color: #0f172a;
+  color: #cbd5e1;
+  font-size: 0.825rem;
+  border-top: 1px solid #1e293b;
+  text-align: center;
+}
+
+.awaiting-doc-notice {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
   background-color: #fffbebf5;
-  border-top: 1px solid #fef08a;
-  padding: 0.85rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.875rem;
+  border: 1px dashed #fef08a;
+  border-radius: var(--radius-md);
+  margin: 1.5rem;
   color: #854d0e;
 }
 
-.replace-notice code {
-  background-color: #fef08a;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  color: #713f12;
+.awaiting-doc-notice i {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: #d97706;
+}
+
+.awaiting-doc-notice h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.awaiting-doc-notice p {
+  font-size: 0.9rem;
+  max-width: 36rem;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
 /* Detail Info Grid */
@@ -762,7 +782,45 @@ button, input, select {
   line-height: 1.65;
 }
 
-/* Visualization Chips List */
+/* KPI Metric Cards Grid */
+.kpi-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.kpi-metric-card {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kpi-metric-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.kpi-metric-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.kpi-metric-sub {
+  font-size: 0.8rem;
+  color: var(--primary-accent);
+  font-weight: 600;
+}
+
+/* Visualizations Chips List */
 .viz-list {
   display: flex;
   flex-direction: column;
@@ -1043,8 +1101,7 @@ button, input, select {
     grid-template-columns: 1fr;
   }
 
-  .replace-notice {
-    flex-direction: column;
-    align-items: flex-start;
+  .screenshots-gallery-grid {
+    grid-template-columns: 1fr;
   }
 }

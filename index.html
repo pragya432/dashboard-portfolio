@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Data Visualization Dashboards — Academic Portfolio</title>
-  <meta name="description" content="A professional academic data visualization portfolio presenting Power BI dashboards for examination analytics, student academic performance, and paper leak investigation." />
+  <title>My Data Visualization Dashboards — Analytics Portfolio</title>
+  <meta name="description" content="Academic and business data visualization portfolio featuring dashboards built with Power BI, Data Studio / Looker Studio, and Tableau." />
   <meta name="author" content="Data Visualization Student" />
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
@@ -53,24 +53,27 @@
     <section class="gallery-hero">
       <div class="container">
         <div class="hero-title-badge">
-          <i class="fa-solid fa-graduation-cap"></i> Academic &amp; Business Intelligence Portfolio
+          <i class="fa-solid fa-graduation-cap"></i> Data Analytics &amp; Business Intelligence Showcase
         </div>
 
         <h1 class="hero-title">My Data Visualization Dashboards</h1>
         <p class="hero-subtitle">
-          A collection of dashboards created for academic data analysis and visualization.
+          A collection of interactive dashboards created for academic analytics, education security, and business sales performance.
         </p>
 
-        <!-- Extra Feature Badges -->
+        <!-- Tool & Stat Chips -->
         <div class="meta-stats-bar">
           <span class="stat-chip count-chip" id="dashboard-count">
-            <i class="fa-solid fa-chart-pie"></i> 3 Dashboards
+            <i class="fa-solid fa-chart-pie"></i> 4 Dashboards
           </span>
-          <span class="stat-chip tool-chip">
+          <span class="stat-chip powerbi-chip">
             <i class="fa-solid fa-bolt"></i> Power BI
           </span>
-          <span class="stat-chip domain-chip">
-            <i class="fa-solid fa-circle-check"></i> Academic Analytics
+          <span class="stat-chip looker-chip">
+            <i class="fa-brands fa-google"></i> Looker Studio
+          </span>
+          <span class="stat-chip tableau-chip">
+            <i class="fa-solid fa-chart-line"></i> Tableau
           </span>
         </div>
 
@@ -82,7 +85,7 @@
               type="text" 
               id="search-input" 
               class="search-input" 
-              placeholder="Search dashboards by title, tool, or keyword (e.g. Attendance, Leaks, Marks)..." 
+              placeholder="Search dashboards by title, tool (Power BI, Tableau, Looker Studio), or category..." 
               aria-label="Search dashboards"
             />
           </div>
@@ -90,8 +93,10 @@
           <div class="filter-tags">
             <button class="filter-btn active" data-category="all">All Dashboards</button>
             <button class="filter-btn" data-category="academic-analytics">Academic Analytics</button>
-            <button class="filter-btn" data-category="performance-tracking">Performance Tracking</button>
-            <button class="filter-btn" data-category="investigative-analytics">Investigative</button>
+            <button class="filter-btn" data-category="sales-analytics">Sales Analytics</button>
+            <button class="filter-btn" data-category="power-bi">Power BI</button>
+            <button class="filter-btn" data-category="looker-studio">Looker Studio</button>
+            <button class="filter-btn" data-category="tableau">Tableau</button>
           </div>
         </div>
       </div>
@@ -101,25 +106,28 @@
          Dashboard Card Gallery Grid
          ========================================================================== -->
     <section class="container" id="dashboards">
+      <h2 class="section-heading">
+        <i class="fa-solid fa-shapes"></i> My Dashboards
+      </h2>
       <div class="dashboard-grid" id="dashboard-grid">
         <!-- Rendered dynamically via js/script.js -->
       </div>
     </section>
 
     <!-- ==========================================================================
-         About Section
-         ========================================================================== -->
+       About Section
+       ========================================================================== -->
     <section class="about-section" id="about">
       <div class="container">
         <div class="about-grid">
           <div>
             <span class="about-header-tag"><i class="fa-solid fa-circle-info"></i> About This Portfolio</span>
-            <h2 class="about-title">Academic Data Analysis &amp; Business Intelligence</h2>
+            <h2 class="about-title">Data Analytics &amp; Business Intelligence</h2>
             <p class="about-text">
-              This portfolio showcases data visualization and business intelligence projects developed during my academic coursework. Utilizing <strong>Microsoft Power BI</strong>, these dashboards transform complex education databases into actionable insights—from predicting student academic performance to analyzing examination security anomalies.
+              This portfolio showcases data visualization and business intelligence projects developed using industry-standard analytics tools including <strong>Microsoft Power BI</strong>, <strong>Google Data Studio / Looker Studio</strong>, and <strong>Tableau</strong>.
             </p>
             <p class="about-text">
-              Each project demonstrates core data engineering skills, including data modeling (Star schema), DAX measures, interactive drill-downs, dynamic filters, and clean visual storytelling designed for academic decision-makers.
+              These dashboards solve real-world analytical problems ranging from institutional result tracking and paper leak investigation to e-commerce sales performance and regional revenue distribution.
             </p>
           </div>
 
@@ -127,16 +135,16 @@
             <div class="highlight-item">
               <div class="highlight-icon"><i class="fa-solid fa-chart-line"></i></div>
               <div class="highlight-content">
-                <h4>Power BI Specialist</h4>
-                <p>Interactive KPIs, ribbon charts, decomposition trees, and drill-through matrices.</p>
+                <h4>Multi-Tool Expertise</h4>
+                <p>Power BI, Looker Studio, and Tableau dashboard implementations.</p>
               </div>
             </div>
 
             <div class="highlight-item">
               <div class="highlight-icon"><i class="fa-solid fa-database"></i></div>
               <div class="highlight-content">
-                <h4>Data Modeling &amp; DAX</h4>
-                <p>Calculated columns, dynamic measures, and optimized data relationships.</p>
+                <h4>Data Modeling &amp; Metrics</h4>
+                <p>DAX, calculated fields, scorecards, and interactive cross-filtering.</p>
               </div>
             </div>
 
@@ -144,15 +152,15 @@
               <div class="highlight-icon"><i class="fa-solid fa-lightbulb"></i></div>
               <div class="highlight-content">
                 <h4>Actionable Insights</h4>
-                <p>Translating analytical findings into concrete academic strategy recommendations.</p>
+                <p>Translating complex dataset trends into executive-level key observations.</p>
               </div>
             </div>
 
             <div class="highlight-item">
-              <div class="highlight-icon"><i class="fa-solid fa-expand"></i></div>
+              <div class="highlight-icon"><i class="fa-solid fa-arrows-spin"></i></div>
               <div class="highlight-content">
-                <h4>Flexible Architecture</h4>
-                <p>Modular showcase designed to easily incorporate future visualization projects.</p>
+                <h4>Expandable Architecture</h4>
+                <p>Structured layout built to seamlessly add more dashboards as work progresses.</p>
               </div>
             </div>
           </div>
