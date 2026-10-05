@@ -1,10 +1,10 @@
 /**
  * Academic & Business Analytics Portfolio
- * Modular JavaScript Registry for Multi-Tool Dashboards
+ * Real Data Registry extracted from Google Document
  */
 
 // --------------------------------------------------------------------------
-// 1. Data Store - Centralized Dashboards Registry (4 Core Dashboards)
+// 1. Data Store - 4 Core Dashboards with Real Content & Screenshots
 // --------------------------------------------------------------------------
 const dashboardsData = [
   {
@@ -15,22 +15,41 @@ const dashboardsData = [
     toolClass: "power-bi",
     images: [
       {
-        src: "images/paper-leak-dashboard.png",
-        caption: "Paper Leak Analysis Executive Dashboard View"
+        src: "images/paper-leak-dashboard-1.png",
+        caption: "Paper Leak Incident Trends, Conducting Body & Status Distribution"
+      },
+      {
+        src: "images/paper-leak-dashboard-2.png",
+        caption: "Action Taken, Aspirants Affected, Arrests vs Convictions & Confidence Metrics"
       }
     ],
-    shortDescription: "Investigative security dashboard analyzing paper leak incidents across dates, examination boards, leak status, and verification confidence metrics.",
-    objective: "Created as an investigative security intelligence dashboard to map reported examination breach incidents, evaluate confidence metrics across reporting channels, track incident resolution lifecycles, and analyze root cause vectors.",
-    dataset: "Geocoded incident report database covering nationwide competitive and academic exam security logs, timestamped incident reports, verification confidence scores, and affected candidate counts.",
-    kpis: [],
-    keyVisualizations: [
-      "Decomposition Tree: Root Cause Breakdown across Digital Messaging, Physical Leak, and Staff Anomalies",
-      "Waterfall Chart: Verification Lifecycle from Initial Report to Final Status Confirmation",
-      "Treemap: Incident Density by Examination Category and Exam Board",
-      "100% Stacked Bar Chart & Regional Risk Matrix by Geographical Zone",
-      "Ribbon Chart & Scatter Plot for Severity vs. Time-to-Detection"
+    shortDescription: "Investigative security dashboard analyzing paper leak incidents across conducting bodies, leak status, affected aspirants, and legal enforcement outcomes.",
+    objective: "Designed as an investigative security intelligence dashboard to analyze reported paper leak incidents across dates, conducting bodies (Vyapam/MPPEB, CBSE, NTA, etc.), leak status, confidence levels, affected aspirants, and enforcement actions taken.",
+    dataset: "Incident reports database containing breach records, conducting bodies (State vs Central), era classification (NDA vs UPA), affected candidate counts, and enforcement outcomes (Arrests/FIR, Convictions).",
+    kpis: [
+      { label: "Confirmed Leaks", value: "89 Cases", sub: "80.91% of total incidents" },
+      { label: "High Confidence Flags", value: "81 Flags", sub: "73.64% verified confidence" },
+      { label: "State Body Share", value: "88 Cases", sub: "80.0% of all incidents" },
+      { label: "Central Body Share", value: "22 Cases", sub: "20.0% of all incidents" }
     ],
-    keyInsights: []
+    keyVisualizations: [
+      "Paper Leaks Over Time (Line Chart): Temporal incident trends from 2010 to 2020+ featuring a peak of 15 incidents around 2022.",
+      "Leak Status Breakdown (Donut Chart): Confirmed (89 cases / 80.91%), Alleged (13 / 11.82%), Denied (5 / 4.55%), and Suspected cases.",
+      "Conducting Body Breakdown (Horizontal Bar Chart & Treemap): Incident frequency across Vyapam (MPPEB), CBSE, NTA, and State Boards.",
+      "State vs. Central Distribution (Pie Chart): State conducting bodies (88 cases / 80%) vs Central bodies (22 cases / 20%).",
+      "Era-Wise Incident Comparison (Column Chart): Incident count breakdown comparing NDA (May 2014–present) and UPA (2004–May 2014) eras.",
+      "Action Taken Breakdown (Bar Chart): Enforcement metrics for Arrests-FIR + Paper Cancelled, Retest + Arrest, and Exam Cancelled.",
+      "Arrests vs. Convictions by Conducting Body (Grouped Column Chart): Comparative tracking of arrests and convictions across Bihar, Haryana, Jharkhand, Rajasthan, UP, etc.",
+      "Aspirants Affected (Column Chart): Impact volume per exam reaching up to 5 Million+ candidates in major tests like NEET and UP Police.",
+      "Confidence Level Distribution (Donut Chart): High Confidence (81 / 73.64%) vs Medium Confidence (26 / 23.64%).",
+      "Sum of Convictions by Incident ID (Funnel Chart): Resolution conversion rates across specific case codes (PL-0019, PL-0020, PL-0016, PL-0018)."
+    ],
+    keyInsights: [
+      "State conducting bodies account for 80% (88 incidents) of total reported paper leaks, while Central conducting bodies represent 20% (22 incidents).",
+      "Confirmed leak cases constitute 80.91% (89 cases) of all logged incidents, with 73.64% (81 cases) evaluated at high verification confidence.",
+      "Paper leak frequency experienced a major surge between 2020 and 2022, directly impacting over 5 Million+ aspirants across competitive examinations.",
+      "Enforcement data shows high initial arrest figures in states like Bihar, Haryana, and Jharkhand, though conviction rates remain low across several incident codes."
+    ]
   },
   {
     id: "examination-result",
@@ -41,21 +60,36 @@ const dashboardsData = [
     images: [
       {
         src: "images/examination-dashboard.png",
-        caption: "Examination & Result Analytics Overview Canvas"
+        caption: "Examination & Result Analytics Executive Overview Canvas"
       }
     ],
-    shortDescription: "Analyze examination results, grade distributions, pass/fail performance trends, and student outcome metrics across academic departments.",
-    objective: "Created to evaluate academic examination results, track pass/fail percentages across departments, analyze score distributions, and identify subject-wise failure patterns for targeted academic intervention.",
-    dataset: "Anonymized institutional examination dataset containing student record entries spanning academic years, including course codes, internal/external marks, semester terms, and degree programs.",
-    kpis: [],
-    keyVisualizations: [
-      "KPI Cards: Overall Pass Rate %, Average Score, Total Students Examined, Distinction Count",
-      "Grade Distribution Bar Chart: Detailed breakdown of A+, A, B, C, D, and F grades",
-      "Semester-over-Semester Pass Rate Trend Line Chart",
-      "Department & Subject Performance Heatmap Matrix",
-      "Interactive Slicers for Academic Year, Department, and Semester filter"
+    shortDescription: "Analyze student academic performance, grade distributions, pass/fail trends, subject-wise scores, and attendance benchmarks.",
+    objective: "Created to evaluate student academic performance across departments, track average marks across semesters and subjects, monitor attendance compliance against target benchmarks, and analyze pass vs. fail grade distributions.",
+    dataset: "Student academic evaluation database containing student IDs, names, semester terms (Sem 1 to Sem 6), course subjects (AI, C Programming, Data Analysis with Python, DBMS, etc.), marks obtained, and attendance percentages.",
+    kpis: [
+      { label: "Total Students", value: "14", sub: "Active cohort size" },
+      { label: "Average Marks", value: "84.21 / 100", sub: "Overall aggregate score" },
+      { label: "Average Attendance", value: "89.34%", sub: "Target benchmark: 75.00%" },
+      { label: "Pass Percentage", value: "96.99%", sub: "258 pass records" },
+      { label: "Fail Percentage", value: "3.01%", sub: "8 fail records" }
     ],
-    keyInsights: []
+    keyVisualizations: [
+      "Pass vs. Fail Distribution (Pie Chart): 258 Pass evaluations (96.99%) vs 8 Fail evaluations (3.01%).",
+      "Grade Distribution (Donut Chart): 266 total grade evaluations — A Grade: 113 (42.48%), A+: 86 (32.33%), B+: 59 (22.18%).",
+      "Overall Attendance Gauge Chart: Cohort attendance average of 89.34% measured against the 75.00% requirement target.",
+      "Average Marks by Semester (Bar Chart): Semester-over-semester score progression showing peak marks concentration in Semester 6.",
+      "Student-wise Average Performance (Column Chart): Individual student aggregate marks (Shreya K., Pragya Gupta, Gouri, Mikki Jaiswal, etc.).",
+      "Subject Performance Ranking Across Semesters (Stacked Bar Chart): Comparative subject score breakdown across Semesters 1 through 6.",
+      "Average Marks by Subject & Semester (Color-Coded Treemap): Visual area mapping across subjects (Data Analysis with Python, AI, Linux, DBMS, Operating Systems).",
+      "Subject Performance Drilldown (Decomposition Tree): Hierarchical decomposition of average marks (84.21) by top subjects (Data Analysis with Python: 89.50, System Architecture: 87.57).",
+      "Student Performance Roster Matrix: Itemized student scoreboard across Sem 1 to Sem 6 with cumulative total marks (e.g. Gouri: 1,733 total, Ayush Ram Tripathi: 1,638 total, Total 22,400 marks)."
+    ],
+    keyInsights: [
+      "The student cohort achieved a 96.99% overall pass rate (258 pass evaluations vs. 8 fail evaluations) with a high average score of 84.21 / 100.",
+      "Top distinction grades (A and A+) accounted for 74.81% of all course evaluations (A Grade: 42.48%, A+ Grade: 32.33%).",
+      "Average cohort attendance stood at 89.34%, comfortably exceeding the institutional 75.00% attendance benchmark target.",
+      "Data Analysis with Python recorded the highest average subject score (89.50), while Semester 6 demonstrated the overall highest student score performance."
+    ]
   },
   {
     id: "sales-by-category",
@@ -69,18 +103,28 @@ const dashboardsData = [
         caption: "Sales by Category Looker Studio Analytics View"
       }
     ],
-    shortDescription: "Sales analytics dashboard tracking category-wise revenue distribution, product performance, sales volume trends, and profit margins.",
-    objective: "Designed to monitor category-level sales revenue, evaluate product margin performance, track top-selling retail categories, and analyze purchasing trends over time using interactive Data Studio / Looker Studio controls.",
-    dataset: "Retail e-commerce transaction dataset including product category hierarchies, order values, quantity sold, discount percentages, and monthly sales volume metrics.",
-    kpis: [],
-    keyVisualizations: [
-      "Category Revenue Scorecard Cards",
-      "Donut Chart: Category Sales Share % Breakdown",
-      "Monthly Category Sales Trend Bar & Line Combo Chart",
-      "Top Product Category Performance Table with Heatmap Cell Formatting",
-      "Interactive Date Range & Region Slicers"
+    shortDescription: "Sales analytics dashboard tracking category-wise revenue distribution, profit margins, order volumes, and payment channel preferences.",
+    objective: "Designed to monitor category-level sales revenue, evaluate product margin performance, track order volume trends across date ranges (Jan 3 to Mar 28), analyze category profit contributions, and evaluate customer payment method preferences.",
+    dataset: "E-commerce sales transaction database featuring order IDs, product names, category hierarchies (Electronics, Furniture, Clothing, Beauty), sales amounts, profit figures, order quantities, payment methods (Card, UPI, Cash), and transaction dates.",
+    kpis: [
+      { label: "Total Sales", value: "$222,100", sub: "Gross sales revenue" },
+      { label: "Total Profit", value: "$29,300", sub: "$29.3k net profit" },
+      { label: "Total Orders", value: "30", sub: "Completed order transactions" },
+      { label: "Total Quantity Sold", value: "47 Units", sub: "Items shipped" }
     ],
-    keyInsights: []
+    keyVisualizations: [
+      "Sales by Category (Horizontal Bar Chart): Category revenue breakdown showing Electronics (~$120k - Top Category), Furniture (~$60k), Clothing (~$24k), and Beauty (~$15k).",
+      "Sales Trend Over Time (Time Series Chart): Daily sales progression from Jan 3 to Mar 28, featuring a major revenue spike (~$65k) in early February.",
+      "Profit by Category (Vertical Column Chart): Category net profit contributions — Electronics ($14k+), Furniture ($7.5k), Clothing ($4k), and Beauty ($3k).",
+      "Orders by Payment Method (Donut Chart): Card payments (46.7%), UPI payments (43.3%), and Cash payments (10.0%).",
+      "Product & Category Performance Table: Detailed product matrix displaying Product Name, Category, Sales, Quantity, Profit, and Profit Margin % (e.g. Bookcase: 27.68% margin, Headphones: 18.00% margin)."
+    ],
+    keyInsights: [
+      "Total sales revenue reached $222,100 with a total net profit of $29,300 ($29.3k) generated across 30 orders and 47 units sold.",
+      "Electronics emerged as the primary revenue and profit driver (~$120k sales, ~$14k+ profit), followed by Furniture (~$60k sales).",
+      "Digital payment methods accounted for 90.0% of all customer orders (Card: 46.7%, UPI: 43.3%), while cash on delivery represented only 10.0%.",
+      "Sales trend analysis revealed a massive revenue demand spike in early February (reaching a peak single-day sales volume of ~$65k)."
+    ]
   },
   {
     id: "sales-performance",
@@ -94,18 +138,25 @@ const dashboardsData = [
         caption: "Tableau Executive Sales Performance Overview"
       }
     ],
-    shortDescription: "Comprehensive executive sales dashboard evaluating regional sales growth, representative performance, target vs actual quotas, and customer segments.",
-    objective: "Created to track overall business sales growth, analyze regional performance variations across territories, evaluate sales rep target attainment, and identify high-value customer segments using interactive Tableau parameters.",
-    dataset: "Enterprise commercial sales database containing regional sales records, customer segment profiles, quarterly targets, order fulfillment metrics, and profit ratios.",
-    kpis: [],
-    keyVisualizations: [
-      "Regional Sales Heatmap & Geographic Map View",
-      "Target vs. Actual Quota Attainment Bullet Charts",
-      "Quarterly Revenue & Profit Margin Dual-Axis Chart",
-      "Sales Representative Ranking Leaderboard",
-      "Customer Segment Breakdown Stacked Bar Chart"
+    shortDescription: "Executive sales dashboard evaluating category revenue, monthly sales seasonality, and multi-year sales and profit trends.",
+    objective: "Created to evaluate overall commercial sales growth for Sample Superstore, monitor revenue across product categories (Technology, Furniture, Office Supplies), analyze monthly sales seasonality, and track multi-year sales and profit trends (2023 to 2026).",
+    dataset: "Enterprise commercial sales database (Sample Superstore) containing multi-year transactions spanning 2023 through 2026, categorized by product segments, order dates, regions (Central, East, South, West), sales revenue, and net profit figures.",
+    kpis: [
+      { label: "Total Sales", value: "$2,326,534", sub: "Gross store revenue" },
+      { label: "Total Profit", value: "$292,297", sub: "Net store profit" }
     ],
-    keyInsights: []
+    keyVisualizations: [
+      "Sales Profit by Category (Column Bar Chart): Category revenue breakdown featuring Technology ($839,893 - Top Category), Furniture ($754,748), and Office Supplies ($731,893).",
+      "Sales by Month (Line Chart): Monthly revenue trend across Order Dates (Jan to Dec), highlighting major Q4 peaks in November (~$340k) and September (~$310k).",
+      "Sales and Profit by Year (Scatter Circle Comparison Matrix): Annual performance matrix tracking sales volume and net profit growth across 2023, 2024, 2025, and 2026.",
+      "Region Slicers Filter: Interactive regional filters covering Central, East, South, and West sales territories."
+    ],
+    keyInsights: [
+      "Sample Superstore generated $2,326,534 in total gross sales revenue and $292,297 in net profit.",
+      "Technology was the highest-performing product category generating $839,893 in sales, followed by Furniture ($754,748) and Office Supplies ($731,893).",
+      "Monthly sales trends demonstrate strong Q4 seasonality, with sales volume peaking significantly in November (~$340k) and September (~$310k).",
+      "Multi-year analysis (2023–2026) reflects steady annual growth in both sales volume and net profitability."
+    ]
   }
 ];
 
@@ -227,12 +278,11 @@ function initGalleryPage() {
       card.setAttribute("tabindex", "0");
       card.setAttribute("aria-label", `View ${item.title}`);
 
-      // Thumbnail image fallback if array empty
       const thumbSrc = item.images && item.images.length > 0 ? item.images[0].src : "images/placeholder.png";
 
       card.innerHTML = `
         <div class="card-image-wrapper">
-          <img src="${thumbSrc}" alt="${item.title} Thumbnail Preview" class="card-image" loading="lazy" onerror="this.src='https://via.placeholder.com/800x450/0f172a/cbd5e1?text=${encodeURIComponent(item.title)}'">
+          <img src="${thumbSrc}" alt="${item.title} Thumbnail Preview" class="card-image" loading="lazy">
           <span class="card-tool-badge ${item.toolClass}">
             <i class="fa-solid fa-layer-group"></i> ${item.tool}
           </span>
@@ -274,7 +324,7 @@ function initDetailPage() {
   const currentDashboard =
     dashboardsData.find((d) => d.id === dashboardId) || dashboardsData[0];
 
-  document.title = `${currentDashboard.title} — Data Analytics Portfolio`;
+  document.title = `${currentDashboard.title} — Analytics Portfolio`;
 
   // Title & Tool Badges
   document.getElementById("detail-title").textContent = currentDashboard.title;
@@ -297,7 +347,7 @@ function initDetailPage() {
       itemDiv.setAttribute("title", "Click to view full screen");
       
       itemDiv.innerHTML = `
-        <img src="${imgObj.src}" alt="${currentDashboard.title} Screenshot ${idx+1}" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x675/0f172a/ffffff?text=${encodeURIComponent(currentDashboard.title + ' Screenshot ' + (idx+1))}'">
+        <img src="${imgObj.src}" alt="${currentDashboard.title} Screenshot ${idx+1}" loading="lazy">
         ${imgObj.caption ? `<div class="screenshot-caption">${imgObj.caption}</div>` : ""}
       `;
 
@@ -307,22 +357,13 @@ function initDetailPage() {
 
       galleryContainer.appendChild(itemDiv);
     });
-  } else {
-    // If screenshots not yet provided in doc
-    galleryContainer.innerHTML = `
-      <div class="awaiting-doc-notice">
-        <i class="fa-solid fa-file-word"></i>
-        <h4>Screenshot Pending Word Document Upload</h4>
-        <p>This section will display the exact, high-resolution screenshots extracted from your Word document once provided.</p>
-      </div>
-    `;
   }
 
   // Objective & Dataset
-  document.getElementById("detail-objective").textContent = currentDashboard.objective || "Objective details will be loaded from your provided Word file.";
-  document.getElementById("detail-dataset").textContent = currentDashboard.dataset || "Dataset specifications will be loaded from your provided Word file.";
+  document.getElementById("detail-objective").textContent = currentDashboard.objective;
+  document.getElementById("detail-dataset").textContent = currentDashboard.dataset;
 
-  // KPIs Block Rendering (Conditional)
+  // KPIs Block Rendering
   const kpiBlock = document.getElementById("detail-kpi-block");
   const kpiGrid = document.getElementById("detail-kpis");
   kpiGrid.innerHTML = "";
@@ -360,7 +401,7 @@ function initDetailPage() {
     vizBlock.style.display = "none";
   }
 
-  // Key Insights List (Conditional)
+  // Key Insights List
   const insightsBlock = document.getElementById("detail-insights-block");
   const insightsList = document.getElementById("detail-insights");
   insightsList.innerHTML = "";
