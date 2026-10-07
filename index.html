@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Data Visualization Dashboards — Analytics Portfolio</title>
-  <meta name="description" content="Academic and business data visualization portfolio featuring dashboards built with Power BI, Data Studio / Looker Studio, and Tableau." />
-  <meta name="author" content="Data Visualization Student" />
+  <title>Department of Computer Science — Portfolio | Dev Sanskriti Vishwavidyalaya</title>
+  <meta name="description" content="Computer Science practical labs and data visualization dashboards portfolio at Dev Sanskriti Vishwavidyalaya (DSVV)." />
+  <meta name="author" content="Computer Science Student" />
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,146 +21,126 @@
 <body>
 
   <!-- ==========================================================================
-       Navigation Bar
+       HEADER / NAVBAR (DSVV Branding)
        ========================================================================== -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="nav-brand" aria-label="DataViz Portfolio Home">
-        <div class="brand-icon">
-          <i class="fa-solid fa-chart-column"></i>
-        </div>
-        <span>DataViz Portfolio</span>
+      <!-- Top Left: DSVV Logo -->
+      <a href="index.html" class="nav-brand" aria-label="Dev Sanskriti Vishwavidyalaya Home">
+        <img src="images/dsvv-logo.svg" alt="Dev Sanskriti Vishwavidyalaya Emblem Logo" class="dsvv-logo-img" />
       </a>
 
       <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li><a href="#dashboards" class="nav-link"><i class="fa-solid fa-border-all"></i> Dashboards</a></li>
-          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-graduate"></i> About</a></li>
-        </ul>
-      </nav>
+      <!-- Top Right: Computer Science Badge & Navigation Links -->
+      <div class="nav-right-group">
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#labs" class="nav-link active"><i class="fa-solid fa-code"></i> Labs</a></li>
+            <li><a href="#dashboards" class="nav-link"><i class="fa-solid fa-chart-column"></i> Dashboard Gallery</a></li>
+            <li><a href="#about" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a></li>
+          </ul>
+        </nav>
+        <span class="cs-dept-badge">
+          <i class="fa-solid fa-laptop-code"></i> Computer Science
+        </span>
+      </div>
     </div>
   </header>
 
   <!-- ==========================================================================
-       Gallery Hero Section
+       HERO SECTION
        ========================================================================== -->
   <main>
-    <section class="gallery-hero">
+    <section class="hero-section">
       <div class="container">
-        <div class="hero-title-badge">
-          <i class="fa-solid fa-graduation-cap"></i> Data Analytics &amp; Business Intelligence Showcase
+        <div class="hero-institution-tag">
+          <i class="fa-solid fa-graduation-cap"></i> Dev Sanskriti Vishwavidyalaya
         </div>
 
-        <h1 class="hero-title">My Data Visualization Dashboards</h1>
+        <h1 class="hero-title">Department of Computer Science</h1>
         <p class="hero-subtitle">
-          A collection of interactive dashboards created for academic analytics, education security, and business sales performance.
+          Practical Computer Science Labs &amp; Interactive Data Analytics Dashboard Portfolio.
         </p>
-
-        <!-- Tool & Stat Chips -->
-        <div class="meta-stats-bar">
-          <span class="stat-chip count-chip" id="dashboard-count">
-            <i class="fa-solid fa-chart-pie"></i> 4 Dashboards
-          </span>
-          <span class="stat-chip powerbi-chip">
-            <i class="fa-solid fa-bolt"></i> Power BI
-          </span>
-          <span class="stat-chip looker-chip">
-            <i class="fa-brands fa-google"></i> Looker Studio
-          </span>
-          <span class="stat-chip tableau-chip">
-            <i class="fa-solid fa-chart-line"></i> Tableau
-          </span>
-        </div>
-
-        <!-- Controls: Search & Category Filters -->
-        <div class="controls-bar">
-          <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input 
-              type="text" 
-              id="search-input" 
-              class="search-input" 
-              placeholder="Search dashboards by title, tool (Power BI, Tableau, Looker Studio), or category..." 
-              aria-label="Search dashboards"
-            />
-          </div>
-
-          <div class="filter-tags">
-            <button class="filter-btn active" data-category="all">All Dashboards</button>
-            <button class="filter-btn" data-category="academic-analytics">Academic Analytics</button>
-            <button class="filter-btn" data-category="sales-analytics">Sales Analytics</button>
-            <button class="filter-btn" data-category="power-bi">Power BI</button>
-            <button class="filter-btn" data-category="looker-studio">Looker Studio</button>
-            <button class="filter-btn" data-category="tableau">Tableau</button>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         Dashboard Card Gallery Grid
+         SECTION 1 — LABS
          ========================================================================== -->
-    <section class="container" id="dashboards">
-      <h2 class="section-heading">
-        <i class="fa-solid fa-shapes"></i> My Dashboards
-      </h2>
-      <div class="dashboard-grid" id="dashboard-grid">
-        <!-- Rendered dynamically via js/script.js -->
+    <section class="labs-section" id="labs">
+      <div class="container">
+        <div class="section-header-wrap">
+          <div>
+            <h2 class="section-title">
+              <i class="fa-solid fa-flask"></i> Practical Labs
+            </h2>
+            <p class="section-desc">
+              Individual practical modules covering core Node.js runtime, HTTP protocols, Express middleware, MongoDB integration, and Web Security.
+            </p>
+          </div>
+        </div>
+
+        <!-- Labs Grid Container (1 card per lab rendered dynamically by js/script.js) -->
+        <div class="labs-grid" id="labs-grid">
+          <!-- Rendered dynamically via js/script.js -->
+        </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-       About Section
-       ========================================================================== -->
+         SECTION 2 — DASHBOARD GALLERY (2 per row Desktop & Tablet)
+         ========================================================================== -->
+    <section class="dashboards-section" id="dashboards">
+      <div class="container">
+        <div class="section-header-wrap">
+          <div>
+            <h2 class="section-title">
+              <i class="fa-solid fa-chart-line"></i> Dashboard Gallery
+            </h2>
+            <p class="section-desc">
+              Visual analytics showcase featuring interactive Power BI, Looker Studio, and Tableau dashboards.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dashboard Gallery Grid Container (2 per row rendered dynamically by js/script.js) -->
+        <div class="dashboard-gallery-grid" id="dashboards-gallery-grid">
+          <!-- Rendered dynamically via js/script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT SECTION
+         ========================================================================== -->
     <section class="about-section" id="about">
       <div class="container">
         <div class="about-grid">
           <div>
-            <span class="about-header-tag"><i class="fa-solid fa-circle-info"></i> About This Portfolio</span>
-            <h2 class="about-title">Data Analytics &amp; Business Intelligence</h2>
+            <span class="about-header-tag"><i class="fa-solid fa-circle-info"></i> Department Overview</span>
+            <h2 class="about-title">Dev Sanskriti Vishwavidyalaya</h2>
             <p class="about-text">
-              This portfolio showcases data visualization and business intelligence projects developed using industry-standard analytics tools including <strong>Microsoft Power BI</strong>, <strong>Google Data Studio / Looker Studio</strong>, and <strong>Tableau</strong>.
-            </p>
-            <p class="about-text">
-              These dashboards solve real-world analytical problems ranging from institutional result tracking and paper leak investigation to e-commerce sales performance and regional revenue distribution.
+              The Department of Computer Science emphasizes strong theoretical foundation alongside hands-on practical application in backend server architectures, database integration, and modern data visualization analytics.
             </p>
           </div>
 
           <div class="about-highlights">
             <div class="highlight-item">
-              <div class="highlight-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="highlight-icon"><i class="fa-solid fa-code"></i></div>
               <div class="highlight-content">
-                <h4>Multi-Tool Expertise</h4>
-                <p>Power BI, Looker Studio, and Tableau dashboard implementations.</p>
+                <h4>Practical Engineering</h4>
+                <p>Modular Node.js, Express, MongoDB, and web security implementations.</p>
               </div>
             </div>
 
             <div class="highlight-item">
-              <div class="highlight-icon"><i class="fa-solid fa-database"></i></div>
+              <div class="highlight-icon"><i class="fa-solid fa-chart-pie"></i></div>
               <div class="highlight-content">
-                <h4>Data Modeling &amp; Metrics</h4>
-                <p>DAX, calculated fields, scorecards, and interactive cross-filtering.</p>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <div class="highlight-icon"><i class="fa-solid fa-lightbulb"></i></div>
-              <div class="highlight-content">
-                <h4>Actionable Insights</h4>
-                <p>Translating complex dataset trends into executive-level key observations.</p>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <div class="highlight-icon"><i class="fa-solid fa-arrows-spin"></i></div>
-              <div class="highlight-content">
-                <h4>Expandable Architecture</h4>
-                <p>Structured layout built to seamlessly add more dashboards as work progresses.</p>
+                <h4>Visual Data Intelligence</h4>
+                <p>Interactive dashboard implementations using Power BI, Looker Studio, and Tableau.</p>
               </div>
             </div>
           </div>
@@ -170,16 +150,17 @@
   </main>
 
   <!-- ==========================================================================
-       Site Footer
+       FOOTER
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <i class="fa-solid fa-chart-column"></i> Data Visualization Portfolio
+          <img src="images/dsvv-logo.svg" alt="DSVV Logo" style="height: 32px; filter: brightness(0) invert(1);" />
+          <span>Dev Sanskriti Vishwavidyalaya</span>
         </div>
         <div class="footer-copyright">
-          © 2026 | Data Visualization Portfolio
+          © 2026 Dev Sanskriti Vishwavidyalaya | Department of Computer Science
         </div>
         <button class="btn-scroll-top" aria-label="Scroll to top of page">
           <i class="fa-solid fa-arrow-up"></i> Top

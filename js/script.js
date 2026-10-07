@@ -1,10 +1,232 @@
 /**
- * Academic & Business Analytics Portfolio
- * Real Data Registry extracted from Google Document
+ * Dev Sanskriti Vishwavidyalaya — Department of Computer Science
+ * Central JavaScript File for Labs, Visual Dashboards, and Reusable Detail Pages
  */
 
 // --------------------------------------------------------------------------
-// 1. Data Store - 4 Core Dashboards with Real Content & Screenshots
+// 1. Data Store - Section 1: Computer Science Practical Labs Registry
+// --------------------------------------------------------------------------
+const labsData = [
+  {
+    id: "lab-01",
+    number: "Lab 01",
+    title: "Introduction to Node.js & Event Loop",
+    tool: "Node.js / V8 Engine",
+    category: "Server-Side Scripting",
+    image: "images/lab-01-preview.png",
+    shortDescription: "Exploring non-blocking I/O runtime, V8 JavaScript engine execution, module exports, and built-in Node core modules.",
+    objective: "To understand the asynchronous event-driven architecture of Node.js, environment configuration, and execution of basic file system operations.",
+    concepts: [
+      "V8 Engine & Single-Threaded Event Loop",
+      "CommonJS Module System (require & module.exports)",
+      "File System (fs) Module & Path Operations",
+      "Process Arguments & Environment Variables"
+    ],
+    explanation: "This lab introduces the fundamental mechanics of Node.js. Students write scripts utilizing the built-in fs (File System) module to read, write, append, and manipulate local text files asynchronously. The execution model demonstrates how Node delegates heavy I/O operations to libuv worker threads without blocking the main event loop.",
+    codeSnippet: `const fs = require('fs');
+const path = require('path');
+
+// Read input file asynchronously
+const filePath = path.join(__dirname, 'sample.txt');
+fs.readFile(filePath, 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log('File Content Loaded Successfully:');
+  console.log(data);
+});`,
+    outputPreview: "File Content Loaded Successfully:\n[Data Science & CS Lab Log Entry #01 - Execution Complete]",
+    result: "Successfully built and verified asynchronous file I/O operations using Node.js core APIs."
+  },
+  {
+    id: "lab-02",
+    number: "Lab 02",
+    title: "HTTP Server & Custom Routing",
+    tool: "Node.js HTTP Module",
+    category: "Web Protocols",
+    image: "images/lab-02-preview.png",
+    shortDescription: "Building a lightweight, native HTTP server from scratch using Node's core 'http' module with URL query parsing and response headers.",
+    objective: "To master low-level HTTP web protocol mechanics, status code handling (200 OK, 404 Not Found), content-type header settings, and manual URL route dispatching.",
+    concepts: [
+      "HTTP Request & Response Streams",
+      "Content-Type Headers (JSON, HTML, Plaintext)",
+      "URL Parameter & Query String Parsing",
+      "Status Code Management & Error Handling"
+    ],
+    explanation: "In this lab, a standalone web server is instantiated using http.createServer(). The server inspects req.url and req.method to route client HTTP requests to appropriate endpoint handlers. JSON payloads and custom headers are sent back using res.writeHead() and res.end().",
+    codeSnippet: `const http = require('http');
+
+const server = http.createServer((req, res) => {
+  if (req.url === '/api/status' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'Online', dept: 'Computer Science DSVV' }));
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('404 Route Not Found');
+  }
+});
+
+server.listen(8080, () => console.log('HTTP Server listening on port 8080'));`,
+    outputPreview: "HTTP Server listening on port 8080\nGET /api/status -> 200 OK (application/json)",
+    result: "Successfully created native HTTP server handling REST routing and status headers without external frameworks."
+  },
+  {
+    id: "lab-03",
+    number: "Lab 03",
+    title: "Express.js Framework & Middleware Pipeline",
+    tool: "Express.js / Node.js",
+    category: "Backend Frameworks",
+    image: "images/lab-03-preview.png",
+    shortDescription: "Engineering scalable RESTful API endpoints with Express application routing, body-parsing middleware, and error-handling layers.",
+    objective: "To construct modular web services using Express.js middleware chains, request body validation, and structured JSON response formatting.",
+    concepts: [
+      "Express Application Pipeline & Middleware Chain",
+      "RESTful Endpoint Architecture (GET, POST, PUT, DELETE)",
+      "JSON Request Body Parsing & Validation",
+      "Custom Global Error Handling Middleware"
+    ],
+    explanation: "This lab replaces low-level HTTP boilerplate with Express.js. Students build middleware functions for logger tracking, authentication token checks, and request payload validation. Routers are split into modular files to maintain clean architectural separation.",
+    codeSnippet: `const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+// Custom Logging Middleware
+app.use((req, res, next) => {
+  console.log(\`[\${new Date().toISOString()}] \${req.method} \${req.url}\`);
+  next();
+});
+
+app.get('/api/students', (req, res) => {
+  res.json([
+    { id: 101, name: 'Aditya Soni', program: 'BCA / Computer Science' },
+    { id: 102, name: 'Pragya Gupta', program: 'BCA / Computer Science' }
+  ]);
+});
+
+app.listen(3000, () => console.log('Express App Running on Port 3000'));`,
+    outputPreview: "[2026-10-07T23:45:00.000Z] GET /api/students\n200 OK - 2 Records Returned",
+    result: "Constructed structured REST API backend utilizing Express middleware and JSON body parsers."
+  },
+  {
+    id: "lab-04",
+    number: "Lab 04",
+    title: "Database Integration with MongoDB & Mongoose",
+    tool: "MongoDB / Mongoose ODM",
+    category: "Database Systems",
+    image: "images/lab-04-preview.png",
+    shortDescription: "Designing NoSQL database collections, schema validation rules, and CRUD persistence operations using Mongoose Object Data Modeling.",
+    objective: "To connect Node/Express applications to a MongoDB database, define strict document schemas, execute CRUD operations, and manage asynchronous database queries.",
+    concepts: [
+      "NoSQL Document Database Concepts",
+      "Mongoose Schema Definition & Data Types",
+      "Async/Await CRUD Query Operations",
+      "Index Creation & Data Validation Rules"
+    ],
+    explanation: "Students configure connection strings to MongoDB Atlas / local instances. Data models are established with field validation (required, unique, default values). Asynchronous async/await functions are used to query documents, update records, and execute aggregate pipelines.",
+    codeSnippet: `const mongoose = require('mongoose');
+
+const studentSchema = new mongoose.Schema({
+  rollNo: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  department: { type: String, default: 'Computer Science' },
+  cgpa: { type: Number, min: 0, max: 10 }
+});
+
+const Student = mongoose.model('Student', studentSchema);
+
+async function addStudent() {
+  await mongoose.connect('mongodb://127.0.0.1:27017/dsvv_cs');
+  const newStudent = await Student.create({
+    rollNo: 'CS-2026-01',
+    name: 'Aarav Sharma',
+    cgpa: 9.4
+  });
+  console.log('Student Record Inserted:', newStudent);
+}`,
+    outputPreview: "MongoDB Connected: dsvv_cs\nStudent Record Inserted: { _id: ObjectId('...'), rollNo: 'CS-2026-01', name: 'Aarav Sharma', cgpa: 9.4 }",
+    result: "Successfully integrated MongoDB persistence layer with schema validation and async queries."
+  },
+  {
+    id: "lab-05",
+    number: "Lab 05",
+    title: "Asynchronous Programming & Promises",
+    tool: "JavaScript ES6+ / Node.js",
+    category: "Core Algorithms",
+    image: "images/lab-05-preview.png",
+    shortDescription: "Mastering asynchronous control flow, Callback to Promise refactoring, Promise.all concurrent fetching, and async/await error handling.",
+    objective: "To eliminate callback hell, understand the Microtask Queue in JS runtime, and execute parallel asynchronous operations safely.",
+    concepts: [
+      "Callbacks vs Promises vs Async/Await",
+      "Microtask Queue & Macro Task Event Loop Timing",
+      "Parallel Execution with Promise.all() & Promise.allSettled()",
+      "Try/Catch Error Propagation in Async Functions"
+    ],
+    explanation: "This lab explores JavaScript's concurrency model. Students benchmark serial async execution versus parallel Promise.all() fetching. Exercises demonstrate proper error handling using try-catch blocks to prevent unhandled promise rejections.",
+    codeSnippet: `async function fetchCourseData(courseId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (courseId) resolve({ id: courseId, title: 'Data Structures' });
+      else reject(new Error('Invalid Course ID'));
+    }, 500);
+  });
+}
+
+async function runLab() {
+  try {
+    const course = await fetchCourseData('CS-301');
+    console.log('Course Resolved:', course.title);
+  } catch (err) {
+    console.error('Execution Failed:', err.message);
+  }
+}
+runLab();`,
+    outputPreview: "Initiating Async Fetch...\nCourse Resolved: Data Structures\nExecution Time: 504ms",
+    result: "Refactored legacy callback patterns to modern async/await syntax with robust error boundaries."
+  },
+  {
+    id: "lab-06",
+    number: "Lab 06",
+    title: "Web Security, JWT & Authentication",
+    tool: "Node.js / JWT / bcrypt",
+    category: "Web Security",
+    image: "images/lab-06-preview.png",
+    shortDescription: "Implementing secure user authentication using bcrypt password hashing, JSON Web Token (JWT) signing, and protected API routes.",
+    objective: "To protect web applications against unauthorized access by building secure authentication middleware and state-less JWT authorization.",
+    concepts: [
+      "Salted Password Hashing with bcrypt",
+      "JSON Web Token (JWT) Structure & Secret Signing",
+      "Bearer Authorization Headers & Middleware Verification",
+      "Protection Against Common Web Security Vulnerabilities"
+    ],
+    explanation: "Students build login and registration authentication flows. User passwords are encrypted using bcrypt hashing prior to database storage. Upon authentication, a signed JWT token is issued, which clients present in HTTP Authorization headers for access to protected routes.",
+    codeSnippet: `const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const JWT_SECRET = 'dsvv_cs_secure_key_2026';
+
+// Password Hashing
+async function hashPassword(plainText) {
+  const salt = await bcrypt.genSalt(10);
+  return await bcrypt.hash(plainText, salt);
+}
+
+// Token Verification Middleware
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (!token) return res.sendStatus(401);
+
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+}`,
+    outputPreview: "Password Hashed: $2b$10$e8Z... (10 rounds salt)\nJWT Token Issued: eyJhbGciOiJIUzI1Ni... [Valid 1h]",
+    result: "Successfully implemented secure user registration, salted hashing, and JWT protected API routes."
+  }
+];
+
+// --------------------------------------------------------------------------
+// 2. Data Store - Section 2: Dashboard Gallery Registry (4 Core Dashboards)
 // --------------------------------------------------------------------------
 const dashboardsData = [
   {
@@ -161,22 +383,24 @@ const dashboardsData = [
 ];
 
 // --------------------------------------------------------------------------
-// 2. Main Initialization & Lifecycle Handler
+// 3. Main Initialization & Router
 // --------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   setupNavigation();
 
-  if (document.getElementById("dashboard-grid")) {
-    initGalleryPage();
+  if (document.getElementById("labs-grid") && document.getElementById("dashboards-gallery-grid")) {
+    initMainPage();
+  } else if (document.getElementById("lab-detail-content")) {
+    initLabDetailPage();
   } else if (document.getElementById("detail-content")) {
-    initDetailPage();
+    initDashboardDetailPage();
   }
 
   setupLightbox();
 });
 
 // --------------------------------------------------------------------------
-// 3. Navigation & Mobile Menu Handler
+// 4. Navigation & Mobile Menu Handler
 // --------------------------------------------------------------------------
 function setupNavigation() {
   const toggleBtn = document.querySelector(".mobile-menu-toggle");
@@ -185,8 +409,6 @@ function setupNavigation() {
   if (toggleBtn && navMenu) {
     toggleBtn.addEventListener("click", () => {
       navMenu.classList.toggle("active");
-      const isExpanded = navMenu.classList.contains("active");
-      toggleBtn.setAttribute("aria-expanded", isExpanded);
     });
   }
 
@@ -199,125 +421,162 @@ function setupNavigation() {
 }
 
 // --------------------------------------------------------------------------
-// 4. Gallery Main Page Logic (`index.html`)
+// 5. Main Homepage Logic (`index.html`) — Render Labs & Dashboard Gallery
 // --------------------------------------------------------------------------
-function initGalleryPage() {
-  const gridContainer = document.getElementById("dashboard-grid");
-  const searchInput = document.getElementById("search-input");
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const dashboardCountBadge = document.getElementById("dashboard-count");
+function initMainPage() {
+  renderLabsSection(labsData);
+  renderDashboardsGallerySection(dashboardsData);
+}
 
-  let currentCategory = "all";
-  let currentSearchQuery = "";
+// Render Section 1: LABS Cards Grid
+function renderLabsSection(labs) {
+  const labsGrid = document.getElementById("labs-grid");
+  if (!labsGrid) return;
+  labsGrid.innerHTML = "";
 
-  renderCards(dashboardsData);
+  labs.forEach((lab) => {
+    const card = document.createElement("article");
+    card.className = "lab-card";
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", `View ${lab.number} ${lab.title}`);
 
-  if (searchInput) {
-    searchInput.addEventListener("input", (e) => {
-      currentSearchQuery = e.target.value.toLowerCase().trim();
-      filterAndRender();
-    });
-  }
+    card.innerHTML = `
+      <div class="lab-image-wrapper">
+        <img src="${lab.image}" alt="${lab.title} Thumbnail" class="lab-image" loading="lazy">
+        <span class="lab-number-badge">${lab.number}</span>
+        <span class="lab-tool-badge"><i class="fa-solid fa-code"></i> ${lab.tool}</span>
+      </div>
+      <div class="lab-card-body">
+        <span class="lab-category">${lab.category}</span>
+        <h3 class="lab-card-title">${lab.title}</h3>
+        <p class="lab-card-description">${lab.shortDescription}</p>
+        <div class="lab-card-footer">
+          <span class="btn-view-lab">View Lab <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    `;
 
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filterButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentCategory = btn.getAttribute("data-category");
-      filterAndRender();
-    });
-  });
+    const openLab = () => {
+      window.location.href = `lab.html?id=${lab.id}`;
+    };
 
-  function filterAndRender() {
-    const filtered = dashboardsData.filter((item) => {
-      const matchesCategory =
-        currentCategory === "all" ||
-        item.category.toLowerCase().replace(/[^a-z0-9]/g, "-").includes(currentCategory) ||
-        item.toolClass === currentCategory;
-
-      const matchesSearch =
-        item.title.toLowerCase().includes(currentSearchQuery) ||
-        item.shortDescription.toLowerCase().includes(currentSearchQuery) ||
-        item.category.toLowerCase().includes(currentSearchQuery) ||
-        item.tool.toLowerCase().includes(currentSearchQuery);
-
-      return matchesCategory && matchesSearch;
-    });
-
-    renderCards(filtered);
-    updateCountBadge(filtered.length, dashboardsData.length);
-  }
-
-  function updateCountBadge(currentCount, totalCount) {
-    if (dashboardCountBadge) {
-      if (currentCount === totalCount) {
-        dashboardCountBadge.innerHTML = `<i class="fa-solid fa-chart-pie"></i> ${totalCount} Dashboards`;
-      } else {
-        dashboardCountBadge.innerHTML = `<i class="fa-solid fa-filter"></i> ${currentCount} of ${totalCount} Dashboards`;
+    card.addEventListener("click", openLab);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLab();
       }
-    }
-  }
-
-  function renderCards(items) {
-    gridContainer.innerHTML = "";
-
-    if (items.length === 0) {
-      gridContainer.innerHTML = `
-        <div class="no-results">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <h3>No matching dashboards found</h3>
-          <p style="color: var(--text-secondary); margin-top: 0.5rem;">Try adjusting your search query or choosing another filter category.</p>
-        </div>
-      `;
-      return;
-    }
-
-    items.forEach((item) => {
-      const card = document.createElement("article");
-      card.className = "dashboard-card";
-      card.setAttribute("tabindex", "0");
-      card.setAttribute("aria-label", `View ${item.title}`);
-
-      const thumbSrc = item.images && item.images.length > 0 ? item.images[0].src : "images/placeholder.png";
-
-      card.innerHTML = `
-        <div class="card-image-wrapper">
-          <img src="${thumbSrc}" alt="${item.title} Thumbnail Preview" class="card-image" loading="lazy">
-          <span class="card-tool-badge ${item.toolClass}">
-            <i class="fa-solid fa-layer-group"></i> ${item.tool}
-          </span>
-        </div>
-        <div class="card-body">
-          <span class="card-category">${item.category}</span>
-          <h3 class="card-title">${item.title}</h3>
-          <p class="card-description">${item.shortDescription}</p>
-          <div class="card-footer">
-            <span class="btn-view-card">View Dashboard <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-      `;
-
-      const navigateToDetail = () => {
-        window.location.href = `dashboard.html?id=${item.id}`;
-      };
-
-      card.addEventListener("click", navigateToDetail);
-      card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          navigateToDetail();
-        }
-      });
-
-      gridContainer.appendChild(card);
     });
-  }
+
+    labsGrid.appendChild(card);
+  });
+}
+
+// Render Section 2: DASHBOARD GALLERY Grid (Visual Cards: 2 per row)
+function renderDashboardsGallerySection(dashboards) {
+  const dashGrid = document.getElementById("dashboards-gallery-grid");
+  if (!dashGrid) return;
+  dashGrid.innerHTML = "";
+
+  dashboards.forEach((dash) => {
+    const card = document.createElement("article");
+    card.className = "visual-dashboard-card";
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", `View Dashboard ${dash.title}`);
+
+    const thumbSrc = dash.images && dash.images.length > 0 ? dash.images[0].src : "images/placeholder.png";
+
+    card.innerHTML = `
+      <div class="dash-thumb-container">
+        <img src="${thumbSrc}" alt="${dash.title} Large Screenshot Preview" class="dash-thumb-img" loading="lazy">
+        <span class="dash-tool-badge ${dash.toolClass}">
+          <i class="fa-solid fa-layer-group"></i> ${dash.tool}
+        </span>
+      </div>
+      <div class="dash-body">
+        <span class="dash-category">${dash.category}</span>
+        <h3 class="dash-title">${dash.title}</h3>
+        <p class="dash-description">${dash.shortDescription}</p>
+        <button class="btn-view-dashboard">
+          <span>View Dashboard</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    `;
+
+    const openDash = () => {
+      window.location.href = `dashboard.html?id=${dash.id}`;
+    };
+
+    card.addEventListener("click", openDash);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openDash();
+      }
+    });
+
+    dashGrid.appendChild(card);
+  });
 }
 
 // --------------------------------------------------------------------------
-// 5. Dynamic Detail Page Logic (`dashboard.html`)
+// 6. Reusable Lab Detail Page Logic (`lab.html`)
 // --------------------------------------------------------------------------
-function initDetailPage() {
+function initLabDetailPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const labId = urlParams.get("id");
+
+  const currentLab = labsData.find((l) => l.id === labId) || labsData[0];
+
+  document.title = `${currentLab.number}: ${currentLab.title} — Computer Science Labs | DSVV`;
+
+  // Header Tags
+  document.getElementById("lab-number-tag").textContent = currentLab.number;
+  document.getElementById("lab-tool-tag").innerHTML = `<i class="fa-solid fa-code"></i> ${currentLab.tool}`;
+  document.getElementById("lab-category-tag").textContent = currentLab.category;
+  document.getElementById("lab-title").textContent = currentLab.title;
+
+  // Sidebar Specs
+  document.getElementById("sidebar-lab-num").textContent = currentLab.number;
+  document.getElementById("sidebar-lab-tool").textContent = currentLab.tool;
+
+  // Screenshot & Viewport
+  const labImg = document.getElementById("lab-img");
+  labImg.src = currentLab.image;
+  labImg.alt = `${currentLab.title} Execution Output`;
+  document.getElementById("lab-img-caption").textContent = `${currentLab.number} — ${currentLab.title} Execution Preview`;
+
+  const viewport = document.getElementById("lab-screenshot-viewport");
+  if (viewport) {
+    viewport.addEventListener("click", () => {
+      openLightbox(currentLab.image, `${currentLab.number}: ${currentLab.title}`);
+    });
+  }
+
+  // Objective & Explanation
+  document.getElementById("lab-objective").textContent = currentLab.objective;
+  document.getElementById("lab-explanation").textContent = currentLab.explanation;
+  document.getElementById("lab-result").textContent = currentLab.result;
+
+  // Concepts List
+  const conceptsList = document.getElementById("lab-concepts");
+  conceptsList.innerHTML = "";
+  currentLab.concepts.forEach((concept) => {
+    const li = document.createElement("li");
+    li.className = "viz-item";
+    li.innerHTML = `<i class="fa-solid fa-check-double"></i> <span>${concept}</span>`;
+    conceptsList.appendChild(li);
+  });
+
+  // Code Snippet & Terminal Output
+  document.getElementById("lab-code").textContent = currentLab.codeSnippet;
+  document.getElementById("lab-output").textContent = currentLab.outputPreview;
+}
+
+// --------------------------------------------------------------------------
+// 7. Reusable Dashboard Detail Page Logic (`dashboard.html`)
+// --------------------------------------------------------------------------
+function initDashboardDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const dashboardId = urlParams.get("id");
 
@@ -423,7 +682,7 @@ function initDetailPage() {
 }
 
 // --------------------------------------------------------------------------
-// 6. Lightbox Fullscreen Modal Handler
+// 8. Lightbox Fullscreen Modal Handler
 // --------------------------------------------------------------------------
 function setupLightbox() {
   const modal = document.getElementById("lightbox-modal");

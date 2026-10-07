@@ -1,45 +1,44 @@
 /* ==========================================================================
-   Academic & Business Analytics Portfolio - Stylesheet
-   Modern, Clean, Modular CSS System for Multi-Tool Dashboards
+   Dev Sanskriti Vishwavidyalaya — Department of Computer Science
+   Academic Labs & Visual Dashboard Gallery Portfolio Stylesheet
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. Design System & CSS Variables
    -------------------------------------------------------------------------- */
 :root {
-  /* Color Palette - Modern Slate & Deep Navy */
+  /* DSVV & Slate Brand Colors */
   --bg-main: #f8fafc;
   --bg-card: #ffffff;
   --bg-secondary: #f1f5f9;
   --bg-accent-light: #eff6ff;
 
   --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-secondary: #334155;
   --text-muted: #64748b;
   --text-inverse: #ffffff;
 
   --border-color: #e2e8f0;
-  --border-focus: #3b82f6;
+  --border-focus: #2563eb;
 
-  /* Accent Colors */
+  /* Primary Accent & DSVV Gold */
   --primary-accent: #2563eb;
   --primary-dark: #1d4ed8;
+  --dsvv-gold: #f59e0b;
+  --dsvv-navy: #1e3a8a;
 
   /* Tool-Specific Badges */
   --powerbi-bg: #fffbeb;
   --powerbi-border: #fef08a;
   --powerbi-text: #92400e;
-  --powerbi-accent: #f2c811;
 
   --looker-bg: #eff6ff;
   --looker-border: #bfdbfe;
   --looker-text: #1e40af;
-  --looker-accent: #4285f4;
 
   --tableau-bg: #fff7ed;
   --tableau-border: #ffedd5;
   --tableau-text: #9a3412;
-  --tableau-accent: #e97627;
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
@@ -47,27 +46,20 @@
   --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
   --shadow-xl: 0 25px 50px -12px rgba(15, 23, 42, 0.18);
 
-  /* Borders & Radius */
+  /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-full: 9999px;
 
   /* Typography */
-  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Container */
   --container-max-width: 1240px;
 }
 
-/* --------------------------------------------------------------------------
-   2. Reset & Base Styling
-   -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -114,52 +106,67 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   3. Header & Navigation
+   2. Header & DSVV Branding Navbar
    -------------------------------------------------------------------------- */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
-  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.5rem;
+  height: 4.8rem;
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--text-primary);
 }
 
-.brand-icon {
-  width: 2.25rem;
-  height: 2.25rem;
-  background-color: var(--text-primary);
-  color: #ffffff;
-  border-radius: var(--radius-sm);
+.dsvv-logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-right-group {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
+  gap: 1.75rem;
+}
+
+.cs-dept-badge {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cs-dept-badge i {
+  color: var(--dsvv-gold);
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
@@ -169,7 +176,7 @@ button, input, select {
   color: var(--text-secondary);
   padding: 0.5rem 0.85rem;
   border-radius: var(--radius-sm);
-  transition: var(--transition-fast);
+  transition: 0.15s ease;
   display: flex;
   align-items: center;
   gap: 0.45rem;
@@ -191,161 +198,87 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   4. Main Page Hero & Controls
+   3. Hero Section
    -------------------------------------------------------------------------- */
-.gallery-hero {
+.hero-section {
   padding: 3.5rem 0 2rem 0;
   text-align: center;
 }
 
-.hero-title-badge {
+.hero-institution-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #f1f5f9;
-  border: 1px solid var(--border-color);
-  padding: 0.35rem 0.95rem;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1d4ed8;
   margin-bottom: 1.25rem;
 }
 
 .hero-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
   color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
   font-size: 1.15rem;
   color: var(--text-secondary);
-  max-width: 44rem;
-  margin: 0 auto 2rem auto;
-  font-weight: 400;
-}
-
-.meta-stats-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.5rem;
-}
-
-.stat-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.stat-chip.count-chip { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
-.stat-chip.powerbi-chip { background-color: var(--powerbi-bg); color: var(--powerbi-text); border: 1px solid var(--powerbi-border); }
-.stat-chip.looker-chip { background-color: var(--looker-bg); color: var(--looker-text); border: 1px solid var(--looker-border); }
-.stat-chip.tableau-chip { background-color: var(--tableau-bg); color: var(--tableau-text); border: 1px solid var(--tableau-border); }
-
-/* Controls Bar (Search & Filter) */
-.controls-bar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 52rem;
+  max-width: 46rem;
   margin: 0 auto 2.5rem auto;
 }
 
-.search-box {
-  position: relative;
-  width: 100%;
+/* Section Divider Header */
+.section-header-wrap {
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.search-input {
-  width: 100%;
-  padding: 0.9rem 1.25rem 0.9rem 2.85rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-card);
-  font-size: 1rem;
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 800;
   color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-fast);
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: var(--border-focus);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
-}
-
-.search-icon {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  font-size: 1.1rem;
-}
-
-.filter-tags {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.filter-btn {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  padding: 0.45rem 1rem;
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.filter-btn:hover {
-  border-color: var(--primary-accent);
+.section-title i {
   color: var(--primary-accent);
 }
 
-.filter-btn.active {
-  background-color: var(--text-primary);
-  color: var(--text-inverse);
-  border-color: var(--text-primary);
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 /* --------------------------------------------------------------------------
-   5. Dashboard Gallery Cards Grid
+   4. Section 1 — LABS (Grid & Individual Cards)
    -------------------------------------------------------------------------- */
-.section-heading {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+.labs-section {
+  padding: 2.5rem 0 4rem 0;
 }
 
-.dashboard-grid {
+.labs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
-  padding-bottom: 4rem;
 }
 
-.dashboard-card {
+.lab-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -353,18 +286,18 @@ button, input, select {
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
   position: relative;
 }
 
-.dashboard-card:hover {
+.lab-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: #cbd5e1;
 }
 
-.card-image-wrapper {
+.lab-image-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -372,58 +305,53 @@ button, input, select {
   background-color: #0f172a;
 }
 
-.card-image {
+.lab-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.dashboard-card:hover .card-image {
+.lab-card:hover .lab-image {
   transform: scale(1.06);
 }
 
-.card-tool-badge {
+.lab-number-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #1e3a8a;
+  color: #ffffff;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lab-tool-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  padding: 0.3rem 0.75rem;
+  background-color: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  box-shadow: var(--shadow-sm);
+  font-weight: 600;
 }
 
-/* Tool badge variants */
-.card-tool-badge.power-bi {
-  background-color: #0f172a;
-  color: #f2c811;
-  border: 1px solid rgba(242, 200, 17, 0.4);
-}
-
-.card-tool-badge.looker-studio {
-  background-color: #0f172a;
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.4);
-}
-
-.card-tool-badge.tableau {
-  background-color: #0f172a;
-  color: #fb923c;
-  border: 1px solid rgba(251, 146, 60, 0.4);
-}
-
-.card-body {
+.lab-card-body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.card-category {
+.lab-category {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -432,15 +360,15 @@ button, input, select {
   margin-bottom: 0.4rem;
 }
 
-.card-title {
+.lab-card-title {
   font-size: 1.2rem;
   font-weight: 700;
-  line-height: 1.35;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
+  line-height: 1.35;
 }
 
-.card-description {
+.lab-card-description {
   font-size: 0.925rem;
   color: var(--text-secondary);
   line-height: 1.5;
@@ -452,7 +380,7 @@ button, input, select {
   flex-grow: 1;
 }
 
-.card-footer {
+.lab-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -460,34 +388,140 @@ button, input, select {
   border-top: 1px solid #f1f5f9;
 }
 
-.btn-view-card {
+.btn-view-lab {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--primary-accent);
-  transition: var(--transition-fast);
+  transition: 0.15s ease;
 }
 
-.dashboard-card:hover .btn-view-card {
+.lab-card:hover .btn-view-lab {
   color: var(--primary-dark);
   transform: translateX(4px);
 }
 
-.no-results {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 4rem 1rem;
-  background-color: var(--bg-card);
-  border: 1px dashed var(--border-color);
-  border-radius: var(--radius-lg);
+/* --------------------------------------------------------------------------
+   5. Section 2 — DASHBOARD GALLERY (Visual Grid: 2 per row Desktop/Tablet)
+   -------------------------------------------------------------------------- */
+.dashboards-section {
+  padding: 4.5rem 0;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
 }
 
-.no-results i {
-  font-size: 3rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
+.dashboard-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Exactly 2 dashboards per row on Desktop/Tablet */
+  gap: 2.5rem;
+}
+
+.visual-dashboard-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.visual-dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: #cbd5e1;
+}
+
+.dash-thumb-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #090d16;
+}
+
+.dash-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.visual-dashboard-card:hover .dash-thumb-img {
+  transform: scale(1.05);
+}
+
+.dash-tool-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dash-tool-badge.power-bi { background-color: #0f172a; color: #f2c811; border: 1px solid rgba(242, 200, 17, 0.4); }
+.dash-tool-badge.looker-studio { background-color: #0f172a; color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.4); }
+.dash-tool-badge.tableau { background-color: #0f172a; color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.4); }
+
+.dash-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dash-category {
+  font-size: 0.775rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-accent);
+  margin-bottom: 0.4rem;
+}
+
+.dash-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+}
+
+.dash-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.btn-view-dashboard {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--text-primary);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: 0.15s ease;
+  width: 100%;
+}
+
+.visual-dashboard-card:hover .btn-view-dashboard {
+  background-color: var(--primary-accent);
 }
 
 /* --------------------------------------------------------------------------
@@ -495,7 +529,7 @@ button, input, select {
    -------------------------------------------------------------------------- */
 .about-section {
   padding: 4.5rem 0;
-  background-color: #ffffff;
+  background-color: var(--bg-main);
   border-top: 1px solid var(--border-color);
 }
 
@@ -506,31 +540,10 @@ button, input, select {
   align-items: center;
 }
 
-.about-header-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--primary-accent);
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
-}
-
 .about-title {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--text-primary);
   margin-bottom: 1.25rem;
-  line-height: 1.25;
-}
-
-.about-text {
-  font-size: 1.025rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
 }
 
 .about-highlights {
@@ -542,9 +555,8 @@ button, input, select {
 .highlight-item {
   display: flex;
   gap: 1rem;
-  align-items: flex-start;
   padding: 1rem;
-  background-color: var(--bg-main);
+  background-color: var(--bg-card);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
 }
@@ -558,23 +570,11 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
   flex-shrink: 0;
 }
 
-.highlight-content h4 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-}
-
-.highlight-content p {
-  font-size: 0.825rem;
-  color: var(--text-muted);
-}
-
 /* --------------------------------------------------------------------------
-   7. Dashboard Detail Page (`dashboard.html`)
+   7. Reusable Detail Views (`lab.html` & `dashboard.html`)
    -------------------------------------------------------------------------- */
 .detail-header-nav {
   padding: 1.5rem 0;
@@ -591,7 +591,7 @@ button, input, select {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  transition: var(--transition-fast);
+  transition: 0.15s ease;
   box-shadow: var(--shadow-sm);
 }
 
@@ -615,6 +615,15 @@ button, input, select {
   gap: 0.75rem;
   margin-bottom: 0.75rem;
   flex-wrap: wrap;
+}
+
+.lab-number-pill {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 800;
 }
 
 .detail-tool-tag {
@@ -648,7 +657,7 @@ button, input, select {
   line-height: 1.25;
 }
 
-/* Screenshot Showcase & Gallery */
+/* Screenshot Card & Gallery */
 .screenshot-section-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -692,7 +701,7 @@ button, input, select {
   border: 1px solid #1e293b;
   cursor: zoom-in;
   background-color: #0f172a;
-  transition: transform var(--transition-normal);
+  transition: transform 0.25s ease;
 }
 
 .screenshot-item:hover {
@@ -715,33 +724,69 @@ button, input, select {
   text-align: center;
 }
 
-.awaiting-doc-notice {
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  background-color: #fffbebf5;
-  border: 1px dashed #fef08a;
+/* Code Editor & Terminal Boxes for Labs */
+.code-editor-box {
+  background-color: #090d16;
+  border: 1px solid #1e293b;
   border-radius: var(--radius-md);
-  margin: 1.5rem;
-  color: #854d0e;
+  overflow: hidden;
 }
 
-.awaiting-doc-notice i {
-  font-size: 2.25rem;
-  margin-bottom: 0.75rem;
-  color: #d97706;
+.code-editor-header {
+  background-color: #0f172a;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1e293b;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
-.awaiting-doc-notice h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
+.code-lang-badge {
+  background-color: #1e293b;
+  color: #38bdf8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
 }
 
-.awaiting-doc-notice p {
+.code-snippet-pre {
+  padding: 1.25rem;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
-  max-width: 36rem;
-  margin: 0 auto;
+  color: #f8fafc;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.terminal-output-box {
+  background-color: #090d16;
+  border: 1px solid #1e293b;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.terminal-header {
+  background-color: #1e293b;
+  color: #10b981;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-body {
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: #a7f3d0;
   line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 /* Detail Info Grid */
@@ -782,7 +827,6 @@ button, input, select {
   line-height: 1.65;
 }
 
-/* KPI Metric Cards Grid */
 .kpi-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -820,7 +864,6 @@ button, input, select {
   font-weight: 600;
 }
 
-/* Visualizations Chips List */
 .viz-list {
   display: flex;
   flex-direction: column;
@@ -845,7 +888,6 @@ button, input, select {
   margin-top: 0.25rem;
 }
 
-/* Insights List */
 .insights-list {
   display: flex;
   flex-direction: column;
@@ -861,9 +903,8 @@ button, input, select {
   background-color: #f8fafc;
   border-left: 4px solid var(--primary-accent);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  border-top: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border: 1px solid var(--border-color);
+  border-left-width: 4px;
 }
 
 .insight-icon {
@@ -878,7 +919,6 @@ button, input, select {
   line-height: 1.6;
 }
 
-/* Sidebar Info Panel */
 .sidebar-panel {
   display: flex;
   flex-direction: column;
@@ -947,7 +987,7 @@ button, input, select {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  transition: opacity 0.25s ease, visibility 0.25s ease;
   padding: 2rem;
 }
 
@@ -984,7 +1024,7 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-fast);
+  transition: 0.15s ease;
 }
 
 .lightbox-close:hover {
@@ -1009,7 +1049,7 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   9. Footer
+   9. Site Footer
    -------------------------------------------------------------------------- */
 .site-footer {
   margin-top: auto;
@@ -1030,9 +1070,12 @@ button, input, select {
 }
 
 .footer-brand {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .footer-copyright {
@@ -1049,7 +1092,7 @@ button, input, select {
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: 0.15s ease;
 }
 
 .btn-scroll-top:hover {
@@ -1058,9 +1101,13 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   10. Responsiveness & Mobile Tweaks
+   10. Responsiveness Rules
    -------------------------------------------------------------------------- */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
+  .dashboard-gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* Exactly 2 dashboards per row on Tablet */
+  }
+
   .detail-info-grid {
     grid-template-columns: 1fr;
   }
@@ -1071,9 +1118,14 @@ button, input, select {
 }
 
 @media (max-width: 768px) {
+  .nav-right-group {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   .nav-menu {
     position: absolute;
-    top: 4.5rem;
+    top: 4.8rem;
     left: 0;
     width: 100%;
     background-color: var(--bg-card);
@@ -1093,15 +1145,15 @@ button, input, select {
     display: block;
   }
 
-  .dashboard-grid {
+  .labs-grid {
     grid-template-columns: 1fr;
+  }
+
+  .dashboard-gallery-grid {
+    grid-template-columns: 1fr; /* Exactly 1 dashboard per row on Mobile */
   }
 
   .about-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .screenshots-gallery-grid {
     grid-template-columns: 1fr;
   }
 }

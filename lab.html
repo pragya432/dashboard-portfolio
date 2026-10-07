@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab Details — Department of Computer Science | DSVV</title>
+  <meta name="description" content="Computer Science practical lab documentation, objectives, code implementation, execution output, and learning outcomes." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header Navigation Bar with DSVV Branding
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <!-- Left Side: DSVV Logo & Branding -->
+      <a href="index.html" class="nav-brand" aria-label="Dev Sanskriti Vishwavidyalaya Portfolio Home">
+        <img src="images/dsvv-logo.svg" alt="Dev Sanskriti Vishwavidyalaya Logo" class="dsvv-logo-img" />
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Right Side: Computer Science Tag & Nav Links -->
+      <div class="nav-right-group">
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html#labs" class="nav-link active"><i class="fa-solid fa-code"></i> Labs</a></li>
+            <li><a href="index.html#dashboards" class="nav-link"><i class="fa-solid fa-chart-column"></i> Dashboard Gallery</a></li>
+            <li><a href="index.html#about" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a></li>
+          </ul>
+        </nav>
+        <span class="cs-dept-badge">
+          <i class="fa-solid fa-laptop-code"></i> Computer Science
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Back Navigation Header
+       ========================================================================== -->
+  <div class="container detail-header-nav">
+    <a href="index.html#labs" class="btn-back" aria-label="Return to labs section">
+      <i class="fa-solid fa-arrow-left"></i> Back to Labs
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       Lab Detail Main Section
+       ========================================================================== -->
+  <main class="container detail-main" id="lab-detail-content">
+    
+    <!-- Title & Meta Header -->
+    <div class="detail-title-section">
+      <div class="detail-title-tags">
+        <span class="lab-number-pill" id="lab-number-tag">
+          Lab 01
+        </span>
+        <span class="detail-tool-tag" id="lab-tool-tag">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Technology
+        </span>
+        <span class="detail-category-tag" id="lab-category-tag">
+          Category
+        </span>
+      </div>
+      <h1 class="detail-title" id="lab-title">Loading Lab Details...</h1>
+    </div>
+
+    <!-- Screenshot & Output Preview Card -->
+    <section class="screenshot-section-card">
+      <div class="screenshot-header-bar">
+        <div class="screenshot-title-mini">
+          <i class="fa-solid fa-desktop"></i> Lab Execution &amp; Output Screenshot Preview
+        </div>
+        <span style="font-size: 0.8rem; color: #94a3b8;"><i class="fa-solid fa-magnifying-glass-plus"></i> Click preview to view full screen</span>
+      </div>
+
+      <div class="screenshots-gallery-grid">
+        <div class="screenshot-item" id="lab-screenshot-viewport" title="Click to view full screen">
+          <img id="lab-img" src="images/lab-01-preview.png" alt="Lab Output Preview Screenshot" />
+          <div class="screenshot-caption" id="lab-img-caption">Lab Output Execution Preview</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lab Information Grid -->
+    <div class="detail-info-grid">
+      
+      <!-- Primary Column: Objective, Concepts, Code, Explanation, Outcome -->
+      <div class="primary-info-col">
+        
+        <!-- Objective -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-bullseye"></i> Lab Objective
+          </h2>
+          <div class="block-body" id="lab-objective">
+            Loading lab objective...
+          </div>
+        </article>
+
+        <!-- Concepts Covered -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-book-bookmark"></i> Concepts Covered
+          </h2>
+          <ul class="viz-list" id="lab-concepts">
+            <!-- Rendered dynamically -->
+          </ul>
+        </article>
+
+        <!-- Code & Implementation -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-code"></i> Code &amp; Implementation Information
+          </h2>
+          <div class="code-editor-box">
+            <div class="code-editor-header">
+              <span class="code-editor-title"><i class="fa-solid fa-file-code"></i> Source Code Implementation</span>
+              <span class="code-lang-badge">JavaScript / Node</span>
+            </div>
+            <pre class="code-snippet-pre"><code id="lab-code">Loading code snippet...</code></pre>
+          </div>
+
+          <div class="terminal-output-box" style="margin-top: 1.5rem;">
+            <div class="terminal-header">
+              <i class="fa-solid fa-terminal"></i> Terminal Execution Output
+            </div>
+            <pre class="terminal-body"><code id="lab-output">Loading terminal output...</code></pre>
+          </div>
+        </article>
+
+        <!-- Explanation -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-align-left"></i> Technical Explanation
+          </h2>
+          <div class="block-body" id="lab-explanation">
+            Loading technical explanation...
+          </div>
+        </article>
+
+        <!-- Result / Learning Outcome -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-award"></i> Result &amp; Learning Outcome
+          </h2>
+          <div class="insight-card" style="border-left-color: #10b981;">
+            <i class="fa-solid fa-circle-check insight-icon" style="color: #10b981;"></i>
+            <div class="insight-text" id="lab-result">
+              Loading learning outcome...
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Secondary Sidebar: Specifications -->
+      <aside class="sidebar-panel">
+        
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">
+            <i class="fa-solid fa-sliders"></i> Lab Overview
+          </h3>
+          <div class="spec-list">
+            <div class="spec-item">
+              <span class="spec-label">Department</span>
+              <span class="spec-value" style="font-weight: 700;">Computer Science</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Institution</span>
+              <span class="spec-value">Dev Sanskriti Vishwavidyalaya</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Technology Stack</span>
+              <span class="spec-value" id="sidebar-lab-tool">Node.js</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Lab Module</span>
+              <span class="spec-value" id="sidebar-lab-num">Lab 01</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- Fullscreen Lightbox Modal Overlay -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Lab screenshot lightbox modal">
+    <div class="lightbox-header">
+      <span class="lightbox-title" id="lightbox-title">Lab Screenshot Preview</span>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="lightbox-img-container">
+      <img id="lightbox-img" src="" alt="Full Resolution Lab Screenshot" class="lightbox-img" />
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="fa-solid fa-graduation-cap"></i> Dev Sanskriti Vishwavidyalaya | Department of Computer Science
+        </div>
+        <div class="footer-copyright">
+          © 2026 DSVV Department of Computer Science
+        </div>
+        <button class="btn-scroll-top" aria-label="Scroll to top of page">
+          <i class="fa-solid fa-arrow-up"></i> Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>
