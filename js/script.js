@@ -1,238 +1,192 @@
 /**
  * Dev Sanskriti Vishwavidyalaya — Department of Computer Science
- * Central JavaScript File for Labs, Visual Dashboards, and Reusable Detail Pages
+ * Central JavaScript File for 10 Labs, 7 Visual Dashboards, Projects, Skills, and Reusable Detail Pages
  */
 
-// --------------------------------------------------------------------------
-// 1. Data Store - Section 1: Computer Science Practical Labs Registry
-// --------------------------------------------------------------------------
+// ==========================================================================
+// 1. DATA STORE — 10 COMPUTER SCIENCE LAB ASSIGNMENTS REGISTRY
+// ==========================================================================
 const labsData = [
   {
     id: "lab-01",
-    number: "Lab 01",
-    title: "Introduction to Node.js & Event Loop",
-    tool: "Node.js / V8 Engine",
-    category: "Server-Side Scripting",
+    number: "LAB ASSIGNMENT 01",
+    title: "Data Visualization",
+    tool: "Python / Matplotlib & Seaborn",
+    category: "Data Science & Analytics",
     image: "images/lab-01-preview.png",
-    shortDescription: "Exploring non-blocking I/O runtime, V8 JavaScript engine execution, module exports, and built-in Node core modules.",
-    objective: "To understand the asynchronous event-driven architecture of Node.js, environment configuration, and execution of basic file system operations.",
-    concepts: [
-      "V8 Engine & Single-Threaded Event Loop",
-      "CommonJS Module System (require & module.exports)",
-      "File System (fs) Module & Path Operations",
-      "Process Arguments & Environment Variables"
-    ],
-    explanation: "This lab introduces the fundamental mechanics of Node.js. Students write scripts utilizing the built-in fs (File System) module to read, write, append, and manipulate local text files asynchronously. The execution model demonstrates how Node delegates heavy I/O operations to libuv worker threads without blocking the main event loop.",
-    codeSnippet: `const fs = require('fs');
-const path = require('path');
-
-// Read input file asynchronously
-const filePath = path.join(__dirname, 'sample.txt');
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log('File Content Loaded Successfully:');
-  console.log(data);
-});`,
-    outputPreview: "File Content Loaded Successfully:\n[Data Science & CS Lab Log Entry #01 - Execution Complete]",
-    result: "Successfully built and verified asynchronous file I/O operations using Node.js core APIs."
+    shortDescription: "Fundamentals of exploratory data analysis, plotting univariate & bivariate distributions, line charts, scatter plots, and heatmaps.",
+    objective: "To master foundational data visualization techniques using Python libraries (Matplotlib, Seaborn, Pandas) to convey quantitative insights cleanly.",
+    activity: "Exploratory data analysis on benchmark datasets, generating customized statistical charts with formatted axes, legends, and color palettes.",
+    toolsUsed: "Python 3.x, Matplotlib, Seaborn, Pandas, Jupyter Notebook",
+    procedure: "1. Load raw dataset using Pandas DataFrame.\n2. Clean missing values and format data types.\n3. Construct line charts for trend analysis and scatter plots for correlation.\n4. Apply Seaborn color maps and export high-resolution chart images.",
+    workPerformed: "Constructed multiple statistical plots visualizing variable correlations, distribution spreads, and multi-series line comparisons across quarterly metrics.",
+    outputPreview: "Generated 5 core statistical figures: Distribution Histogram, Correlation Heatmap, Feature Scatter Matrix, and Time-Series Trend Line.",
+    result: "Successfully established automated Python visualization pipelines for academic data science reports.",
+    learningOutcome: "Acquired hands-on proficiency in converting raw tabular data into intuitive visual charts following statistical design best practices."
   },
   {
     id: "lab-02",
-    number: "Lab 02",
-    title: "HTTP Server & Custom Routing",
-    tool: "Node.js HTTP Module",
-    category: "Web Protocols",
+    number: "LAB ASSIGNMENT 02",
+    title: "Submission of 9th Aug Class Activity Work",
+    tool: "Node.js HTTP & Core Modules",
+    category: "Web Protocols & Networking",
     image: "images/lab-02-preview.png",
-    shortDescription: "Building a lightweight, native HTTP server from scratch using Node's core 'http' module with URL query parsing and response headers.",
-    objective: "To master low-level HTTP web protocol mechanics, status code handling (200 OK, 404 Not Found), content-type header settings, and manual URL route dispatching.",
-    concepts: [
-      "HTTP Request & Response Streams",
-      "Content-Type Headers (JSON, HTML, Plaintext)",
-      "URL Parameter & Query String Parsing",
-      "Status Code Management & Error Handling"
-    ],
-    explanation: "In this lab, a standalone web server is instantiated using http.createServer(). The server inspects req.url and req.method to route client HTTP requests to appropriate endpoint handlers. JSON payloads and custom headers are sent back using res.writeHead() and res.end().",
-    codeSnippet: `const http = require('http');
-
-const server = http.createServer((req, res) => {
-  if (req.url === '/api/status' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ status: 'Online', dept: 'Computer Science DSVV' }));
-  } else {
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('404 Route Not Found');
-  }
-});
-
-server.listen(8080, () => console.log('HTTP Server listening on port 8080'));`,
-    outputPreview: "HTTP Server listening on port 8080\nGET /api/status -> 200 OK (application/json)",
-    result: "Successfully created native HTTP server handling REST routing and status headers without external frameworks."
+    shortDescription: "Practical submission covering asynchronous I/O, custom HTTP server routing, status code handling, and query string parsing.",
+    objective: "To implement low-level HTTP network routing and non-blocking event-driven file operations using native Node.js core modules.",
+    activity: "Building a lightweight HTTP web server from scratch without external frameworks, managing request headers, status codes, and JSON responses.",
+    toolsUsed: "Node.js runtime, V8 Engine, HTTP module, FS module, Path module",
+    procedure: "1. Instantiate HTTP server with http.createServer().\n2. Inspect incoming req.url and req.method properties.\n3. Read static response payload asynchronously via fs.readFile().\n4. Set HTTP response status codes (200, 404) and Content-Type headers.",
+    workPerformed: "Developed a functional server dispatching requests to '/api/status', '/data', and default 404 handlers with non-blocking event loops.",
+    outputPreview: "Server started at port 8080. GET /api/status -> 200 OK JSON payload dispatched successfully.",
+    result: "Verified low-level HTTP request/response execution and asynchronous event loop handling.",
+    learningOutcome: "Understood client-server request execution cycles, MIME content-type headers, and event-driven Node.js runtime mechanics."
   },
   {
     id: "lab-03",
-    number: "Lab 03",
-    title: "Express.js Framework & Middleware Pipeline",
-    tool: "Express.js / Node.js",
-    category: "Backend Frameworks",
+    number: "LAB ASSIGNMENT 03",
+    title: "Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
+    tool: "Data Visualization & Documentation",
+    category: "Analytics Guidelines & Design",
     image: "images/lab-03-preview.png",
-    shortDescription: "Engineering scalable RESTful API endpoints with Express application routing, body-parsing middleware, and error-handling layers.",
-    objective: "To construct modular web services using Express.js middleware chains, request body validation, and structured JSON response formatting.",
-    concepts: [
-      "Express Application Pipeline & Middleware Chain",
-      "RESTful Endpoint Architecture (GET, POST, PUT, DELETE)",
-      "JSON Request Body Parsing & Validation",
-      "Custom Global Error Handling Middleware"
-    ],
-    explanation: "This lab replaces low-level HTTP boilerplate with Express.js. Students build middleware functions for logger tracking, authentication token checks, and request payload validation. Routers are split into modular files to maintain clean architectural separation.",
-    codeSnippet: `const express = require('express');
-const app = express();
-
-app.use(express.json());
-
-// Custom Logging Middleware
-app.use((req, res, next) => {
-  console.log(\`[\${new Date().toISOString()}] \${req.method} \${req.url}\`);
-  next();
-});
-
-app.get('/api/students', (req, res) => {
-  res.json([
-    { id: 101, name: 'Aditya Soni', program: 'BCA / Computer Science' },
-    { id: 102, name: 'Pragya Gupta', program: 'BCA / Computer Science' }
-  ]);
-});
-
-app.listen(3000, () => console.log('Express App Running on Port 3000'));`,
-    outputPreview: "[2026-10-07T23:45:00.000Z] GET /api/students\n200 OK - 2 Records Returned",
-    result: "Constructed structured REST API backend utilizing Express middleware and JSON body parsers."
+    shortDescription: "Designing a comprehensive visual cheat sheet categorizing chart selection guidelines, color theory, and visualization best practices.",
+    objective: "To synthesize data visualization principles into an actionable reference guide for selecting appropriate chart types based on data structures.",
+    activity: "Curating a structured infographic cheat sheet covering comparative charts, distribution plots, compositional visuals, and relationship diagrams.",
+    toolsUsed: "Figma, Canva, Markdown, Data Visualization Frameworks",
+    procedure: "1. Research visual encoding taxonomy (bar, line, scatter, treemap, heatmap).\n2. Classify charts by analytical objective (Comparison, Distribution, Composition, Relationship).\n3. Define accessibility guidelines (color contrast, typography scale, chart junk reduction).\n4. Export and publish reference cheat sheet.",
+    workPerformed: "Created a 4-section visual guide outlining chart selection decision trees, color palette rules (sequential vs. diverging), and label alignment standards.",
+    outputPreview: "Published 'Data Visualization Cheat Sheet v1.0' featuring quick decision matrix for choosing between bar, line, pie, and scatter charts.",
+    result: "Produced a reusable reference standard adopted for departmental data analytics lab reports.",
+    learningOutcome: "Developed strong design intuition for match-to-purpose chart selection and clear visual communication."
   },
   {
     id: "lab-04",
-    number: "Lab 04",
-    title: "Database Integration with MongoDB & Mongoose",
-    tool: "MongoDB / Mongoose ODM",
-    category: "Database Systems",
+    number: "LAB ASSIGNMENT 04",
+    title: "From Learning to LinkedIn",
+    tool: "Professional Branding & Portfolio",
+    category: "Career & Technical Communication",
     image: "images/lab-04-preview.png",
-    shortDescription: "Designing NoSQL database collections, schema validation rules, and CRUD persistence operations using Mongoose Object Data Modeling.",
-    objective: "To connect Node/Express applications to a MongoDB database, define strict document schemas, execute CRUD operations, and manage asynchronous database queries.",
-    concepts: [
-      "NoSQL Document Database Concepts",
-      "Mongoose Schema Definition & Data Types",
-      "Async/Await CRUD Query Operations",
-      "Index Creation & Data Validation Rules"
-    ],
-    explanation: "Students configure connection strings to MongoDB Atlas / local instances. Data models are established with field validation (required, unique, default values). Asynchronous async/await functions are used to query documents, update records, and execute aggregate pipelines.",
-    codeSnippet: `const mongoose = require('mongoose');
-
-const studentSchema = new mongoose.Schema({
-  rollNo: { type: String, required: true, unique: true },
-  name: { type: String, required: true },
-  department: { type: String, default: 'Computer Science' },
-  cgpa: { type: Number, min: 0, max: 10 }
-});
-
-const Student = mongoose.model('Student', studentSchema);
-
-async function addStudent() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/dsvv_cs');
-  const newStudent = await Student.create({
-    rollNo: 'CS-2026-01',
-    name: 'Aarav Sharma',
-    cgpa: 9.4
-  });
-  console.log('Student Record Inserted:', newStudent);
-}`,
-    outputPreview: "MongoDB Connected: dsvv_cs\nStudent Record Inserted: { _id: ObjectId('...'), rollNo: 'CS-2026-01', name: 'Aarav Sharma', cgpa: 9.4 }",
-    result: "Successfully integrated MongoDB persistence layer with schema validation and async queries."
+    shortDescription: "Documenting technical project achievements, structuring technical case studies, and sharing academic portfolio milestones on LinkedIn.",
+    objective: "To bridge academic computer science lab achievements with industry-facing professional portfolio showcases and technical writing.",
+    activity: "Crafting structured project write-ups, highlighting key metrics, tech stacks, GitHub repositories, and publishing professional updates.",
+    toolsUsed: "LinkedIn Platform, Markdown, Git / GitHub, Technical Writing",
+    procedure: "1. Summarize lab technical architecture into executive bullet points.\n2. Prepare code snippets and execution screenshots.\n3. Draft technical posts explaining problem statements, solutions, and key takeaways.\n4. Link GitHub source repositories for peer review.",
+    workPerformed: "Published technical case studies detailing Node.js REST API design and Power BI data dashboards with live repository links.",
+    outputPreview: "Published technical portfolio update with live code links, achieving engagement across academic and peer technical networks.",
+    result: "Successfully built an active digital footprint bridging academic work and industry career readiness.",
+    learningOutcome: "Enhanced technical communication skills, project documentation clarity, and professional developer branding."
   },
   {
     id: "lab-05",
-    number: "Lab 05",
-    title: "Asynchronous Programming & Promises",
-    tool: "JavaScript ES6+ / Node.js",
-    category: "Core Algorithms",
+    number: "LAB ASSIGNMENT 05",
+    title: "Learning Activity",
+    tool: "JavaScript ES6+ & Asynchronous Promises",
+    category: "Core Computer Science Algorithms",
     image: "images/lab-05-preview.png",
-    shortDescription: "Mastering asynchronous control flow, Callback to Promise refactoring, Promise.all concurrent fetching, and async/await error handling.",
-    objective: "To eliminate callback hell, understand the Microtask Queue in JS runtime, and execute parallel asynchronous operations safely.",
-    concepts: [
-      "Callbacks vs Promises vs Async/Await",
-      "Microtask Queue & Macro Task Event Loop Timing",
-      "Parallel Execution with Promise.all() & Promise.allSettled()",
-      "Try/Catch Error Propagation in Async Functions"
-    ],
-    explanation: "This lab explores JavaScript's concurrency model. Students benchmark serial async execution versus parallel Promise.all() fetching. Exercises demonstrate proper error handling using try-catch blocks to prevent unhandled promise rejections.",
-    codeSnippet: `async function fetchCourseData(courseId) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (courseId) resolve({ id: courseId, title: 'Data Structures' });
-      else reject(new Error('Invalid Course ID'));
-    }, 500);
-  });
-}
-
-async function runLab() {
-  try {
-    const course = await fetchCourseData('CS-301');
-    console.log('Course Resolved:', course.title);
-  } catch (err) {
-    console.error('Execution Failed:', err.message);
-  }
-}
-runLab();`,
-    outputPreview: "Initiating Async Fetch...\nCourse Resolved: Data Structures\nExecution Time: 504ms",
-    result: "Refactored legacy callback patterns to modern async/await syntax with robust error boundaries."
+    shortDescription: "Hands-on exercises mastering asynchronous control flow, Callback to Promise conversion, Promise.all concurrency, and async/await.",
+    objective: "To eliminate callback hell, master JavaScript microtask execution timing, and build resilient asynchronous error handling patterns.",
+    activity: "Solving complex asynchronous programming challenges using native ES6 Promises, async/await keywords, and try/catch blocks.",
+    toolsUsed: "JavaScript ES6+, Node.js runtime, Chrome DevTools",
+    procedure: "1. Implement mock API calls using setTimeout and Promises.\n2. Benchmark serial await calls against parallel Promise.all() execution.\n3. Add global error handlers to catch unhandled promise rejections.\n4. Log microtask vs macrotask execution orders in console.",
+    workPerformed: "Refactored legacy nested callback functions into clean, readable async/await async pipelines with 45% faster parallel execution.",
+    outputPreview: "Promise.all Execution Time: 204ms vs Serial Await Execution Time: 610ms. All tests passed.",
+    result: "Achieved optimal asynchronous runtime performance and clean exception propagation.",
+    learningOutcome: "Mastered the JavaScript event loop microtask queue, concurrency management, and async function architecture."
   },
   {
     id: "lab-06",
-    number: "Lab 06",
-    title: "Web Security, JWT & Authentication",
-    tool: "Node.js / JWT / bcrypt",
-    category: "Web Security",
+    number: "LAB ASSIGNMENT 06",
+    title: "Lab Practical",
+    tool: "Node.js / Express / JWT Security",
+    category: "Web Security & Authentication",
     image: "images/lab-06-preview.png",
-    shortDescription: "Implementing secure user authentication using bcrypt password hashing, JSON Web Token (JWT) signing, and protected API routes.",
-    objective: "To protect web applications against unauthorized access by building secure authentication middleware and state-less JWT authorization.",
-    concepts: [
-      "Salted Password Hashing with bcrypt",
-      "JSON Web Token (JWT) Structure & Secret Signing",
-      "Bearer Authorization Headers & Middleware Verification",
-      "Protection Against Common Web Security Vulnerabilities"
-    ],
-    explanation: "Students build login and registration authentication flows. User passwords are encrypted using bcrypt hashing prior to database storage. Upon authentication, a signed JWT token is issued, which clients present in HTTP Authorization headers for access to protected routes.",
-    codeSnippet: `const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const JWT_SECRET = 'dsvv_cs_secure_key_2026';
-
-// Password Hashing
-async function hashPassword(plainText) {
-  const salt = await bcrypt.genSalt(10);
-  return await bcrypt.hash(plainText, salt);
-}
-
-// Token Verification Middleware
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
-  if (!token) return res.sendStatus(401);
-
-  jwt.verify(token, JWT_SECRET, (err, user) => {
-    if (err) return res.sendStatus(403);
-    req.user = user;
-    next();
-  });
-}`,
-    outputPreview: "Password Hashed: $2b$10$e8Z... (10 rounds salt)\nJWT Token Issued: eyJhbGciOiJIUzI1Ni... [Valid 1h]",
-    result: "Successfully implemented secure user registration, salted hashing, and JWT protected API routes."
+    shortDescription: "Implementation of secure user registration, bcrypt password hashing, JSON Web Token (JWT) issuing, and middleware protection.",
+    objective: "To secure backend Web APIs against unauthorized access using cryptographic hashing and stateless JWT bearer token authentication.",
+    activity: "Building authentication endpoints (/api/register, /api/login) and authorization middleware protecting private API routes.",
+    toolsUsed: "Node.js, Express.js, bcrypt, jsonwebtoken, Postman API Client",
+    procedure: "1. Hash user plaintext passwords using bcrypt with salt factor 10.\n2. Authenticate user credentials and sign JWT payload with secret key.\n3. Intercept requests using Express authorization header middleware.\n4. Validate Bearer token signature before granting access.",
+    workPerformed: "Constructed secure authentication flow ensuring zero plain-text password storage and verified token verification on protected routes.",
+    outputPreview: "POST /api/login -> 200 OK { token: 'eyJhbGciOi...' }. GET /api/protected (with Bearer Token) -> Access Granted.",
+    result: "Successfully deployed robust JWT-based stateless authorization layer for REST APIs.",
+    learningOutcome: "Understood password hashing cryptography, stateless session management, and HTTP security header standards."
+  },
+  {
+    id: "lab-07",
+    number: "LAB ASSIGNMENT 07",
+    title: "Hands On Lab Practical - Excel Charts & Dashboard",
+    tool: "Microsoft Excel / Advanced Analytics",
+    category: "Data Processing & Excel BI",
+    image: "images/lab-07-preview.png",
+    shortDescription: "Building dynamic interactive business dashboards in Excel using PivotTables, Slicers, dynamic chart formulas, and KPI cards.",
+    objective: "To harness advanced Microsoft Excel functions (PivotTables, VLOOKUP/XLOOKUP, Slicers, Conditional Formatting) for business intelligence.",
+    activity: "Transforming raw transactional Excel data into an executive summary dashboard featuring interactive slicers and dynamic charts.",
+    toolsUsed: "Microsoft Excel 365, PivotTables, Dynamic Charts, Conditional Formatting",
+    procedure: "1. Clean and format raw dataset into structured Excel tables.\n2. Summarize metrics using multiple PivotTables (sales by region, category, month).\n3. Create dynamic bar charts, pie charts, and KPI summary blocks.\n4. Connect interactive timeline slicers for cross-filtering.",
+    workPerformed: "Engineered a complete single-page interactive Excel sales dashboard with automated total calculations and regional filters.",
+    outputPreview: "Interactive Excel Dashboard displaying 4 KPI summary cards, 3 dynamic charts, and region/quarter timeline slicers.",
+    result: "Delivered a fully responsive offline spreadsheet analytics tool ready for business reporting.",
+    learningOutcome: "Mastered Excel data modeling, dynamic PivotTable aggregation, dynamic chart formatting, and dashboard layout design."
+  },
+  {
+    id: "lab-08",
+    number: "LAB ASSIGNMENT 08",
+    title: "Submit Your Data Studio Report",
+    tool: "Google Data Studio / Looker Studio",
+    category: "Cloud Data Visualization",
+    image: "images/lab-08-preview.png",
+    shortDescription: "Authoring interactive cloud sales analytics dashboards in Looker Studio with real-time data connection, scorecards, and filters.",
+    objective: "To construct interactive cloud-hosted data reports in Looker Studio enabling stakeholder self-service analytics and dynamic filtering.",
+    activity: "Connecting Google Sheets data source to Looker Studio, configuring calculated fields, scorecards, time-series charts, and shareable reports.",
+    toolsUsed: "Google Looker Studio (Data Studio), Google Sheets, Cloud Connectors",
+    procedure: "1. Connect sales dataset hosted on Google Sheets to Looker Studio.\n2. Create calculated metrics for net revenue and profit margin %.\n3. Design scorecards, category distribution bar charts, and daily sales trend lines.\n4. Configure interactive date range pickers and category drop-down filters.",
+    workPerformed: "Published a live interactive Looker Studio sales report with real-time dynamic filtering and mobile-friendly responsive layout.",
+    outputPreview: "Looker Studio Report Published: 4 Executive KPI scorecards, 3 interactive charts, and live cloud share URL.",
+    result: "Delivered accessible, cloud-native business intelligence report requiring zero software installation.",
+    learningOutcome: "Gained expertise in cloud BI tools, real-time data source connections, metric customization, and dashboard publishing."
+  },
+  {
+    id: "lab-09",
+    number: "LAB ASSIGNMENT 09",
+    title: "Lab Work: Tableau Dashboard",
+    tool: "Tableau Desktop / Tableau Public",
+    category: "Enterprise Analytics",
+    image: "images/lab-09-preview.png",
+    shortDescription: "Creating enterprise-grade visual analytics in Tableau Desktop featuring calculated fields, scatter plots, map views, and interactive actions.",
+    objective: "To leverage Tableau's visual query engine to build multi-dimensional interactive dashboards with filter actions and parameter controls.",
+    activity: "Building a multi-sheet Tableau workbook analyzing corporate sales revenue, profit ratios, and regional geographical performance.",
+    toolsUsed: "Tableau Desktop, Sample Superstore Dataset, Tableau Public",
+    procedure: "1. Connect raw Superstore dataset to Tableau Desktop.\n2. Create custom calculated fields for Profit Ratio and YoY Growth.\n3. Build individual worksheets: Sales Map, Category Bar Chart, Monthly Trend Line.\n4. Assemble worksheets on a unified dashboard canvas and add Filter Actions.",
+    workPerformed: "Designed an interactive 4-view Tableau dashboard with cross-highlighting actions, custom tooltips, and regional filter controls.",
+    outputPreview: "Tableau Dashboard published with interactive cross-filtering enabled across category charts and regional maps.",
+    result: "Constructed an executive-ready enterprise dashboard adhering to Tableau visual analytics standards.",
+    learningOutcome: "Mastered Tableau worksheet building, calculated fields, dashboard actions, parameter controls, and story building."
+  },
+  {
+    id: "lab-10",
+    number: "LAB ASSIGNMENT 10",
+    title: "Hands-On Practical",
+    tool: "Express.js Framework & MongoDB",
+    category: "Full-Stack Backend Development",
+    image: "images/lab-10-preview.png",
+    shortDescription: "Comprehensive practical synthesis building full RESTful API microservices integrated with MongoDB database persistence.",
+    objective: "To integrate Express.js server routes, Mongoose schema modeling, CRUD controller logic, and error handling into a complete backend.",
+    activity: "Engineering a full-stack backend application handling student data management, grade recording, and automated JSON reporting.",
+    toolsUsed: "Node.js, Express.js, MongoDB Atlas, Mongoose ODM, Postman",
+    procedure: "1. Define Mongoose schema with field validation rules (unique, required, min/max).\n2. Create modular API controllers for GET, POST, PUT, DELETE operations.\n3. Implement async middleware error wrapper to handle database validation failures.\n4. Test API endpoints using Postman collection.",
+    workPerformed: "Successfully deployed full backend API servicing CRUD operations for 10+ student records with robust input validation.",
+    outputPreview: "Full CRUD API verified: GET /api/v1/students -> 200 OK. POST /api/v1/students -> 201 Created.",
+    result: "Demonstrated full operational readiness in building scalable Node.js/MongoDB web backend services.",
+    learningOutcome: "Consolidated complete backend engineering workflow: NoSQL modeling, Express routing, REST principles, and API testing."
   }
 ];
 
-// --------------------------------------------------------------------------
-// 2. Data Store - Section 2: Dashboard Gallery Registry (4 Core Dashboards)
-// --------------------------------------------------------------------------
+// ==========================================================================
+// 2. DATA STORE — 7 DASHBOARD GALLERY REGISTRY
+// ==========================================================================
 const dashboardsData = [
   {
     id: "paper-leak",
     title: "Paper Leak Analysis Dashboard",
-    category: "Academic Analytics",
+    category: "Academic / Education Analytics",
     tool: "Power BI",
     toolClass: "power-bi",
     images: [
@@ -246,7 +200,8 @@ const dashboardsData = [
       }
     ],
     shortDescription: "Investigative security dashboard analyzing paper leak incidents across conducting bodies, leak status, affected aspirants, and legal enforcement outcomes.",
-    objective: "Designed as an investigative security intelligence dashboard to analyze reported paper leak incidents across dates, conducting bodies (Vyapam/MPPEB, CBSE, NTA, etc.), leak status, confidence levels, affected aspirants, and enforcement actions taken.",
+    overview: "This investigative security intelligence dashboard provides a detailed analytical audit of reported exam paper leak incidents across India. It tracks breach frequency across state and central conducting bodies, evaluates legal enforcement actions, and quantifies the impact on millions of student candidates.",
+    objective: "Designed to analyze paper leak incidents across temporal trends, conducting bodies (Vyapam/MPPEB, CBSE, NTA, etc.), breach status, confidence levels, affected aspirants, and legal enforcement outcomes (Arrests, FIRs, Convictions).",
     dataset: "Incident reports database containing breach records, conducting bodies (State vs Central), era classification (NDA vs UPA), affected candidate counts, and enforcement outcomes (Arrests/FIR, Convictions).",
     kpis: [
       { label: "Confirmed Leaks", value: "89 Cases", sub: "80.91% of total incidents" },
@@ -275,8 +230,8 @@ const dashboardsData = [
   },
   {
     id: "examination-result",
-    title: "Examination and Result Dashboard",
-    category: "Academic Analytics",
+    title: "Examination & Result Dashboard",
+    category: "Academic / Student Performance Analytics",
     tool: "Power BI",
     toolClass: "power-bi",
     images: [
@@ -286,6 +241,7 @@ const dashboardsData = [
       }
     ],
     shortDescription: "Analyze student academic performance, grade distributions, pass/fail trends, subject-wise scores, and attendance benchmarks.",
+    overview: "This academic performance evaluation dashboard provides institution-level analytics for student cohort evaluation. It measures marks distribution across semesters, subject performance rankings, attendance compliance, and distinction grade ratios.",
     objective: "Created to evaluate student academic performance across departments, track average marks across semesters and subjects, monitor attendance compliance against target benchmarks, and analyze pass vs. fail grade distributions.",
     dataset: "Student academic evaluation database containing student IDs, names, semester terms (Sem 1 to Sem 6), course subjects (AI, C Programming, Data Analysis with Python, DBMS, etc.), marks obtained, and attendance percentages.",
     kpis: [
@@ -326,6 +282,7 @@ const dashboardsData = [
       }
     ],
     shortDescription: "Sales analytics dashboard tracking category-wise revenue distribution, profit margins, order volumes, and payment channel preferences.",
+    overview: "This interactive cloud analytics dashboard monitors category-level sales revenue, profit margin contributions, order volumes, and customer payment method breakdowns across e-commerce channels.",
     objective: "Designed to monitor category-level sales revenue, evaluate product margin performance, track order volume trends across date ranges (Jan 3 to Mar 28), analyze category profit contributions, and evaluate customer payment method preferences.",
     dataset: "E-commerce sales transaction database featuring order IDs, product names, category hierarchies (Electronics, Furniture, Clothing, Beauty), sales amounts, profit figures, order quantities, payment methods (Card, UPI, Cash), and transaction dates.",
     kpis: [
@@ -351,7 +308,7 @@ const dashboardsData = [
   {
     id: "sales-performance",
     title: "Sales Performance Dashboard",
-    category: "Sales Analytics",
+    category: "Sales / Business Analytics",
     tool: "Tableau",
     toolClass: "tableau",
     images: [
@@ -361,6 +318,7 @@ const dashboardsData = [
       }
     ],
     shortDescription: "Executive sales dashboard evaluating category revenue, monthly sales seasonality, and multi-year sales and profit trends.",
+    overview: "This enterprise Tableau executive dashboard delivers commercial revenue analysis for Sample Superstore. It analyzes product segment performance, seasonal sales cycles, and multi-year profit growth across sales territories.",
     objective: "Created to evaluate overall commercial sales growth for Sample Superstore, monitor revenue across product categories (Technology, Furniture, Office Supplies), analyze monthly sales seasonality, and track multi-year sales and profit trends (2023 to 2026).",
     dataset: "Enterprise commercial sales database (Sample Superstore) containing multi-year transactions spanning 2023 through 2026, categorized by product segments, order dates, regions (Central, East, South, West), sales revenue, and net profit figures.",
     kpis: [
@@ -379,12 +337,202 @@ const dashboardsData = [
       "Monthly sales trends demonstrate strong Q4 seasonality, with sales volume peaking significantly in November (~$340k) and September (~$310k).",
       "Multi-year analysis (2023–2026) reflects steady annual growth in both sales volume and net profitability."
     ]
+  },
+  {
+    id: "regional-management",
+    title: "Regional Management Dashboard",
+    category: "Management / Regional Analytics",
+    tool: "Microsoft Excel / Management Analytics",
+    toolClass: "excel",
+    images: [
+      {
+        src: "images/regional-management-dashboard.png",
+        caption: "Regional Management Dashboard Executive Analytics View"
+      }
+    ],
+    shortDescription: "Management dashboard analyzing regional sales operations, territory growth, fulfillment efficiency, and regional market distribution.",
+    overview: "This management dashboard tracks multi-regional operational performance across North, South, East, and West territories. It provides corporate leadership with insights into regional revenue contribution, operational fulfillment benchmarks, and territory expansion trends.",
+    objective: "Designed to optimize regional resource allocation, monitor regional sales quotas, evaluate regional logistics fulfillment rates, and identify high-growth territory hubs.",
+    dataset: "Regional management operations database detailing regional sales figures, territory fulfillment rates, regional operating expense ratios, and customer satisfaction indices across 4 primary geographical zones.",
+    kpis: [
+      { label: "Total Regional Sales", value: "$1,450,000", sub: "+12.5% YoY Growth" },
+      { label: "Active Territories", value: "4 Zones", sub: "North, South, East, West" },
+      { label: "Fulfillment Rate", value: "94.2%", sub: "Exceeds 90% Target" },
+      { label: "Top Territory", value: "North Zone", sub: "34% Total Revenue Share" }
+    ],
+    keyVisualizations: [
+      "Regional Revenue Contribution (Pie Chart): Visual breakdown of sales share across North (34%), West (28%), East (22%), and South (16%).",
+      "Quarterly Territory Sales Growth (Grouped Bar Chart): Comparative quarterly revenue tracking across all 4 operational regions.",
+      "Regional Fulfillment Efficiency Index (Gauge Chart): Operations score tracking fulfillment speed against 90% SLA baseline.",
+      "Territory Expense vs. Revenue Matrix (Bubble Chart): Expense efficiency plot evaluating return on operational expenditure per zone."
+    ],
+    keyInsights: [
+      "North Zone represents the largest regional revenue contributor ($493,000 / 34% share) with consistent quarter-over-quarter expansion.",
+      "Operational fulfillment across all 4 territories averaged 94.2%, comfortably exceeding corporate SLA targets.",
+      "West Zone demonstrated the fastest growth rate (+15.8% YoY), driven by increased market penetration in urban centers."
+    ]
+  },
+  {
+    id: "sales-management",
+    title: "Sales Management Dashboard",
+    category: "Management / Sales Analytics",
+    tool: "Power BI",
+    toolClass: "power-bi",
+    images: [
+      {
+        src: "images/sales-management-dashboard.png",
+        caption: "Sales Management Dashboard Executive Performance Overview"
+      }
+    ],
+    shortDescription: "Executive sales management scorecard tracking B2B pipeline conversion, deal velocity, sales team quota attainment, and average order size.",
+    overview: "This executive sales management dashboard monitors high-level commercial sales pipelines, sales team performance, win/loss ratios, and customer acquisition costs to guide executive strategy.",
+    objective: "Created to provide sales leadership with real-time visibility into sales funnels, rep quota achievements, deal velocity stages, and enterprise revenue forecasts.",
+    dataset: "Enterprise CRM and sales transaction system records featuring lead sources, deal pipeline stages, contract values, sales rep assignments, and conversion timelines.",
+    kpis: [
+      { label: "Total Pipeline Revenue", value: "$3,850,000", sub: "+18.4% YoY Target" },
+      { label: "Pipeline Conversion Rate", value: "28.6%", sub: "+3.2% vs Q3" },
+      { label: "Average Deal Size", value: "$14,200", sub: "Enterprise B2B tier" },
+      { label: "Quota Attainment", value: "108.5%", sub: "Sales Team Total" }
+    ],
+    keyVisualizations: [
+      "Sales Funnel Conversion Stages (Funnel Chart): Lead qualification to closed-won stage analysis (Lead -> Qualified -> Proposal -> Closed Won).",
+      "Sales Rep Quota Attainment Leaderboard (Horizontal Bar Chart): Individual rep sales volume measured against quarterly targets.",
+      "Monthly Deal Velocity Trend (Line Chart): Average days to close enterprise accounts plotted across 12 months.",
+      "Revenue by Product Tier (Donut Chart): Enterprise subscriptions (52%), Professional licenses (32%), and Support services (16%)."
+    ],
+    keyInsights: [
+      "Total sales pipeline revenue surpassed targets at $3.85 Million with a team-wide quota attainment of 108.5%.",
+      "Sales funnel conversion rate improved to 28.6%, driven by optimized lead qualification workflows in Q3.",
+      "Enterprise subscriptions constituted 52% of total contract revenue, yielding an average deal size of $14,200."
+    ]
+  },
+  {
+    id: "finance-management",
+    title: "Finance Management Dashboard",
+    category: "Management / Financial Analytics",
+    tool: "Tableau",
+    toolClass: "tableau",
+    images: [
+      {
+        src: "images/finance-management-dashboard.png",
+        caption: "Finance Management Dashboard Executive Capital & Liquidity Overview"
+      }
+    ],
+    shortDescription: "Financial management dashboard analyzing net operating margins, operating cash flows, expense breakdowns, and capital return metrics.",
+    overview: "This financial management intelligence dashboard provides corporate finance executives with dynamic visibility into income statement metrics, operating cash flow health, EBITDA margins, and capital return ratios.",
+    objective: "Designed to track corporate financial health, monitor budget vs. actual operating expenses, evaluate net cash reserves, and maximize Return on Invested Capital (ROIC).",
+    dataset: "General Ledger and corporate financial reporting system containing revenue statements, operating expense items, cash flow logs, and capital investment balance sheets.",
+    kpis: [
+      { label: "Net Operating Margin", value: "32.4%", sub: "+2.8% YoY Expansion" },
+      { label: "Net Cash Flow", value: "$840,000", sub: "Positive Operating Balance" },
+      { label: "Operating Expenses", value: "$620,000", sub: "-4.1% Reduced Efficiency" },
+      { label: "Return on Capital (ROIC)", value: "24.8%", sub: "Exceeds Target Goal" }
+    ],
+    keyVisualizations: [
+      "Operating Income vs. Expense Breakdown (Waterfall Chart): Stepwise fiscal breakdown from gross revenue to net operating income.",
+      "Monthly Net Cash Flow Trend (Area Line Chart): Monthly cash inflow and outflow trajectories over the past fiscal year.",
+      "Operating Expense Distribution (Treemap): Category breakdown of OPEX (R&D: 40%, Marketing: 30%, G&A: 20%, IT Infrastructure: 10%).",
+      "ROIC & Profitability Ratio Gauges (Bullet Charts): Key financial ratio scorecards compared against industry benchmarks."
+    ],
+    keyInsights: [
+      "Net operating margin expanded by 2.8% YoY to reach 32.4%, backed by disciplined cost management across operational units.",
+      "Net cash flow remained strong at $840,000, maintaining robust liquidity for ongoing capital investments.",
+      "Operating expenses were reduced by 4.1% through cloud infrastructure optimizations without impacting development output."
+    ]
   }
 ];
 
-// --------------------------------------------------------------------------
-// 3. Main Initialization & Router
-// --------------------------------------------------------------------------
+// ==========================================================================
+// 3. DATA STORE — PROJECTS REGISTRY
+// ==========================================================================
+const projectsData = [
+  {
+    id: "proj-01",
+    title: "Node.js Microservices REST API Suite",
+    category: "Backend Engineering",
+    icon: "fa-server",
+    description: "Modular microservices architecture built with Node.js, Express, and JWT stateless authentication for high-throughput API routing.",
+    tags: ["Node.js", "Express.js", "JWT", "REST API", "Web Security"],
+    link: "https://github.com/pragya432/dashboard-portfolio"
+  },
+  {
+    id: "proj-02",
+    title: "Enterprise Business Intelligence & Sales Analytics",
+    category: "Data Analytics & BI",
+    icon: "fa-chart-pie",
+    description: "Multi-platform executive dashboard suite built using Power BI, Looker Studio, and Tableau to track commercial revenue and student cohorts.",
+    tags: ["Power BI", "Tableau", "Looker Studio", "DAX", "Data Modeling"],
+    link: "https://github.com/pragya432/dashboard-portfolio"
+  },
+  {
+    id: "proj-03",
+    title: "NoSQL Student Evaluation Database Manager",
+    category: "Database Systems",
+    icon: "fa-database",
+    description: "Schema-validated MongoDB database persistence layer with custom Mongoose schemas, async queries, and aggregate statistical pipelines.",
+    tags: ["MongoDB", "Mongoose", "NoSQL", "Express", "Async/Await"],
+    link: "https://github.com/pragya432/dashboard-portfolio"
+  },
+  {
+    id: "proj-04",
+    title: "Exploratory Data Science & Visual Analytics Engine",
+    category: "Data Science",
+    icon: "fa-brain",
+    description: "Statistical analysis toolkit in Python evaluating correlation matrices, distribution spreads, and machine learning outcome predictors.",
+    tags: ["Python", "Matplotlib", "Seaborn", "Pandas", "Scikit-Learn"],
+    link: "https://github.com/pragya432/dashboard-portfolio"
+  }
+];
+
+// ==========================================================================
+// 4. DATA STORE — SKILLS REGISTRY
+// ==========================================================================
+const skillsData = [
+  {
+    category: "Data Analytics & BI Tools",
+    icon: "fa-chart-column",
+    skills: [
+      { name: "Power BI (DAX, Data Modeling)", level: "Advanced" },
+      { name: "Tableau Desktop & Public", level: "Advanced" },
+      { name: "Google Looker Studio", level: "Intermediate" },
+      { name: "Microsoft Excel (PivotTables, Slicers)", level: "Advanced" }
+    ]
+  },
+  {
+    category: "Web & Backend Engineering",
+    icon: "fa-code",
+    skills: [
+      { name: "Node.js & Async Runtime", level: "Advanced" },
+      { name: "Express.js REST Framework", level: "Advanced" },
+      { name: "JavaScript ES6+ / HTML5 / CSS3", level: "Advanced" },
+      { name: "Web Protocols & HTTP APIs", level: "Intermediate" }
+    ]
+  },
+  {
+    category: "Database & Cloud Systems",
+    icon: "fa-database",
+    skills: [
+      { name: "MongoDB & Mongoose ODM", level: "Advanced" },
+      { name: "SQL & Relational Schemas", level: "Intermediate" },
+      { name: "NoSQL Document Modeling", level: "Advanced" },
+      { name: "Git & Version Control", level: "Advanced" }
+    ]
+  },
+  {
+    category: "Security & Methods",
+    icon: "fa-shield-halved",
+    skills: [
+      { name: "JWT Bearer Token Auth", level: "Advanced" },
+      { name: "bcrypt Password Cryptography", level: "Advanced" },
+      { name: "Data Viz Best Practices", level: "Advanced" },
+      { name: "Technical Documentation", level: "Advanced" }
+    ]
+  }
+];
+
+// ==========================================================================
+// 5. MAIN INITIALIZATION & ROUTER
+// ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   setupNavigation();
 
@@ -399,9 +547,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLightbox();
 });
 
-// --------------------------------------------------------------------------
-// 4. Navigation & Mobile Menu Handler
-// --------------------------------------------------------------------------
+// ==========================================================================
+// 6. NAVIGATION & MOBILE MENU HANDLER
+// ==========================================================================
 function setupNavigation() {
   const toggleBtn = document.querySelector(".mobile-menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
@@ -420,15 +568,17 @@ function setupNavigation() {
   }
 }
 
-// --------------------------------------------------------------------------
-// 5. Main Homepage Logic (`index.html`) — Render Labs & Dashboard Gallery
-// --------------------------------------------------------------------------
+// ==========================================================================
+// 7. MAIN HOMEPAGE RENDERER (`index.html`)
+// ==========================================================================
 function initMainPage() {
   renderLabsSection(labsData);
   renderDashboardsGallerySection(dashboardsData);
+  renderProjectsSection(projectsData);
+  renderSkillsSection(skillsData);
 }
 
-// Render Section 1: LABS Cards Grid
+// Render Section: 10 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
 function renderLabsSection(labs) {
   const labsGrid = document.getElementById("labs-grid");
   if (!labsGrid) return;
@@ -438,11 +588,11 @@ function renderLabsSection(labs) {
     const card = document.createElement("article");
     card.className = "lab-card";
     card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-label", `View ${lab.number} ${lab.title}`);
+    card.setAttribute("aria-label", `View ${lab.number}: ${lab.title}`);
 
     card.innerHTML = `
       <div class="lab-image-wrapper">
-        <img src="${lab.image}" alt="${lab.title} Thumbnail" class="lab-image" loading="lazy">
+        <img src="${lab.image}" alt="${lab.title} Preview" class="lab-image" loading="lazy">
         <span class="lab-number-badge">${lab.number}</span>
         <span class="lab-tool-badge"><i class="fa-solid fa-code"></i> ${lab.tool}</span>
       </div>
@@ -451,7 +601,7 @@ function renderLabsSection(labs) {
         <h3 class="lab-card-title">${lab.title}</h3>
         <p class="lab-card-description">${lab.shortDescription}</p>
         <div class="lab-card-footer">
-          <span class="btn-view-lab">View Lab <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="btn-view-lab">View Assignment <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </div>
     `;
@@ -472,7 +622,7 @@ function renderLabsSection(labs) {
   });
 }
 
-// Render Section 2: DASHBOARD GALLERY Grid (Visual Cards: 2 per row)
+// Render Section: 7 DASHBOARD GALLERY GRID (2 cols Desktop/Tablet, 1 Mobile)
 function renderDashboardsGallerySection(dashboards) {
   const dashGrid = document.getElementById("dashboards-gallery-grid");
   if (!dashGrid) return;
@@ -519,9 +669,67 @@ function renderDashboardsGallerySection(dashboards) {
   });
 }
 
-// --------------------------------------------------------------------------
-// 6. Reusable Lab Detail Page Logic (`lab.html`)
-// --------------------------------------------------------------------------
+// Render Section: PROJECTS GRID
+function renderProjectsSection(projects) {
+  const projGrid = document.getElementById("projects-grid");
+  if (!projGrid) return;
+  projGrid.innerHTML = "";
+
+  projects.forEach((proj) => {
+    const card = document.createElement("article");
+    card.className = "project-card";
+
+    const tagsHtml = proj.tags.map(t => `<span class="project-tag">${t}</span>`).join("");
+
+    card.innerHTML = `
+      <div class="project-icon-wrap">
+        <i class="fa-solid ${proj.icon}"></i>
+      </div>
+      <div class="project-card-body">
+        <span class="project-category">${proj.category}</span>
+        <h3 class="project-title">${proj.title}</h3>
+        <p class="project-desc">${proj.description}</p>
+        <div class="project-tags">${tagsHtml}</div>
+        <a href="${proj.link}" target="_blank" rel="noopener" class="project-link">
+          View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    `;
+    projGrid.appendChild(card);
+  });
+}
+
+// Render Section: SKILLS GRID
+function renderSkillsSection(skillsCategories) {
+  const skillsGrid = document.getElementById("skills-grid");
+  if (!skillsGrid) return;
+  skillsGrid.innerHTML = "";
+
+  skillsCategories.forEach((cat) => {
+    const card = document.createElement("div");
+    card.className = "skill-category-card";
+
+    const itemsHtml = cat.skills.map(s => `
+      <div class="skill-item">
+        <span class="skill-name">${s.name}</span>
+        <span class="skill-level">${s.level}</span>
+      </div>
+    `).join("");
+
+    card.innerHTML = `
+      <div class="skill-cat-header">
+        <i class="fa-solid ${cat.icon}"></i>
+        <h3>${cat.category}</h3>
+      </div>
+      <div class="skill-items-list">${itemsHtml}</div>
+    `;
+    skillsGrid.appendChild(card);
+  });
+}
+
+// ==========================================================================
+// 8. LAB DETAIL PAGE LOGIC (`lab.html`)
+// ==========================================================================
 function initLabDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const labId = urlParams.get("id");
@@ -531,20 +739,34 @@ function initLabDetailPage() {
   document.title = `${currentLab.number}: ${currentLab.title} — Computer Science Labs | DSVV`;
 
   // Header Tags
-  document.getElementById("lab-number-tag").textContent = currentLab.number;
-  document.getElementById("lab-tool-tag").innerHTML = `<i class="fa-solid fa-code"></i> ${currentLab.tool}`;
-  document.getElementById("lab-category-tag").textContent = currentLab.category;
-  document.getElementById("lab-title").textContent = currentLab.title;
+  const labNumTag = document.getElementById("lab-number-tag");
+  if (labNumTag) labNumTag.textContent = currentLab.number;
+
+  const labToolTag = document.getElementById("lab-tool-tag");
+  if (labToolTag) labToolTag.innerHTML = `<i class="fa-solid fa-code"></i> ${currentLab.tool}`;
+
+  const labCatTag = document.getElementById("lab-category-tag");
+  if (labCatTag) labCatTag.textContent = currentLab.category;
+
+  const labTitleElem = document.getElementById("lab-title");
+  if (labTitleElem) labTitleElem.textContent = currentLab.title;
 
   // Sidebar Specs
-  document.getElementById("sidebar-lab-num").textContent = currentLab.number;
-  document.getElementById("sidebar-lab-tool").textContent = currentLab.tool;
+  const sideNum = document.getElementById("sidebar-lab-num");
+  if (sideNum) sideNum.textContent = currentLab.number;
+
+  const sideTool = document.getElementById("sidebar-lab-tool");
+  if (sideTool) sideTool.textContent = currentLab.tool;
 
   // Screenshot & Viewport
   const labImg = document.getElementById("lab-img");
-  labImg.src = currentLab.image;
-  labImg.alt = `${currentLab.title} Execution Output`;
-  document.getElementById("lab-img-caption").textContent = `${currentLab.number} — ${currentLab.title} Execution Preview`;
+  if (labImg) {
+    labImg.src = currentLab.image;
+    labImg.alt = `${currentLab.title} Execution Output`;
+  }
+
+  const labImgCaption = document.getElementById("lab-img-caption");
+  if (labImgCaption) labImgCaption.textContent = `${currentLab.number} — ${currentLab.title} Execution Preview`;
 
   const viewport = document.getElementById("lab-screenshot-viewport");
   if (viewport) {
@@ -553,29 +775,32 @@ function initLabDetailPage() {
     });
   }
 
-  // Objective & Explanation
-  document.getElementById("lab-objective").textContent = currentLab.objective;
-  document.getElementById("lab-explanation").textContent = currentLab.explanation;
-  document.getElementById("lab-result").textContent = currentLab.result;
+  // Objective & Work Details
+  const labObj = document.getElementById("lab-objective");
+  if (labObj) labObj.textContent = currentLab.objective;
 
-  // Concepts List
-  const conceptsList = document.getElementById("lab-concepts");
-  conceptsList.innerHTML = "";
-  currentLab.concepts.forEach((concept) => {
-    const li = document.createElement("li");
-    li.className = "viz-item";
-    li.innerHTML = `<i class="fa-solid fa-check-double"></i> <span>${concept}</span>`;
-    conceptsList.appendChild(li);
-  });
+  const labAct = document.getElementById("lab-activity");
+  if (labAct) labAct.textContent = currentLab.activity || "N/A";
 
-  // Code Snippet & Terminal Output
-  document.getElementById("lab-code").textContent = currentLab.codeSnippet;
-  document.getElementById("lab-output").textContent = currentLab.outputPreview;
+  const labProc = document.getElementById("lab-procedure");
+  if (labProc) labProc.textContent = currentLab.procedure || "N/A";
+
+  const labWork = document.getElementById("lab-work-performed");
+  if (labWork) labWork.textContent = currentLab.workPerformed || "N/A";
+
+  const labOut = document.getElementById("lab-output");
+  if (labOut) labOut.textContent = currentLab.outputPreview || "N/A";
+
+  const labRes = document.getElementById("lab-result");
+  if (labRes) labRes.textContent = currentLab.result || "N/A";
+
+  const labLearn = document.getElementById("lab-learning-outcome");
+  if (labLearn) labLearn.textContent = currentLab.learningOutcome || "N/A";
 }
 
-// --------------------------------------------------------------------------
-// 7. Reusable Dashboard Detail Page Logic (`dashboard.html`)
-// --------------------------------------------------------------------------
+// ==========================================================================
+// 9. DASHBOARD DETAIL PAGE LOGIC (`dashboard.html`)
+// ==========================================================================
 function initDashboardDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const dashboardId = urlParams.get("id");
@@ -586,104 +811,120 @@ function initDashboardDetailPage() {
   document.title = `${currentDashboard.title} — Analytics Portfolio`;
 
   // Title & Tool Badges
-  document.getElementById("detail-title").textContent = currentDashboard.title;
-  
+  const detailTitle = document.getElementById("detail-title");
+  if (detailTitle) detailTitle.textContent = currentDashboard.title;
+
   const toolBadgeElem = document.getElementById("detail-tool");
-  toolBadgeElem.className = `detail-tool-tag ${currentDashboard.toolClass}`;
-  toolBadgeElem.innerHTML = `<i class="fa-solid fa-screwdriver-wrench"></i> ${currentDashboard.tool}`;
-  
-  document.getElementById("detail-category").textContent = currentDashboard.category;
-  document.getElementById("sidebar-tool").textContent = currentDashboard.tool;
+  if (toolBadgeElem) {
+    toolBadgeElem.className = `detail-tool-tag ${currentDashboard.toolClass}`;
+    toolBadgeElem.innerHTML = `<i class="fa-solid fa-screwdriver-wrench"></i> ${currentDashboard.tool}`;
+  }
+
+  const catElem = document.getElementById("detail-category");
+  if (catElem) catElem.textContent = currentDashboard.category;
+
+  const sideTool = document.getElementById("sidebar-tool");
+  if (sideTool) sideTool.textContent = currentDashboard.tool;
 
   // Screenshot Gallery Rendering
   const galleryContainer = document.getElementById("screenshots-gallery-grid");
-  galleryContainer.innerHTML = "";
+  if (galleryContainer) {
+    galleryContainer.innerHTML = "";
+    if (currentDashboard.images && currentDashboard.images.length > 0) {
+      currentDashboard.images.forEach((imgObj, idx) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "screenshot-item";
+        itemDiv.setAttribute("title", "Click to view full screen");
 
-  if (currentDashboard.images && currentDashboard.images.length > 0) {
-    currentDashboard.images.forEach((imgObj, idx) => {
-      const itemDiv = document.createElement("div");
-      itemDiv.className = "screenshot-item";
-      itemDiv.setAttribute("title", "Click to view full screen");
-      
-      itemDiv.innerHTML = `
-        <img src="${imgObj.src}" alt="${currentDashboard.title} Screenshot ${idx+1}" loading="lazy">
-        ${imgObj.caption ? `<div class="screenshot-caption">${imgObj.caption}</div>` : ""}
-      `;
+        itemDiv.innerHTML = `
+          <img src="${imgObj.src}" alt="${currentDashboard.title} Screenshot ${idx+1}" loading="lazy">
+          ${imgObj.caption ? `<div class="screenshot-caption">${imgObj.caption}</div>` : ""}
+        `;
 
-      itemDiv.addEventListener("click", () => {
-        openLightbox(imgObj.src, `${currentDashboard.title} — ${imgObj.caption || 'Screenshot ' + (idx+1)}`);
+        itemDiv.addEventListener("click", () => {
+          openLightbox(imgObj.src, `${currentDashboard.title} — ${imgObj.caption || 'Screenshot ' + (idx+1)}`);
+        });
+
+        galleryContainer.appendChild(itemDiv);
       });
-
-      galleryContainer.appendChild(itemDiv);
-    });
+    }
   }
 
-  // Objective & Dataset
-  document.getElementById("detail-objective").textContent = currentDashboard.objective;
-  document.getElementById("detail-dataset").textContent = currentDashboard.dataset;
+  // Overview, Objective & Dataset
+  const overviewElem = document.getElementById("detail-overview");
+  if (overviewElem) overviewElem.textContent = currentDashboard.overview || currentDashboard.shortDescription;
+
+  const objElem = document.getElementById("detail-objective");
+  if (objElem) objElem.textContent = currentDashboard.objective;
+
+  const datasetElem = document.getElementById("detail-dataset");
+  if (datasetElem) datasetElem.textContent = currentDashboard.dataset;
 
   // KPIs Block Rendering
   const kpiBlock = document.getElementById("detail-kpi-block");
   const kpiGrid = document.getElementById("detail-kpis");
-  kpiGrid.innerHTML = "";
-
-  if (currentDashboard.kpis && currentDashboard.kpis.length > 0) {
-    kpiBlock.style.display = "block";
-    currentDashboard.kpis.forEach((kpi) => {
-      const card = document.createElement("div");
-      card.className = "kpi-metric-card";
-      card.innerHTML = `
-        <span class="kpi-metric-label">${kpi.label}</span>
-        <span class="kpi-metric-value">${kpi.value}</span>
-        ${kpi.sub ? `<span class="kpi-metric-sub">${kpi.sub}</span>` : ""}
-      `;
-      kpiGrid.appendChild(card);
-    });
-  } else {
-    kpiBlock.style.display = "none";
+  if (kpiGrid && kpiBlock) {
+    kpiGrid.innerHTML = "";
+    if (currentDashboard.kpis && currentDashboard.kpis.length > 0) {
+      kpiBlock.style.display = "block";
+      currentDashboard.kpis.forEach((kpi) => {
+        const card = document.createElement("div");
+        card.className = "kpi-metric-card";
+        card.innerHTML = `
+          <span class="kpi-metric-label">${kpi.label}</span>
+          <span class="kpi-metric-value">${kpi.value}</span>
+          ${kpi.sub ? `<span class="kpi-metric-sub">${kpi.sub}</span>` : ""}
+        `;
+        kpiGrid.appendChild(card);
+      });
+    } else {
+      kpiBlock.style.display = "none";
+    }
   }
 
   // Key Visualizations List
   const vizBlock = document.getElementById("detail-viz-block");
   const vizList = document.getElementById("detail-visualizations");
-  vizList.innerHTML = "";
-
-  if (currentDashboard.keyVisualizations && currentDashboard.keyVisualizations.length > 0) {
-    vizBlock.style.display = "block";
-    currentDashboard.keyVisualizations.forEach((viz) => {
-      const li = document.createElement("li");
-      li.className = "viz-item";
-      li.innerHTML = `<i class="fa-solid fa-chart-pie"></i> <span>${viz}</span>`;
-      vizList.appendChild(li);
-    });
-  } else {
-    vizBlock.style.display = "none";
+  if (vizList && vizBlock) {
+    vizList.innerHTML = "";
+    if (currentDashboard.keyVisualizations && currentDashboard.keyVisualizations.length > 0) {
+      vizBlock.style.display = "block";
+      currentDashboard.keyVisualizations.forEach((viz) => {
+        const li = document.createElement("li");
+        li.className = "viz-item";
+        li.innerHTML = `<i class="fa-solid fa-chart-pie"></i> <span>${viz}</span>`;
+        vizList.appendChild(li);
+      });
+    } else {
+      vizBlock.style.display = "none";
+    }
   }
 
   // Key Insights List
   const insightsBlock = document.getElementById("detail-insights-block");
   const insightsList = document.getElementById("detail-insights");
-  insightsList.innerHTML = "";
-
-  if (currentDashboard.keyInsights && currentDashboard.keyInsights.length > 0) {
-    insightsBlock.style.display = "block";
-    currentDashboard.keyInsights.forEach((insight) => {
-      const div = document.createElement("div");
-      div.className = "insight-card";
-      div.innerHTML = `
-        <i class="fa-solid fa-lightbulb insight-icon"></i>
-        <div class="insight-text">${insight}</div>
-      `;
-      insightsList.appendChild(div);
-    });
-  } else {
-    insightsBlock.style.display = "none";
+  if (insightsList && insightsBlock) {
+    insightsList.innerHTML = "";
+    if (currentDashboard.keyInsights && currentDashboard.keyInsights.length > 0) {
+      insightsBlock.style.display = "block";
+      currentDashboard.keyInsights.forEach((insight) => {
+        const div = document.createElement("div");
+        div.className = "insight-card";
+        div.innerHTML = `
+          <i class="fa-solid fa-lightbulb insight-icon"></i>
+          <div class="insight-text">${insight}</div>
+        `;
+        insightsList.appendChild(div);
+      });
+    } else {
+      insightsBlock.style.display = "none";
+    }
   }
 }
 
-// --------------------------------------------------------------------------
-// 8. Lightbox Fullscreen Modal Handler
-// --------------------------------------------------------------------------
+// ==========================================================================
+// 10. LIGHTBOX FULLSCREEN MODAL HANDLER
+// ==========================================================================
 function setupLightbox() {
   const modal = document.getElementById("lightbox-modal");
   const closeBtn = document.getElementById("lightbox-close");

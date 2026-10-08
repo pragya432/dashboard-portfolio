@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Details — Analytics Portfolio</title>
+  <title>Dashboard Details — Analytics Portfolio | DSVV</title>
   <meta name="description" content="Detailed analytical breakdown, KPIs, dataset specifications, visualizations, and key insights." />
   
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
@@ -24,7 +24,6 @@
        ========================================================================== -->
   <header class="navbar">
     <div class="container nav-container">
-      <!-- Top Left: DSVV Logo & Text -->
       <a href="index.html" class="nav-brand" aria-label="Dev Sanskriti Vishwavidyalaya Home">
         <img src="images/dsvv-logo.png" alt="DSVV Logo" class="dsvv-logo-img" />
         <span class="dsvv-brand-text">DSVV</span>
@@ -34,13 +33,16 @@
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <!-- Top Right: Computer Science Badge & Navigation Links -->
       <div class="nav-right-group">
         <nav>
           <ul class="nav-menu">
             <li><a href="index.html#hero" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
             <li><a href="index.html#labs" class="nav-link"><i class="fa-solid fa-flask"></i> Lab Work</a></li>
-            <li><a href="index.html#dashboards" class="nav-link active"><i class="fa-solid fa-chart-column"></i> Dashboards</a></li>
+            <li><a href="index.html#dashboards" class="nav-link active"><i class="fa-solid fa-chart-column"></i> Dashboard Gallery</a></li>
+            <li><a href="index.html#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+            <li><a href="index.html#skills" class="nav-link"><i class="fa-solid fa-gears"></i> Skills</a></li>
+            <li><a href="index.html#about" class="nav-link"><i class="fa-solid fa-user-graduate"></i> About</a></li>
+            <li><a href="index.html#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
           </ul>
         </nav>
         <span class="cs-dept-badge">
@@ -50,18 +52,14 @@
     </div>
   </header>
 
-  <!-- ==========================================================================
-       Back Navigation Button
-       ========================================================================== -->
+  <!-- Back Navigation Button -->
   <div class="container detail-header-nav">
-    <a href="index.html#dashboards" class="btn-back" aria-label="Return to main dashboard page">
-      <i class="fa-solid fa-arrow-left"></i> Back to Dashboards
+    <a href="index.html#dashboards" class="btn-back" aria-label="Return to Dashboard Gallery">
+      <i class="fa-solid fa-arrow-left"></i> Back to Dashboard Gallery
     </a>
   </div>
 
-  <!-- ==========================================================================
-       Dashboard Detail Main Section
-       ========================================================================== -->
+  <!-- Dashboard Detail Main Section -->
   <main class="container detail-main" id="detail-content">
     
     <!-- Header Title & Badges -->
@@ -94,20 +92,30 @@
     <!-- Dashboard Information Grid -->
     <div class="detail-info-grid">
       
-      <!-- Primary Column: Objective, KPIs, Visualizations, Insights -->
+      <!-- Primary Column -->
       <div class="primary-info-col">
         
-        <!-- Objective & Overview -->
+        <!-- Overview -->
         <article class="detail-block">
           <h2 class="block-heading">
-            <i class="fa-solid fa-bullseye"></i> Dashboard Overview &amp; Objective
+            <i class="fa-solid fa-circle-info"></i> Overview
+          </h2>
+          <div class="block-body" id="detail-overview">
+            Loading overview content...
+          </div>
+        </article>
+
+        <!-- Objective -->
+        <article class="detail-block">
+          <h2 class="block-heading">
+            <i class="fa-solid fa-bullseye"></i> Objective
           </h2>
           <div class="block-body" id="detail-objective">
             Loading objective content...
           </div>
         </article>
 
-        <!-- KPIs & Key Metrics (Rendered dynamically if available) -->
+        <!-- KPIs & Key Metrics -->
         <article class="detail-block" id="detail-kpi-block" style="display: none;">
           <h2 class="block-heading">
             <i class="fa-solid fa-gauge-high"></i> KPIs &amp; Core Metrics
@@ -117,7 +125,7 @@
           </div>
         </article>
 
-        <!-- Charts & Visualizations Used -->
+        <!-- Visualizations Used -->
         <article class="detail-block" id="detail-viz-block">
           <h2 class="block-heading">
             <i class="fa-solid fa-chart-pie"></i> Visualizations &amp; Charts Used
@@ -127,7 +135,7 @@
           </ul>
         </article>
 
-        <!-- Key Insights & Findings (Rendered dynamically if available) -->
+        <!-- Key Insights & Findings -->
         <article class="detail-block" id="detail-insights-block" style="display: none;">
           <h2 class="block-heading">
             <i class="fa-solid fa-lightbulb"></i> Key Insights &amp; Findings
@@ -139,7 +147,7 @@
 
       </div>
 
-      <!-- Secondary Column: Technical Overview & Dataset Specs -->
+      <!-- Secondary Sidebar Column -->
       <aside class="sidebar-panel">
         
         <!-- Tools & Technical Overview Card -->
@@ -162,7 +170,7 @@
 
             <div class="spec-item">
               <span class="spec-label">Navigation</span>
-              <span class="spec-value">Cross-Filtering &amp; Parameter Drill-down</span>
+              <span class="spec-value">Cross-Filtering &amp; Dynamic Drill-down</span>
             </div>
           </div>
         </div>
@@ -182,9 +190,7 @@
 
   </main>
 
-  <!-- ==========================================================================
-       Fullscreen Image Lightbox Modal Overlay
-       ========================================================================== -->
+  <!-- Fullscreen Lightbox Modal Overlay -->
   <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Dashboard screenshot lightbox modal">
     <div class="lightbox-header">
       <span class="lightbox-title" id="lightbox-title">Dashboard Screenshot</span>
@@ -197,15 +203,13 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       Site Footer
-       ========================================================================== -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
           <img src="images/dsvv-logo.png" alt="DSVV Logo" style="height: 36px; border-radius: 4px;" />
-          <span>Dev Sanskriti Vishwavidyalaya</span>
+          <span>Dev Sanskriti Vishwavidyalaya | Department of Computer Science</span>
         </div>
         <div class="footer-copyright">
           © 2026 Dev Sanskriti Vishwavidyalaya | Department of Computer Science
