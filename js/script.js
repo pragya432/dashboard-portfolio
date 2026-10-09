@@ -42,7 +42,7 @@ const labsData = [
     number: "Lab 02",
     title: "Lab 02 — Visualize Your World",
     subtitle: "Draw Your Day & Energy Curve Visualizations",
-    tool: "Hand-drawn Visual Diagrams",
+    tool: "Power BI",
     category: "Visual Storytelling & Data Journaling",
     image: "images/lab-02-your-day-1.png",
     images: [
@@ -94,7 +94,7 @@ const labsData = [
     number: "Lab 03",
     title: "Lab 03 — Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
     subtitle: "Types of Data Visualization: Charts, Graphs & Maps — LinkedIn Post",
-    tool: "Visual Cheat Sheet & LinkedIn",
+    tool: "LinkedIn",
     category: "Professional Publishing & Reference",
     image: "images/lab-03-cheatsheet-linkedin.png",
     images: [
@@ -127,7 +127,7 @@ const labsData = [
     number: "Lab 04",
     title: "Lab 04 — From Learning to LinkedIn",
     subtitle: "Data Visualization: Turning Data into Meaningful Stories — LinkedIn Blog",
-    tool: "LinkedIn Publishing & Blog Strategy",
+    tool: "LinkedIn",
     category: "Data Storytelling & Content Strategy",
     image: "images/lab-04-linkedin-blog.png",
     images: [
@@ -152,7 +152,7 @@ const labsData = [
     number: "Lab 05",
     title: "Lab 05 — Learning Activity: Tableau Practical Notes",
     subtitle: "Tableau Notes & Core Data Concepts",
-    tool: "Tableau Desktop",
+    tool: "Notes",
     category: "Tableau Fundamentals",
     image: "images/lab-05-tableau-notes.png",
     images: [
@@ -177,7 +177,7 @@ const labsData = [
     number: "Lab 06",
     title: "Lab 06 — Lab Practical: Understanding Audience and Context",
     subtitle: "Understanding Audience and Context",
-    tool: "Design Theory & Context UX",
+    tool: "Microsoft Excel",
     category: "Visual Design & Contextual Analytics",
     image: "images/lab-06-audience-context.png",
     images: [
@@ -227,7 +227,7 @@ const labsData = [
     number: "Lab 08",
     title: "Lab 08 — Submit Your Data Studio Report: Power BI Web Data ETL",
     subtitle: "Import, Clean, Transform and Visualize Web Data using Power BI",
-    tool: "Power BI & Power Query",
+    tool: "Power BI",
     category: "Web ETL & Power BI Reporting",
     image: "images/lab-08-powerbi-web-data.png",
     images: [
@@ -252,7 +252,7 @@ const labsData = [
     number: "Lab 09",
     title: "Lab 09 — Lab Work: Data Studio Report",
     subtitle: "Data Studio Report & Cloud BI Analytics",
-    tool: "Google Looker Studio",
+    tool: "Looker Studio",
     category: "Cloud BI & Reporting",
     image: "images/lab-09-data-studio-report.png",
     images: [
@@ -306,7 +306,7 @@ const labsData = [
     number: "Lab 11",
     title: "Lab 11 — Hands-On Practical: Geographic Maps in Tableau",
     subtitle: "Tableau Dashboard: Sample Superstore Dataset",
-    tool: "Tableau & Sample Superstore Dataset",
+    tool: "Tableau Desktop",
     category: "Geographic & Sales Analytics",
     image: "images/lab-10-tableau-dashboard-2.png",
     images: [
@@ -335,7 +335,7 @@ const labsData = [
     number: "Lab 12",
     title: "Lab 12 — Hands-On Lab Practical: Geospatial Visualization",
     subtitle: "Geospatial & Advanced Data Visualization",
-    tool: "Geospatial Analytics Tools & Tableau",
+    tool: "Tableau Desktop",
     category: "Geospatial Visualization",
     image: "images/lab-10-geospatial-viz.png",
     images: [
