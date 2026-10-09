@@ -1,19 +1,19 @@
 /**
  * Dev Sanskriti Vishwavidyalaya — Department of Computer Science
- * Central JavaScript File for 10 Lab Assignments, 7 Visual Dashboards, and Detail Views
+ * Central JavaScript File for 12 Lab Assignments, 7 Visual Dashboards, and Detail Views
  */
 
 // ==========================================================================
-// 1. DATA STORE — 10 LAB ASSIGNMENTS REGISTRY (DOCUMENT SOURCE OF TRUTH)
+// 1. DATA STORE — 12 LAB ASSIGNMENTS REGISTRY (Lab 01 to Lab 12)
 // ==========================================================================
 const labsData = [
   {
-    id: "assignment-1",
-    number: "LAB ASSIGNMENT 1",
-    title: "Data Visualization",
+    id: "lab-01",
+    number: "Lab 01",
+    title: "Lab 01 — Paper Leak Dashboard",
     subtitle: "Paper Leak Analysis Dashboard",
     tool: "Power BI",
-    category: "Data Visualization / Security Analytics",
+    category: "Security & Education Analytics",
     image: "images/lab-01-paper-leak-1.png",
     images: [
       {
@@ -26,7 +26,7 @@ const labsData = [
       }
     ],
     shortDescription: "Analyze examination paper leak-related data using an interactive Power BI dashboard tracking breach frequency, conducting bodies, and legal enforcement actions.",
-    objective: "Analyze paper-leak related information using an interactive dashboard.",
+    objective: "Analyze examination paper leak-related data and present the findings through an interactive dashboard.",
     overview: "This investigative security intelligence dashboard provides a detailed analytical audit of reported exam paper leak incidents across India. It tracks breach frequency across state and central conducting bodies, evaluates legal enforcement actions, and quantifies the impact on student candidates.",
     workPerformed: "1. Imported paper leak incident dataset into Power BI Desktop.\n2. Organized data fields including conducting bodies, breach eras (NDA vs UPA), leak status, and candidate metrics.\n3. Constructed interactive visual charts: temporal line trend of leaks, donut chart of confirmed vs. alleged cases, and horizontal bar charts of conducting bodies.\n4. Formatted visual canvas with slicers for state vs. central conducting bodies.",
     results: [
@@ -38,9 +38,9 @@ const labsData = [
     deliverable: "Completed Paper Leak Analysis Power BI Dashboard File."
   },
   {
-    id: "assignment-2",
-    number: "LAB ASSIGNMENT 2",
-    title: "Submission of 9th Aug Class Activity Work",
+    id: "lab-02",
+    number: "Lab 02",
+    title: "Lab 02 — Visualize Your World",
     subtitle: "Draw Your Day & Energy Curve Visualizations",
     tool: "Hand-drawn Visual Diagrams",
     category: "Visual Storytelling & Data Journaling",
@@ -63,18 +63,22 @@ const labsData = [
         caption: "Activity B: Draw Your Energy Curve — Diurnal Energy Level Line Graph"
       }
     ],
-    shortDescription: "Represent daily routine activities, time allocation, and personal energy level fluctuations throughout the day using hand-drawn visual diagrams and energy curves.",
-    objective: "Represent daily routine activities and personal energy level changes throughout the day to understand personal time management and high-energy productivity windows.",
-    overview: "A 2-part exploratory practical activity analyzing personal daily time distribution across routines and tracking hourly subjective energy levels (scale 1-10) across morning, afternoon, and evening phases.",
+    shortDescription: "Represent daily routines, energy curves, and real-world data visualization examples across three practical activities.",
+    objective: "Explore personal data visualization through daily activity timelines, energy curves, and real-world visualization analysis.",
+    overview: "A 3-part exploratory lab analyzing personal daily time distribution across routines, tracking hourly subjective energy levels (scale 1-10), and evaluating real-world visual applications.",
     isMultiActivity: true,
     activities: [
       {
         name: "Activity A: Draw Your Day",
-        desc: "Represent daily activities through a visual timeline or diagram showing time distribution across daily routines (study, fitness, leisure, rest) to make personal habits easy to understand."
+        desc: "Represent daily activities through a visual timeline or diagram showing time distribution across daily routines (study, fitness, leisure, rest) to make habits easy to understand."
       },
       {
         name: "Activity B: Draw Your Energy Curve",
-        desc: "Represent changes in personal energy levels throughout the day using a line graph or energy curve to identify peak productive periods and focus recovery windows."
+        desc: "Represent changes in personal energy levels throughout the day using a line graph or energy curve to identify peak productive periods."
+      },
+      {
+        name: "Activity C: Real-World Data Visualization",
+        desc: "Examine real-world data visualizations in news, business, and education, explaining visual design choices and audience communication impact."
       }
     ],
     workPerformed: "1. Logged 24-hour daily activities and categorized time spent across study, rest, fitness, and leisure.\n2. Sketched 'Draw Your Day' visual diagrams illustrating time distribution wheel and daily routine timeline.\n3. Tracked hourly energy levels throughout the day and plotted the 'Draw Your Energy Curve' line graph.\n4. Identified peak performance windows and low-energy recovery periods.",
@@ -83,14 +87,14 @@ const labsData = [
       "The Energy Curve demonstrated peak cognitive performance during mid-morning hours (9 AM - 12 PM) followed by a secondary focus recovery around 5 PM."
     ],
     skillsDemonstrated: ["Visual Thinking", "Basic Chart Interpretation", "Personal Data Journaling", "Storytelling"],
-    deliverable: "Visualized personal journal & energy curve report."
+    deliverable: "Visualized personal journal & real-world visualization review."
   },
   {
-    id: "assignment-3",
-    number: "LAB ASSIGNMENT 3",
-    title: "Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
+    id: "lab-03",
+    number: "Lab 03",
+    title: "Lab 03 — Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
     subtitle: "Types of Data Visualization: Charts, Graphs & Maps — LinkedIn Post",
-    tool: "Data Visualization Reference Guide & LinkedIn",
+    tool: "Visual Cheat Sheet & LinkedIn",
     category: "Professional Publishing & Reference",
     image: "images/lab-03-cheatsheet-linkedin.png",
     images: [
@@ -119,11 +123,11 @@ const labsData = [
     deliverable: "Published LinkedIn Cheat Sheet Guide Post."
   },
   {
-    id: "assignment-4",
-    number: "LAB ASSIGNMENT 4",
-    title: "From Learning to LinkedIn",
+    id: "lab-04",
+    number: "Lab 04",
+    title: "Lab 04 — From Learning to LinkedIn",
     subtitle: "Data Visualization: Turning Data into Meaningful Stories — LinkedIn Blog",
-    tool: "LinkedIn Publishing & Content Strategy",
+    tool: "LinkedIn Publishing & Blog Strategy",
     category: "Data Storytelling & Content Strategy",
     image: "images/lab-04-linkedin-blog.png",
     images: [
@@ -144,10 +148,10 @@ const labsData = [
     deliverable: "Published LinkedIn Blog Article on Data Storytelling."
   },
   {
-    id: "assignment-5",
-    number: "LAB ASSIGNMENT 5",
-    title: "Learning Activity",
-    subtitle: "Tableau Notes & Core Concepts",
+    id: "lab-05",
+    number: "Lab 05",
+    title: "Lab 05 — Learning Activity: Tableau Practical Notes",
+    subtitle: "Tableau Notes & Core Data Concepts",
     tool: "Tableau Desktop",
     category: "Tableau Fundamentals",
     image: "images/lab-05-tableau-notes.png",
@@ -169,11 +173,11 @@ const labsData = [
     deliverable: "Organized Tableau Notes Reference Document."
   },
   {
-    id: "assignment-6",
-    number: "LAB ASSIGNMENT 6",
-    title: "Lab Practical",
+    id: "lab-06",
+    number: "Lab 06",
+    title: "Lab 06 — Lab Practical: Understanding Audience and Context",
     subtitle: "Understanding Audience and Context",
-    tool: "Data Storytelling & UX Context Design",
+    tool: "Design Theory & Context UX",
     category: "Visual Design & Contextual Analytics",
     image: "images/lab-06-audience-context.png",
     images: [
@@ -194,11 +198,11 @@ const labsData = [
     deliverable: "Audience & Context Visualization Study Report."
   },
   {
-    id: "assignment-7",
-    number: "LAB ASSIGNMENT 7",
-    title: "Hands On Lab Practical - Excel Charts & Dashboard",
+    id: "lab-07",
+    number: "Lab 07",
+    title: "Lab 07 — Hands On Lab Practical - Excel Charts & Dashboard",
     subtitle: "Excel Charts & Interactive Business Dashboard",
-    tool: "Microsoft Excel (PivotTables & PivotCharts)",
+    tool: "Microsoft Excel",
     category: "Spreadsheet Analytics & Dashboarding",
     image: "images/lab-07-excel-charts.png",
     images: [
@@ -219,11 +223,11 @@ const labsData = [
     deliverable: "Interactive Excel Dashboard File."
   },
   {
-    id: "assignment-8",
-    number: "LAB ASSIGNMENT 8",
-    title: "Submit Your Data Studio Report",
+    id: "lab-08",
+    number: "Lab 08",
+    title: "Lab 08 — Submit Your Data Studio Report: Power BI Web Data ETL",
     subtitle: "Import, Clean, Transform and Visualize Web Data using Power BI",
-    tool: "Microsoft Power BI & Power Query",
+    tool: "Power BI & Power Query",
     category: "Web ETL & Power BI Reporting",
     image: "images/lab-08-powerbi-web-data.png",
     images: [
@@ -244,12 +248,12 @@ const labsData = [
     deliverable: "Power BI Web Data Analytics Report."
   },
   {
-    id: "assignment-9",
-    number: "LAB ASSIGNMENT 9",
-    title: "Lab Work: Tableau Dashboard",
-    subtitle: "Data Studio Report & Tableau Analytics",
-    tool: "Google Looker Studio / Tableau",
-    category: "Cloud BI & Visual Analytics",
+    id: "lab-09",
+    number: "Lab 09",
+    title: "Lab 09 — Lab Work: Data Studio Report",
+    subtitle: "Data Studio Report & Cloud BI Analytics",
+    tool: "Google Looker Studio",
+    category: "Cloud BI & Reporting",
     image: "images/lab-09-data-studio-report.png",
     images: [
       {
@@ -269,12 +273,12 @@ const labsData = [
     deliverable: "Interactive Looker Studio & Tableau Dashboard."
   },
   {
-    id: "assignment-10",
-    number: "LAB ASSIGNMENT 10",
-    title: "Hands-On Practical",
-    subtitle: "Tableau Dashboard & Geospatial Visualization (Sample Superstore)",
-    tool: "Tableau Desktop & GIS Spatial Mapping",
-    category: "Advanced Tableau & Geospatial Analytics",
+    id: "lab-10",
+    number: "Lab 10",
+    title: "Lab 10 — Hands-On Practical: Tableau Dashboard",
+    subtitle: "Tableau Worksheet & Dashboard Composition",
+    tool: "Tableau Desktop",
+    category: "Tableau Analytics",
     image: "images/lab-10-tableau-dashboard-1.png",
     images: [
       {
@@ -282,25 +286,42 @@ const labsData = [
         caption: "Tableau Dashboard Executive Overview Canvas"
       },
       {
+        src: "images/lab-10-tableau-dashboard-3.png",
+        caption: "Tableau Multi-Worksheet Dashboard Composition View"
+      }
+    ],
+    shortDescription: "Create a Tableau dashboard combining multiple worksheets into a coherent analytical view with interactive filter actions.",
+    objective: "Create a dashboard in Tableau by combining relevant visualizations into a coherent analytical view.",
+    overview: "A Tableau dashboard composition lab building individual analytical worksheets and combining them into an interactive dashboard canvas.",
+    workPerformed: "1. Connecting dataset to Tableau Desktop.\n2. Preparing fields, custom parameters, and calculated fields.\n3. Creating individual worksheets (charts, trends, comparisons).\n4. Combining worksheets on a unified dashboard canvas.\n5. Adding dashboard filter actions for interactive cross-highlighting.",
+    results: [
+      "Combining worksheets into a single dashboard canvas streamlines comparative visual analytics.",
+      "Filter actions enable dynamic cross-highlighting across multiple chart views."
+    ],
+    skillsDemonstrated: ["Worksheet Creation", "Dashboard Composition", "Data Analysis", "Visual Design"],
+    deliverable: "Completed Tableau Dashboard Workbook."
+  },
+  {
+    id: "lab-11",
+    number: "Lab 11",
+    title: "Lab 11 — Hands-On Practical: Geographic Maps in Tableau",
+    subtitle: "Tableau Dashboard: Sample Superstore Dataset",
+    tool: "Tableau & Sample Superstore Dataset",
+    category: "Geographic & Sales Analytics",
+    image: "images/lab-10-tableau-dashboard-2.png",
+    images: [
+      {
         src: "images/lab-10-tableau-dashboard-2.png",
         caption: "Sample Superstore Dataset Sales & Profit Worksheets"
       },
       {
-        src: "images/lab-10-tableau-dashboard-3.png",
-        caption: "Tableau Multi-Worksheet Dashboard Composition View"
-      },
-      {
         src: "images/lab-10-tableau-dashboard-4.png",
         caption: "Sample Superstore Regional & Segment Performance Dashboard"
-      },
-      {
-        src: "images/lab-10-geospatial-viz.png",
-        caption: "Geospatial Visualization & State Filled Map Analysis"
       }
     ],
-    shortDescription: "Build advanced Tableau dashboards using the Sample Superstore dataset, combining sales scorecards, segment charts, and state-level filled maps.",
-    objective: "Analyze the Sample Superstore dataset using Tableau to create comprehensive multi-worksheet dashboards and state-level filled maps.",
-    overview: "A capstone practical assignment utilizing Tableau Desktop and the Sample Superstore dataset to construct Filled Maps, Scatter Plots, Segment Treemaps, and unified interactive sales dashboards.",
+    shortDescription: "Analyze the Sample Superstore dataset using Tableau maps to reveal sales, profit, geographic, and order concentration patterns.",
+    objective: "Analyze the Sample Superstore dataset using Tableau and create visualizations that reveal sales, profit, geographic, and order-related patterns.",
+    overview: "A geographic analytics lab utilizing Tableau and Sample Superstore dataset to construct Filled Maps, Scatter Plots, Segment Treemaps, and comparative sales dashboards.",
     workPerformed: "1. Loaded Sample Superstore dataset into Tableau Desktop.\n2. Built State-level Filled Map (colored by SUM(Sales)) and City Bubble Map (sized by SUM(Profit)).\n3. Created category profit bar charts and multi-year time-series trend line graphs.\n4. Assembled worksheets into a unified Tableau dashboard canvas.\n5. Configured interactive Dashboard Filter Actions for seamless cross-filtering.",
     results: [
       "Filled state maps in Tableau quickly highlight geographic high-revenue clusters and underperforming regional markets.",
@@ -308,6 +329,31 @@ const labsData = [
     ],
     skillsDemonstrated: ["Geographic Analysis", "Sales Analysis", "State Filled Maps", "Tableau Dashboard Composition"],
     deliverable: "Superstore Sales Geographic Tableau Dashboard."
+  },
+  {
+    id: "lab-12",
+    number: "Lab 12",
+    title: "Lab 12 — Hands-On Lab Practical: Geospatial Visualization",
+    subtitle: "Geospatial & Advanced Data Visualization",
+    tool: "Geospatial Analytics Tools & Tableau",
+    category: "Geospatial Visualization",
+    image: "images/lab-10-geospatial-viz.png",
+    images: [
+      {
+        src: "images/lab-10-geospatial-viz.png",
+        caption: "Geospatial Visualization & State Filled Map Analysis"
+      }
+    ],
+    shortDescription: "Explore how geographic data can be represented visually to reveal spatial patterns, distributions, and territorial relationships.",
+    objective: "Explore how geographic data can be represented visually to reveal spatial patterns, distributions, and relationships.",
+    overview: "A specialized geospatial visualization lab exploring coordinate mapping, spatial hierarchy, geographic encoding, and spatial data limitations.",
+    workPerformed: "1. Inspect dataset location fields (latitude, longitude, zip codes).\n2. Geocode missing location data.\n3. Choose spatial map projection.\n4. Render choropleth or symbol map visual.\n5. Analyze spatial density and patterns.",
+    results: [
+      "Geospatial visualization reveals geographical clustering and regional variances that standard tabular data conceals.",
+      "Choropleth maps communicate regional metrics effectively across state boundaries."
+    ],
+    skillsDemonstrated: ["Geographic Data Handling", "Spatial Analysis", "Map Selection", "Visual Interpretation"],
+    deliverable: "Geospatial Visualization Study."
   }
 ];
 
@@ -615,7 +661,7 @@ function initMainPage() {
   renderDashboardsGallerySection(dashboardsData);
 }
 
-// Render Section: 10 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
+// Render Section: 12 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
 function renderLabsSection(labs) {
   const labsGrid = document.getElementById("labs-grid");
   if (!labsGrid) return;
@@ -711,7 +757,7 @@ function renderDashboardsGallerySection(dashboards) {
 // ==========================================================================
 function initLabDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
-  const labId = urlParams.get("id") || "assignment-1";
+  const labId = urlParams.get("id") || "lab-01";
 
   const currentLab = labsData.find((l) => l.id === labId) || labsData[0];
 
