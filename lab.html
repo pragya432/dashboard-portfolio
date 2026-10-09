@@ -65,27 +65,24 @@
     <!-- Title & Meta Header -->
     <div class="detail-title-section">
       <div class="detail-title-tags">
-        <span class="lab-number-pill" id="lab-number-tag">Assignment 1</span>
+        <span class="lab-number-pill" id="lab-number-tag">Lab 01</span>
         <span class="detail-tool-tag" id="lab-tool-tag"><i class="fa-solid fa-screwdriver-wrench"></i> Technology</span>
         <span class="detail-category-tag" id="lab-category-tag">Category</span>
       </div>
       <h1 class="detail-title" id="lab-title">Loading Lab Details...</h1>
     </div>
 
-    <!-- Screenshot & Output Preview Card -->
+    <!-- Screenshot & Output Preview Card (Styled Placeholders Gallery) -->
     <section class="screenshot-section-card">
       <div class="screenshot-header-bar">
         <div class="screenshot-title-mini">
-          <i class="fa-solid fa-desktop"></i> Assignment Preview &amp; Execution Output
+          <i class="fa-solid fa-desktop"></i> Assignment Screenshots &amp; Visual Artifacts
         </div>
-        <span style="font-size: 0.8rem; color: #94a3b8;"><i class="fa-solid fa-magnifying-glass-plus"></i> Click preview to view full screen</span>
+        <span style="font-size: 0.8rem; color: #94a3b8;"><i class="fa-solid fa-camera"></i> Clean Styled Placeholders</span>
       </div>
 
-      <div class="screenshots-gallery-grid">
-        <div class="screenshot-item" id="lab-screenshot-viewport" title="Click to view full screen">
-          <img id="lab-img" src="images/lab-01-preview.png" alt="Lab Output Preview Screenshot" />
-          <div class="screenshot-caption" id="lab-img-caption">Lab Output Execution Preview</div>
-        </div>
+      <div class="screenshots-gallery-grid" id="lab-placeholders-gallery">
+        <!-- Dynamically rendered placeholders -->
       </div>
     </section>
 
@@ -101,61 +98,40 @@
           <div class="block-body" id="lab-objective">Loading lab objective...</div>
         </article>
 
-        <!-- Assignment Content -->
+        <!-- Overview -->
         <article class="detail-block">
-          <h2 class="block-heading"><i class="fa-solid fa-file-lines"></i> Assignment Content</h2>
-          <div class="block-body" id="lab-content">Loading assignment content...</div>
+          <h2 class="block-heading"><i class="fa-solid fa-circle-info"></i> Overview &amp; Background</h2>
+          <div class="block-body" id="lab-overview">Loading overview...</div>
         </article>
 
-        <!-- Tableau Map Tasks & Analysis Questions (Renders for Assignment 9) -->
-        <article class="detail-block" id="lab-tableau-extras" style="display: none;">
-          <h2 class="block-heading"><i class="fa-solid fa-map-location-dot"></i> Map-Based Tableau Tasks (Superstore_Sales.csv)</h2>
-          <ul class="viz-list" id="tableau-tasks"></ul>
-          <h2 class="block-heading" style="margin-top: 1.5rem;"><i class="fa-solid fa-circle-question"></i> Geographic Analysis Questions</h2>
-          <div id="tableau-questions"></div>
+        <!-- Multi-Activity Subsections (Renders for Lab 02) -->
+        <article class="detail-block" id="lab-activities-extras" style="display: none;">
+          <h2 class="block-heading"><i class="fa-solid fa-shapes"></i> Assignment Activities</h2>
+          <div id="lab-activities-list"></div>
         </article>
 
-        <!-- Cheat Sheet Chart Categories (Renders for Assignment 3) -->
+        <!-- Cheat Sheet Chart Categories (Renders for Lab 03) -->
         <article class="detail-block" id="lab-cheatsheet-extras" style="display: none;">
           <h2 class="block-heading"><i class="fa-solid fa-chart-simple"></i> Chart Selection Categories</h2>
           <ul class="viz-list" id="cheatsheet-categories"></ul>
         </article>
 
-        <!-- Activity / Task -->
-        <article class="detail-block">
-          <h2 class="block-heading"><i class="fa-solid fa-list-check"></i> Activity / Task</h2>
-          <div class="block-body" id="lab-activity">Loading activity details...</div>
+        <!-- Key Tasks & Activities -->
+        <article class="detail-block" id="lab-tasks-block" style="display: none;">
+          <h2 class="block-heading"><i class="fa-solid fa-list-check"></i> Key Tasks Completed</h2>
+          <ul class="viz-list" id="lab-tasks-list"></ul>
         </article>
 
-        <!-- Procedure -->
+        <!-- Workflow & Analytical Methodology -->
         <article class="detail-block">
-          <h2 class="block-heading"><i class="fa-solid fa-gears"></i> Procedure &amp; Method</h2>
-          <div class="block-body" style="white-space: pre-line;" id="lab-procedure">Loading procedure...</div>
+          <h2 class="block-heading"><i class="fa-solid fa-diagram-project"></i> Workflow &amp; Analytical Methodology</h2>
+          <div class="block-body" style="white-space: pre-line;" id="lab-workflow">Loading workflow methodology...</div>
         </article>
 
-        <!-- Work Performed -->
-        <article class="detail-block">
-          <h2 class="block-heading"><i class="fa-solid fa-laptop-code"></i> Work Completed</h2>
-          <div class="block-body" id="lab-work-performed">Loading work completed...</div>
-        </article>
-
-        <!-- Output / Results -->
-        <article class="detail-block">
-          <h2 class="block-heading"><i class="fa-solid fa-square-poll-vertical"></i> Output &amp; Result</h2>
-          <div class="terminal-output-box">
-            <div class="terminal-header"><i class="fa-solid fa-terminal"></i> Execution Output Log</div>
-            <pre class="terminal-body"><code id="lab-output">Loading execution output...</code></pre>
-          </div>
-          <div style="margin-top: 1.25rem;" class="block-body" id="lab-result">Loading result summary...</div>
-        </article>
-
-        <!-- Learning Outcome -->
-        <article class="detail-block">
-          <h2 class="block-heading"><i class="fa-solid fa-award"></i> Learning Outcome</h2>
-          <div class="insight-card" style="border-left-color: #10b981;">
-            <i class="fa-solid fa-circle-check insight-icon" style="color: #10b981;"></i>
-            <div class="insight-text" id="lab-learning-outcome">Loading learning outcome...</div>
-          </div>
+        <!-- Skills Demonstrated -->
+        <article class="detail-block" id="lab-skills-block" style="display: none;">
+          <h2 class="block-heading"><i class="fa-solid fa-award"></i> Skills Demonstrated</h2>
+          <div id="lab-skills-demonstrated"></div>
         </article>
 
       </div>
@@ -179,7 +155,11 @@
             </div>
             <div class="spec-item">
               <span class="spec-label">Assignment Number</span>
-              <span class="spec-value" id="sidebar-lab-num">Assignment 1</span>
+              <span class="spec-value" id="sidebar-lab-num">Lab 01</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Deliverable</span>
+              <span class="spec-value" id="sidebar-lab-deliverable">Completed Assignment</span>
             </div>
           </div>
         </div>

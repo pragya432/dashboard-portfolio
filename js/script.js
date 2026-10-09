@@ -1,58 +1,82 @@
 /**
  * Dev Sanskriti Vishwavidyalaya — Department of Computer Science
- * Central JavaScript File for 10 Real Lab Assignments, 7 Visual Dashboards, Projects, Skills, and Reusable Detail Pages
+ * Central JavaScript File for 12 Lab Assignments, 7 Visual Dashboards, Projects, Skills, and Detail Views
  */
 
 // ==========================================================================
-// 1. DATA STORE — 10 REAL LAB ASSIGNMENTS REGISTRY
+// 1. DATA STORE — 12 LAB ASSIGNMENTS REGISTRY (Lab 01 to Lab 12)
 // ==========================================================================
 const labsData = [
   {
-    id: "assignment-1",
-    number: "Assignment 1",
-    title: "Assignment 1: Data Visualization",
-    tool: "Python / Data Visualization Software",
-    category: "Data Science & Analytics",
-    image: "images/lab-01-preview.png",
-    shortDescription: "Learn how to represent data visually and communicate information effectively through chart selection, clear labeling, and trend identification.",
-    objective: "Learn how to represent data visually and communicate information through appropriate charts.",
-    content: "Explores how data visualization helps identify patterns, trends, comparisons, and relationships. Chart selection depends on data type and the specific questions answered. Information is presented using clear labels, titles, legends, and readable formatting.",
-    activity: "Analyzing benchmark datasets to explore patterns, trends, and variable correlations. Selecting appropriate chart types and formatting visual elements.",
-    toolsUsed: "Python (Matplotlib & Seaborn) / Data Visualization Software",
-    procedure: "1. Load raw dataset and inspect data types.\n2. Clean missing values and prepare variable categories.\n3. Construct line charts for trends, bar charts for category comparisons, and scatter plots for relationships.\n4. Apply clear labels, titles, color contrast, and legends before exporting output.",
-    workPerformed: "Constructed multiple statistical plots visualizing variable correlations, distribution spreads, and multi-series line comparisons with formatted axes and legends.",
-    outputPreview: "Generated statistical figures: Distribution Histogram, Correlation Heatmap, Category Comparison Bar Chart, and Time-Series Trend Line.",
-    result: "Successfully demonstrated chart selection principles, visual communication, and data interpretation.",
-    learningOutcome: "Understanding chart selection, visual communication, data interpretation, and the importance of clear presentation."
+    id: "lab-01",
+    number: "Lab 01",
+    title: "Lab 01 — Paper Leak Dashboard",
+    tool: "Power BI / Dashboard Analytics",
+    category: "Dashboard Design",
+    imagePlaceholder: "lab-01-paper-leak-dashboard-01.png",
+    shortDescription: "Analyze examination paper leak data and present findings through an interactive analytical dashboard.",
+    objective: "Analyze examination paper leak-related data and present the findings through an interactive dashboard.",
+    overview: "An analytical dashboard examining examination paper leak data across conducting bodies, breach frequency, legal enforcement, and aspirant impact.",
+    tasksCompleted: [
+      "Dataset overview and relevant field organization.",
+      "Data preparation and structural cleaning.",
+      "Identification of breach patterns and temporal trends.",
+      "Visual representation of key metrics and comparisons.",
+      "Dashboard design and interpretation of findings."
+    ],
+    workflow: "1. Import paper leak incident database.\n2. Clean fields (conducting body, era, leak status, affected candidates).\n3. Build KPI cards for confirmed leaks and state vs central share.\n4. Construct donut charts for leak status and bar charts for conducting bodies.\n5. Assemble unified dashboard layout for security analysis.",
+    placeholders: [
+      { label: "Dashboard Overview", filename: "lab-01-paper-leak-dashboard-01.png" },
+      { label: "Individual Charts", filename: "lab-01-paper-leak-dashboard-02.png" },
+      { label: "Final Dashboard", filename: "lab-01-paper-leak-dashboard-03.png" }
+    ],
+    skillsDemonstrated: ["Data Analysis", "Dashboard Design", "Data Visualization", "Insight Communication"],
+    deliverable: "Completed Paper Leak Analysis Dashboard."
   },
   {
-    id: "assignment-2",
-    number: "Assignment 2",
-    title: "Assignment 2: Submission of 9th Aug Class Activity Work",
-    tool: "Node.js HTTP & Core Networking",
-    category: "Web Protocols & Networking",
-    image: "images/lab-02-preview.png",
-    shortDescription: "Organize and present the practical work completed for the class activity conducted on 9th August covering HTTP networking protocols.",
-    objective: "Organize and present the work completed for the class activity conducted on 9 August.",
-    content: "Presents the class activity instructions, task performed, and purpose of the activity. Displays the actual work submitted including network routing, HTTP status codes, and JSON response formatting.",
-    activity: "Implementing native Node.js HTTP server routing without external frameworks, handling request headers, status codes (200 OK, 404 Not Found), and URL query strings.",
-    toolsUsed: "Node.js runtime, V8 Engine, HTTP core module, FS module, Path module",
-    procedure: "1. Instantiate native HTTP server with http.createServer().\n2. Inspect req.url and req.method request properties.\n3. Read static response payload asynchronously via fs.readFile().\n4. Set HTTP response status codes and Content-Type headers.",
-    workPerformed: "Developed a functional server dispatching requests to '/api/status', '/data', and default 404 handlers with non-blocking event loops.",
-    outputPreview: "Server started at port 8080. GET /api/status -> 200 OK JSON payload dispatched successfully.",
-    result: "Verified low-level HTTP request/response execution and asynchronous event loop handling.",
-    learningOutcome: "Organizing class activity submissions, client-server request execution cycles, MIME content-type headers, and event-driven Node.js runtime mechanics."
+    id: "lab-02",
+    number: "Lab 02",
+    title: "Lab 02 — Visualize Your World",
+    tool: "Visual Thinking & Manual Sketching",
+    category: "Visual Storytelling",
+    imagePlaceholder: "lab-02-draw-your-day-01.png",
+    shortDescription: "Represent daily routines, energy curves, and real-world data visualization examples across three practical activities.",
+    objective: "Explore personal data visualization through daily activity timelines, energy curves, and real-world visualization analysis.",
+    overview: "A 3-part exploratory lab analyzing personal daily time distribution, energy fluctuations, and real-world visualization applications.",
+    isMultiActivity: true,
+    activities: [
+      {
+        name: "Activity A: Draw Your Day",
+        desc: "Represent daily activities through a visual timeline or diagram showing time distribution across daily routines to make habits easy to understand."
+      },
+      {
+        name: "Activity B: Draw Your Energy Curve",
+        desc: "Represent changes in personal energy levels throughout the day using a line graph or energy curve to identify peak productive periods."
+      },
+      {
+        name: "Activity C: Explore Data Visualization in the Real World",
+        desc: "Examine real-world data visualizations in news, business, and education, explaining visual design choices and audience communication impact."
+      }
+    ],
+    workflow: "1. Log 24-hour activity distribution into categories.\n2. Track hourly subjective energy levels (scale 1-10).\n3. Draw activity timeline and smooth energy curve graph.\n4. Collect and analyze real-world infographic examples.",
+    placeholders: [
+      { label: "Activity A: Draw Your Day Timeline", filename: "lab-02-draw-your-day-01.png" },
+      { label: "Activity B: Energy Curve Graph", filename: "lab-02-energy-curve-01.png" },
+      { label: "Activity C: Real-World Visualization Examples", filename: "lab-02-real-world-viz-01.png" }
+    ],
+    skillsDemonstrated: ["Visual Thinking", "Basic Chart Interpretation", "Storytelling", "Real-World Visualization Analysis"],
+    deliverable: "Visualized personal journal & real-world visualization review."
   },
   {
-    id: "assignment-3",
-    number: "Assignment 3",
-    title: "Assignment 3: Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
-    tool: "Data Visualization & Graphic Tools",
-    category: "Analytics Guidelines & Design",
-    image: "images/lab-03-preview.png",
-    shortDescription: "Create a concise reference guide that helps learners select appropriate charts for different data visualization tasks.",
-    objective: "Create a concise reference guide that helps learners select appropriate charts for different data visualization tasks.",
-    content: "Explains the purpose of common chart types, when to use each chart, and the types of comparisons, distributions, trends, or relationships each chart communicates.",
+    id: "lab-03",
+    number: "Lab 03",
+    title: "Lab 03 — Types of Data Visualization: Charts, Graphs & Maps — LinkedIn Post",
+    tool: "LinkedIn & Visual Documentation",
+    category: "Professional Presentation",
+    imagePlaceholder: "lab-03-linkedin-post-01.png",
+    shortDescription: "Understand different types of data visualization (charts, graphs, maps) and communicate their appropriate use cases in a LinkedIn post.",
+    objective: "Understand different types of data visualization and communicate their uses through a LinkedIn post.",
+    overview: "A public-facing technical communication deliverable classifying chart types, map encodings, and visual selection rules.",
     chartCategories: [
       "Bar & Column Charts: Category comparisons and discrete groupings.",
       "Line Charts: Trends, continuous time-series, and trajectories over time.",
@@ -61,151 +85,262 @@ const labsData = [
       "Scatter Plots: Relationships and correlations between numerical variables.",
       "Maps: Geographic distributions and spatial comparisons."
     ],
-    activity: "Curating a structured infographic cheat sheet covering comparative charts, distribution plots, compositional visuals, and relationship diagrams.",
-    toolsUsed: "Data Visualization Software & Design Documentation Tools",
-    procedure: "1. Research visual encoding taxonomy (bar, line, scatter, histogram, map).\n2. Classify charts by analytical objective (Comparison, Distribution, Composition, Relationship).\n3. Define accessibility guidelines (color contrast, typography scale, chart junk reduction).\n4. Format reference cheat sheet for easy reading and sharing.",
-    workPerformed: "Created a visual guide outlining chart selection decision trees, color palette rules (sequential vs. diverging), and label alignment standards.",
-    outputPreview: "Published 'Data Visualization Cheat Sheet' featuring quick decision matrix for choosing between bar, line, pie, histogram, and scatter charts.",
-    result: "Produced a reusable reference standard adopted for departmental data analytics lab reports.",
-    learningOutcome: "Chart selection, visual literacy, concise documentation, and communicating visualization principles."
+    workflow: "1. Research visual encoding taxonomy (bar, line, scatter, histogram, map).\n2. Classify charts by analytical objective (Comparison, Distribution, Composition, Relationship).\n3. Define accessibility guidelines (color contrast, typography scale, chart junk reduction).\n4. Draft and publish professional LinkedIn post.",
+    placeholders: [
+      { label: "Published LinkedIn Post", filename: "lab-03-linkedin-post-01.png" },
+      { label: "Supporting Infographic Guide", filename: "lab-03-chart-types-guide-01.png" }
+    ],
+    skillsDemonstrated: ["Chart Selection", "Visual Communication", "Content Creation", "Professional Presentation"],
+    deliverable: "LinkedIn Post discussing charts, graphs, and maps."
   },
   {
-    id: "assignment-4",
-    number: "Assignment 4",
-    title: "Assignment 4: From Learning to LinkedIn",
-    tool: "LinkedIn & Portfolio Tools",
-    category: "Career & Technical Communication",
-    image: "images/lab-04-preview.png",
-    shortDescription: "Present learning progress or completed computer science practical work professionally through LinkedIn and technical portfolios.",
-    objective: "Present learning progress or completed work professionally through LinkedIn.",
-    content: "Describes the practical subject work documented in the submission, displaying the learning output and explaining key learning points communicated to the professional developer network.",
-    activity: "Summarizing technical lab achievements into structured case studies, detailing technologies used, source code repositories, and sharing updates.",
-    toolsUsed: "LinkedIn Platform, Git / GitHub, Technical Writing Tools",
-    procedure: "1. Summarize lab technical architecture into clear bullet points.\n2. Prepare code snippets and execution screenshots.\n3. Draft technical posts explaining problem statements, solutions, and key takeaways.\n4. Link verified GitHub source repositories for peer review.",
-    workPerformed: "Published technical case studies detailing Node.js REST API design and Power BI data dashboards with live repository links.",
-    outputPreview: "Published technical portfolio update with live repository links across professional developer networks.",
-    result: "Successfully established a professional digital footprint bridging academic work and industry readiness.",
-    learningOutcome: "Professional communication, documenting learning progress, presenting work, and building a professional portfolio."
+    id: "lab-04",
+    number: "Lab 04",
+    title: "Lab 04 — Data Visualization: Turning Data into Meaningful Stories — LinkedIn Blog",
+    tool: "LinkedIn Blog & Storytelling",
+    category: "Data Storytelling",
+    imagePlaceholder: "lab-04-linkedin-blog-01.png",
+    shortDescription: "Explore how data visualization turns raw data into meaningful insights and narrative stories through a LinkedIn blog post.",
+    objective: "Explore how data visualization can turn raw data into meaningful insights and stories.",
+    overview: "A technical article detailing data storytelling techniques, connecting data, visuals, and narrative context to engage target audiences.",
+    tasksCompleted: [
+      "Introduction to data storytelling concepts.",
+      "Examining the relationship between data, visuals, and narrative.",
+      "Identifying key insights from raw datasets.",
+      "Selecting charts that support a central narrative message.",
+      "Addressing audience context and clear communication."
+    ],
+    workflow: "1. Select dataset with clear narrative message.\n2. Extract top 3 analytical takeaways.\n3. Design charts highlighting key insights.\n4. Write structured LinkedIn article linking data, visuals, and business context.",
+    placeholders: [
+      { label: "LinkedIn Blog Article", filename: "lab-04-linkedin-blog-01.png" },
+      { label: "Article Cover & Data Visuals", filename: "lab-04-blog-cover-visuals-01.png" }
+    ],
+    skillsDemonstrated: ["Data Storytelling", "Analytical Thinking", "Technical Writing", "Insight Communication"],
+    deliverable: "Published LinkedIn Blog Article on Data Storytelling."
   },
   {
-    id: "assignment-5",
-    number: "Assignment 5",
-    title: "Assignment 5: Learning Activity",
-    tool: "JavaScript ES6+ & Asynchronous Promises",
-    category: "Core Computer Science Algorithms",
-    image: "images/lab-05-preview.png",
-    shortDescription: "Document the practical learning activity and demonstrate understanding of asynchronous programming and JavaScript control flow.",
-    objective: "Document the practical learning activity and demonstrate understanding of the concepts covered.",
-    content: "Displays the activity instructions, concepts/techniques practiced in asynchronous control flow, Callback to Promise conversion, Promise.all concurrency, and async/await.",
-    activity: "Solving complex asynchronous programming challenges using native ES6 Promises, async/await keywords, and try/catch error boundaries.",
-    toolsUsed: "JavaScript ES6+, Node.js runtime, Chrome DevTools",
-    procedure: "1. Implement asynchronous operations using Promises.\n2. Benchmark serial await calls against parallel Promise.all() execution.\n3. Add global error handlers to catch unhandled promise rejections.\n4. Log microtask vs macrotask execution orders in console.",
-    workPerformed: "Refactored nested callback functions into clean, readable async/await pipelines with improved parallel execution speed.",
-    outputPreview: "Promise.all Execution Time: 204ms vs Serial Await Execution Time: 610ms. All tests passed.",
-    result: "Achieved optimal asynchronous runtime performance and clean exception handling.",
-    learningOutcome: "Applying classroom concepts, following practical instructions, interpreting results, and documenting work."
-  },
-  {
-    id: "assignment-6",
-    number: "Assignment 6",
-    title: "Assignment 6: Lab Practical",
-    tool: "Node.js / Express / Web Security",
-    category: "Web Security & Authentication",
-    image: "images/lab-06-preview.png",
-    shortDescription: "Present the work completed for the assigned laboratory practical on secure user authentication and web security middleware.",
-    objective: "Present the work completed for the assigned laboratory practical.",
-    content: "Shows the practical title and objective, procedure and tasks performed, software tools used, screenshots of completed work, and recorded conclusions.",
-    activity: "Building authentication endpoints (/api/register, /api/login) and authorization middleware protecting private API routes using salted password hashing and JWT tokens.",
-    toolsUsed: "Node.js, Express.js, bcrypt cryptography, jsonwebtoken, Postman",
-    procedure: "1. Hash user plaintext passwords using bcrypt with salt factor 10.\n2. Authenticate credentials and sign JWT payload with secret key.\n3. Intercept requests using Express authorization header middleware.\n4. Validate Bearer token signature before granting access.",
-    workPerformed: "Constructed secure authentication flow ensuring zero plain-text password storage and verified token verification on protected routes.",
-    outputPreview: "POST /api/login -> 200 OK { token: 'eyJhbGciOi...' }. GET /api/protected (with Bearer Token) -> Access Granted.",
-    result: "Successfully deployed robust JWT-based stateless authorization layer for REST APIs.",
-    learningOutcome: "Practical implementation, tool usage, problem-solving, reporting results, and web security principles."
-  },
-  {
-    id: "assignment-7",
-    number: "Assignment 7",
-    title: "Assignment 7: Hands On Lab Practical - Excel Charts & Dashboard",
-    tool: "Microsoft Excel",
-    category: "Data Processing & Excel BI",
-    image: "images/lab-07-preview.png",
-    shortDescription: "Use Microsoft Excel to create charts and assemble a dashboard that presents data in an understandable visual format.",
-    objective: "Use Microsoft Excel to create charts and assemble a dashboard that presents data in an understandable visual format.",
-    content: "Works with the practical dataset, organizing fields for analysis, creating required charts, and arranging elements into an interactive dashboard using meaningful titles, labels, legends, and formatting.",
-    activity: "Transforming raw transactional data into an executive summary dashboard featuring interactive slicers, PivotTables, and dynamic charts.",
-    toolsUsed: "Microsoft Excel (PivotTables, Dynamic Charts, Slicers, Conditional Formatting)",
-    procedure: "1. Clean and format raw dataset into structured Excel tables.\n2. Summarize metrics using multiple PivotTables (sales by region, category, month).\n3. Create dynamic bar charts, pie charts, and KPI summary blocks.\n4. Connect interactive timeline slicers for cross-filtering.",
-    workPerformed: "Engineered a complete single-page interactive Excel sales dashboard with automated total calculations and regional filters.",
-    outputPreview: "Interactive Excel Dashboard displaying KPI summary cards, dynamic charts, and region/quarter timeline slicers.",
-    result: "Delivered a fully responsive spreadsheet analytics tool ready for business reporting.",
-    learningOutcome: "Spreadsheet-based data analysis, chart creation, dashboard layout, data presentation, and interpretation of visual results."
-  },
-  {
-    id: "assignment-8",
-    number: "Assignment 8",
-    title: "Assignment 8: Submit Your Data Studio Report",
-    tool: "Google Data Studio / Looker Studio",
-    category: "Cloud Data Visualization",
-    image: "images/lab-08-preview.png",
-    shortDescription: "Create and submit a report using Google Data Studio (Looker Studio) to communicate data through interactive visualizations.",
-    objective: "Create and submit a report using Google Data Studio, now known as Looker Studio, to communicate data through interactive visualizations.",
-    content: "Identifies the data source used, presents the report's purpose, displays scorecards, tables, filters, and charts, and explains the metrics and observations shown.",
-    activity: "Connecting Google Sheets data source to Looker Studio, configuring calculated fields, scorecards, time-series charts, and shareable reports.",
-    toolsUsed: "Google Data Studio / Looker Studio, Google Sheets",
-    procedure: "1. Connect sales dataset hosted on Google Sheets to Looker Studio.\n2. Create calculated metrics for net revenue and profit margin %.\n3. Design scorecards, category distribution bar charts, and daily sales trend lines.\n4. Configure interactive date range pickers and category drop-down filters.",
-    workPerformed: "Published an interactive Looker Studio sales report with dynamic filtering and mobile-friendly responsive layout.",
-    outputPreview: "Looker Studio Report Published: Executive KPI scorecards, interactive charts, and live cloud share URL.",
-    result: "Delivered accessible, cloud-native business intelligence report requiring zero software installation.",
-    learningOutcome: "Report building, visual storytelling, metric presentation, dashboard organization, and communicating data-driven observations."
-  },
-  {
-    id: "assignment-9",
-    number: "Assignment 9",
-    title: "Assignment 9: Lab Work: Tableau Dashboard",
+    id: "lab-05",
+    number: "Lab 05",
+    title: "Lab 05 — Tableau Notes",
     tool: "Tableau",
-    category: "Enterprise Analytics & Geographic Mapping",
-    image: "images/lab-09-preview.png",
-    shortDescription: "Use Tableau to build geographic visualizations and dashboards using Superstore_Sales.csv supporting data exploration.",
-    objective: "Use Tableau to build visualizations and dashboards that support data exploration and analysis.",
-    content: "Uses Superstore_Sales.csv to perform map-based visualization tasks including Filled Maps for sales by state, Bubble Maps for profit distribution by city, Heat Maps for order concentration, and Flow Maps for delivery routes.",
-    tableautasks: [
-      "1. Display total sales by state using a Filled Map.",
-      "2. Show profit distribution by city using a Bubble Map.",
-      "3. Identify order concentration using a Heat Map.",
-      "4. Trace delivery routes using a Flow Map."
+    category: "Tableau Fundamentals",
+    imagePlaceholder: "lab-05-tableau-notes-01.png",
+    shortDescription: "Document foundational Tableau concepts, data connections, dimensions vs. measures, worksheets, dashboards, and maps.",
+    objective: "Document foundational Tableau concepts and practical learning.",
+    overview: "A comprehensive reference guide and practical documentation of core Tableau Desktop functionality and workflow procedures.",
+    tasksCompleted: [
+      "Connecting to flat files and database sources.",
+      "Understanding Dimensions vs Measures and Discrete vs Continuous fields.",
+      "Building worksheets, interactive dashboards, and story points.",
+      "Creating bar charts, line graphs, pie charts, and maps.",
+      "Configuring filters, sorting, tooltips, marks card, and formatting."
     ],
-    analysisQuestions: [
-      "• Which states bring in the highest sales?",
-      "• Which cities or locations stand out in the profit distribution?",
-      "• Where is order concentration highest?",
-      "• What delivery routes or geographic patterns are visible?"
+    workflow: "1. Connect Tableau to sample dataset.\n2. Classify fields into Dimensions and Measures.\n3. Build individual worksheets with proper marks card configuration.\n4. Assemble worksheets into unified dashboard with filter actions.\n5. Document step-by-step procedures and key concepts.",
+    placeholders: [
+      { label: "Tableau Notes Document", filename: "lab-05-tableau-notes-01.png" },
+      { label: "Tableau Interface Overview", filename: "lab-05-tableau-interface-01.png" },
+      { label: "Practical Worksheet Examples", filename: "lab-05-practical-examples-01.png" }
     ],
-    activity: "Building a multi-sheet Tableau workbook analyzing corporate sales revenue, profit ratios, and regional geographical performance using Superstore_Sales.csv.",
-    toolsUsed: "Tableau Desktop / Tableau Public, Superstore_Sales.csv",
-    procedure: "1. Connect Superstore_Sales.csv dataset to Tableau Desktop.\n2. Build Filled Map for State sales, Bubble Map for City profit, and Heat Map for order density.\n3. Create custom calculated fields for Profit Ratio and YoY Growth.\n4. Assemble worksheets on a unified dashboard canvas and add Filter Actions.",
-    workPerformed: "Designed an interactive Tableau dashboard with map visualizations, cross-highlighting actions, tooltips, and regional filter controls.",
-    outputPreview: "Tableau Dashboard published with interactive geographic maps and regional filter controls.",
-    result: "Constructed an executive-ready enterprise dashboard adhering to Tableau visual analytics standards.",
-    learningOutcome: "Geographic visualization, map configuration, visual encoding, dashboard creation, and interpretation of sales and order data."
+    skillsDemonstrated: ["Tableau Fundamentals", "Data Preparation", "Chart Creation", "Technical Documentation"],
+    deliverable: "Organized Tableau Notes Document for revision and reference."
   },
   {
-    id: "assignment-10",
-    number: "Assignment 10",
-    title: "Assignment 10: Hands-On Practical",
-    tool: "Express.js & MongoDB",
-    category: "Full-Stack Backend Development",
-    image: "images/lab-10-preview.png",
-    shortDescription: "Demonstrate the practical skills developed through assigned hands-on exercises in full-stack backend RESTful microservices.",
-    objective: "Demonstrate the practical skills developed through the assigned hands-on exercise.",
-    content: "Presents the practical title and objective, instructions performed, tools used, submitted work outputs, results, and learning outcomes.",
-    activity: "Engineering a full-stack backend application handling student data management, grade recording, Mongoose validation, and automated JSON reporting.",
-    toolsUsed: "Node.js, Express.js, MongoDB, Mongoose ODM, Postman",
-    procedure: "1. Define Mongoose schema with field validation rules (unique, required, min/max).\n2. Create modular API controllers for GET, POST, PUT, DELETE operations.\n3. Implement async middleware error wrapper to handle database validation failures.\n4. Test API endpoints using Postman collection.",
-    workPerformed: "Successfully deployed full backend API servicing CRUD operations for 10+ student records with robust input validation.",
-    outputPreview: "Full CRUD API verified: GET /api/v1/students -> 200 OK. POST /api/v1/students -> 201 Created.",
-    result: "Demonstrated full operational readiness in building scalable Node.js/MongoDB web backend services.",
-    learningOutcome: "Applying practical skills, working through assigned tasks, interpreting outputs, and documenting completed work."
+    id: "lab-06",
+    number: "Lab 06",
+    title: "Lab 06 — Understanding Audience and Context",
+    tool: "Design & Contextual Analytics",
+    category: "Design Theory",
+    imagePlaceholder: "lab-06-audience-context-01.png",
+    shortDescription: "Analyze how target audience requirements, literacy levels, and viewing context influence visual design choices.",
+    objective: "Understand how audience requirements and context influence data visualization decisions.",
+    overview: "An exploration of audience-centric visualization design, focusing on visual clarity, context framing, and responsible data presentation.",
+    tasksCompleted: [
+      "Identifying target audience profiles and data literacy needs.",
+      "Defining the specific analytical purpose of visualizations.",
+      "Evaluating viewing context (desktop dashboard vs mobile vs presentation).",
+      "Selecting appropriate chart detail and level of aggregation.",
+      "Using titles, labels, legends, and annotations effectively.",
+      "Avoiding misleading visual scales and chart clutter."
+    ],
+    workflow: "1. Define target audience personas and decision goals.\n2. Analyze viewing context constraints.\n3. Select chart types matched to audience data literacy.\n4. Apply formatting, clear titles, and annotations.",
+    placeholders: [
+      { label: "Audience Analysis Framework", filename: "lab-06-audience-context-01.png" },
+      { label: "Context Design Examples", filename: "lab-06-context-examples-01.png" },
+      { label: "Completed Deliverable", filename: "lab-06-completed-deliverable-01.png" }
+    ],
+    skillsDemonstrated: ["Audience Analysis", "Contextual Design", "Visual Communication", "Responsible Data Presentation"],
+    deliverable: "Audience & Context Visualization Study."
+  },
+  {
+    id: "lab-07",
+    number: "Lab 07",
+    title: "Lab 07 — Excel Charts & Dashboard",
+    tool: "Microsoft Excel",
+    category: "Spreadsheet Analytics",
+    imagePlaceholder: "lab-07-excel-dashboard-01.png",
+    shortDescription: "Organize transactional datasets in Microsoft Excel, build PivotTables and dynamic charts, and assemble an interactive dashboard.",
+    objective: "Use Microsoft Excel to organize data, create charts, and assemble a dashboard.",
+    overview: "A spreadsheet-based business intelligence project creating an executive Excel dashboard using PivotTables and slicers.",
+    tasksCompleted: [
+      "Importing and structuring raw Excel data tables.",
+      "Cleaning missing fields and formatting data types.",
+      "Creating PivotTables for summary aggregations.",
+      "Constructing bar, column, and pie charts with custom labels.",
+      "Arranging charts into a unified dashboard layout with timeline slicers."
+    ],
+    workflow: "1. Format raw data into structured Excel Table.\n2. Generate PivotTables for sales by region, category, and month.\n3. Insert PivotCharts paired with each PivotTable.\n4. Link interactive slicers across all charts.\n5. Apply clean dashboard styling and layout alignment.",
+    placeholders: [
+      { label: "Source Dataset Table", filename: "lab-07-excel-source-data-01.png" },
+      { label: "Individual Excel Charts", filename: "lab-07-excel-charts-01.png" },
+      { label: "Completed Excel Dashboard", filename: "lab-07-excel-dashboard-01.png" }
+    ],
+    skillsDemonstrated: ["Spreadsheet Analysis", "Chart Creation", "Data Organization", "Dashboard Design"],
+    deliverable: "Interactive Excel Dashboard File."
+  },
+  {
+    id: "lab-08",
+    number: "Lab 08",
+    title: "Lab 08 — Import, Clean, Transform and Visualize Web Data Using Power BI",
+    tool: "Power BI Desktop / Power Query",
+    category: "ETL & Power BI",
+    imagePlaceholder: "lab-08-power-bi-web-data-01.png",
+    shortDescription: "Connect Power BI to a web data source, clean and transform data in Power Query Editor, and create map and pie chart visuals.",
+    objective: "Connect Power BI Desktop to a web data source, import relevant data, prepare it in Power Query, and create visualizations.",
+    overview: "A end-to-end Power BI ETL and visualization exercise importing web data, executing transformations in Power Query, and building report pages.",
+    tasksCompleted: [
+      "Connecting Power BI Desktop to web data URL.",
+      "Navigating and selecting target data tables.",
+      "Importing data into Power Query Editor.",
+      "Inspecting column data types, headers, and data quality.",
+      "Applying cleaning, split, and type transformation steps.",
+      "Loading prepared data model into Power BI canvas.",
+      "Building geographic map visualizations and pie charts."
+    ],
+    workflow: "1. Launch Power BI Desktop -> Get Data -> Web.\n2. Enter Web Data URL and select HTML table in Navigator.\n3. Click Transform Data to open Power Query Editor.\n4. Promote headers, change data types, and remove null rows.\n5. Click Close & Apply.\n6. Add Map visual for geographic fields and Pie chart for category breakdown.\n7. Format report layout and titles.",
+    placeholders: [
+      { label: "1. Web Data Connection", filename: "lab-08-web-connection-01.png" },
+      { label: "2. Table Selection & Import", filename: "lab-08-table-selection-01.png" },
+      { label: "3. Power Query Editor", filename: "lab-08-power-query-editor-01.png" },
+      { label: "4. Applied Transformations", filename: "lab-08-applied-steps-01.png" },
+      { label: "5. Map Visualization", filename: "lab-08-map-visualization-01.png" },
+      { label: "6. Pie Chart Visual", filename: "lab-08-pie-chart-01.png" },
+      { label: "7. Final Power BI Report", filename: "lab-08-power-bi-web-data-01.png" }
+    ],
+    skillsDemonstrated: ["Web Data Import", "Data Cleaning", "Power Query Transformation", "Geographic Visualization", "Pie Charts", "Report Formatting"],
+    deliverable: "Power BI Web Data Analytics Report."
+  },
+  {
+    id: "lab-09",
+    number: "Lab 09",
+    title: "Lab 09 — Data Studio Report",
+    tool: "Looker Studio",
+    category: "Cloud BI & Reporting",
+    imagePlaceholder: "lab-09-data-studio-report-01.png",
+    shortDescription: "Create an interactive report in Google Data Studio (Looker Studio) using scorecards, time series graphs, and interactive filters.",
+    objective: "Create a report using Google Data Studio, now known as Looker Studio, to communicate information through interactive visualizations.",
+    overview: "A cloud-native data reporting project connecting Google Sheets data sources to Looker Studio to deliver dynamic stakeholder reports.",
+    tasksCompleted: [
+      "Connecting data source to Looker Studio.",
+      "Configuring dimensions, calculated fields, and metrics.",
+      "Creating scorecards, bar charts, time-series graphs, and tables.",
+      "Organizing elements into a clean multi-visual report.",
+      "Applying interactive date range controls and category dropdown filters."
+    ],
+    workflow: "1. Create blank report in Looker Studio.\n2. Add data connector (Google Sheets / CSV).\n3. Add scorecards for top KPIs.\n4. Create time-series line chart for trends.\n5. Add interactive date range picker and category controls.\n6. Publish report.",
+    placeholders: [
+      { label: "Data Source Configuration", filename: "lab-09-data-source-config-01.png" },
+      { label: "Individual Report Charts", filename: "lab-09-individual-charts-01.png" },
+      { label: "Completed Looker Studio Report", filename: "lab-09-data-studio-report-01.png" }
+    ],
+    skillsDemonstrated: ["Report Building", "Data Visualization", "Layout Design", "Interactive Reporting"],
+    deliverable: "Interactive Looker Studio Cloud Report."
+  },
+  {
+    id: "lab-10",
+    number: "Lab 10",
+    title: "Lab 10 — Tableau Dashboard",
+    tool: "Tableau",
+    category: "Tableau Analytics",
+    imagePlaceholder: "lab-10-tableau-dashboard-01.png",
+    shortDescription: "Create a Tableau dashboard combining multiple worksheets into a coherent analytical view with interactive filter actions.",
+    objective: "Create a dashboard in Tableau by combining relevant visualizations into a coherent analytical view.",
+    overview: "A Tableau dashboard composition lab building individual analytical worksheets and combining them into an interactive dashboard canvas.",
+    tasksCompleted: [
+      "Connecting dataset to Tableau Desktop.",
+      "Preparing fields, custom parameters, and calculated fields.",
+      "Creating individual worksheets (charts, trends, comparisons).",
+      "Combining worksheets on a unified dashboard canvas.",
+      "Formatting titles, legends, tooltips, and color palettes.",
+      "Adding dashboard filter actions for interactive cross-highlighting."
+    ],
+    workflow: "1. Load dataset into Tableau Desktop.\n2. Build Worksheet 1 (Sales Bar Chart), Worksheet 2 (Monthly Line Graph), Worksheet 3 (Segment Treemap).\n3. Create new Dashboard.\n4. Drag worksheets onto dashboard grid.\n5. Add Dashboard Filter Actions.",
+    placeholders: [
+      { label: "Data Source Connection", filename: "lab-10-data-source-01.png" },
+      { label: "Worksheet Views", filename: "lab-10-worksheets-01.png" },
+      { label: "Dashboard Composition Layout", filename: "lab-10-dashboard-layout-01.png" },
+      { label: "Final Tableau Dashboard", filename: "lab-10-tableau-dashboard-01.png" }
+    ],
+    skillsDemonstrated: ["Worksheet Creation", "Dashboard Composition", "Data Analysis", "Visual Design"],
+    deliverable: "Completed Tableau Dashboard Workbook."
+  },
+  {
+    id: "lab-11",
+    number: "Lab 11",
+    title: "Lab 11 — Tableau Dashboard: Sample Superstore Dataset",
+    tool: "Tableau & Superstore Dataset",
+    category: "Geographic & Sales Analytics",
+    imagePlaceholder: "lab-11-superstore-dashboard-01.png",
+    shortDescription: "Analyze the Sample Superstore dataset using Tableau maps to reveal sales, profit, geographic, and order concentration patterns.",
+    objective: "Analyze the Sample Superstore dataset using Tableau and create visualizations that reveal sales, profit, geographic, and order-related patterns.",
+    overview: "A geographic analytics lab utilizing Tableau and Sample Superstore dataset to construct map visualizations and comparative sales dashboards.",
+    tasksCompleted: [
+      "Connecting Tableau to Sample Superstore dataset.",
+      "Examining dimensions, measures, and geographic roles.",
+      "Creating Filled Map for Total Sales by State.",
+      "Creating Bubble Map for Profit Distribution by City.",
+      "Creating Heat Map for Order Concentration density.",
+      "Exploring optional Flow Map for delivery routes.",
+      "Assembling worksheets into a unified sales dashboard."
+    ],
+    workflow: "1. Load Sample Superstore.csv.\n2. Double-click State -> Change mark to Filled Map -> Color by SUM(Sales).\n3. New sheet -> Double-click City -> Change mark to Circle -> Size by SUM(Profit).\n4. New sheet -> Heat Map for order concentration.\n5. Assemble into dashboard canvas.",
+    placeholders: [
+      { label: "1. Sample Superstore Data Source", filename: "lab-11-superstore-datasource-01.png" },
+      { label: "2. Sales by State Filled Map", filename: "lab-11-filled-map-sales-01.png" },
+      { label: "3. Profit by City Bubble Map", filename: "lab-11-bubble-map-profit-01.png" },
+      { label: "4. Order Concentration Heat Map", filename: "lab-11-heat-map-orders-01.png" },
+      { label: "5. Delivery Routes Flow Map (Optional)", filename: "lab-11-flow-map-routes-01.png" },
+      { label: "6. Final Tableau Dashboard", filename: "lab-11-superstore-dashboard-01.png" }
+    ],
+    skillsDemonstrated: ["Geographic Analysis", "Sales Analysis", "Map Creation", "Heat Maps", "Dashboard Composition", "Business Insight Communication"],
+    deliverable: "Superstore Sales Geographic Tableau Dashboard."
+  },
+  {
+    id: "lab-12",
+    number: "Lab 12",
+    title: "Lab 12 — Geospatial Visualization",
+    tool: "Geospatial Analytics Tools",
+    category: "Geospatial Visualization",
+    imagePlaceholder: "lab-12-geospatial-visualization-01.png",
+    shortDescription: "Explore how geographic data can be represented visually to reveal spatial patterns, distributions, and territorial relationships.",
+    objective: "Explore how geographic data can be represented visually to reveal spatial patterns, distributions, and relationships.",
+    overview: "A specialized geospatial visualization lab exploring coordinate mapping, spatial hierarchy, geographic encoding, and spatial data limitations.",
+    tasksCompleted: [
+      "Introduction to geospatial data concepts.",
+      "Understanding location fields, coordinates, and spatial boundaries.",
+      "Preparing location information for spatial mapping.",
+      "Selecting appropriate map projections and map types.",
+      "Plotting geographic distributions and spatial clusters.",
+      "Documenting spatial limitations such as unmapped location values."
+    ],
+    workflow: "1. Inspect dataset location fields (latitude, longitude, zip codes).\n2. Geocode missing location data.\n3. Choose spatial map projection.\n4. Render choropleth or symbol map visual.\n5. Analyze spatial density and patterns.",
+    placeholders: [
+      { label: "Source Geographic Data", filename: "lab-12-source-data-01.png" },
+      { label: "Map Configuration", filename: "lab-12-map-config-01.png" },
+      { label: "Geospatial Visualizations", filename: "lab-12-geospatial-viz-01.png" },
+      { label: "Final Geospatial Result", filename: "lab-12-geospatial-visualization-01.png" }
+    ],
+    skillsDemonstrated: ["Geographic Data Handling", "Spatial Analysis", "Map Selection", "Visual Interpretation"],
+    deliverable: "Geospatial Visualization Study."
   }
 ];
 
@@ -606,7 +741,7 @@ function initMainPage() {
   renderSkillsSection(skillsData);
 }
 
-// Render Section: 10 REAL ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
+// Render Section: 12 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
 function renderLabsSection(labs) {
   const labsGrid = document.getElementById("labs-grid");
   if (!labsGrid) return;
@@ -616,11 +751,15 @@ function renderLabsSection(labs) {
     const card = document.createElement("article");
     card.className = "lab-card";
     card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-label", `View ${lab.number}: ${lab.title}`);
+    card.setAttribute("aria-label", `View Details for ${lab.number}: ${lab.title}`);
 
     card.innerHTML = `
       <div class="lab-image-wrapper">
-        <img src="${lab.image}" alt="${lab.title} Preview" class="lab-image" loading="lazy">
+        <div class="styled-screenshot-placeholder">
+          <i class="fa-solid fa-image placeholder-icon"></i>
+          <span class="placeholder-label">Screenshot to be added</span>
+          <span class="placeholder-target-filename">${lab.imagePlaceholder}</span>
+        </div>
         <span class="lab-number-badge">${lab.number}</span>
         <span class="lab-tool-badge"><i class="fa-solid fa-code"></i> ${lab.tool}</span>
       </div>
@@ -629,7 +768,7 @@ function renderLabsSection(labs) {
         <h3 class="lab-card-title">${lab.title}</h3>
         <p class="lab-card-description">${lab.shortDescription}</p>
         <div class="lab-card-footer">
-          <span class="btn-view-lab">View Assignment <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="btn-view-lab">View Details <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </div>
     `;
@@ -786,48 +925,65 @@ function initLabDetailPage() {
   const sideTool = document.getElementById("sidebar-lab-tool");
   if (sideTool) sideTool.textContent = currentLab.tool;
 
-  // Screenshot & Viewport
-  const labImg = document.getElementById("lab-img");
-  if (labImg) {
-    labImg.src = currentLab.image;
-    labImg.alt = `${currentLab.title} Output Preview`;
-  }
+  const sideDeliverable = document.getElementById("sidebar-lab-deliverable");
+  if (sideDeliverable) sideDeliverable.textContent = currentLab.deliverable || "Completed Assignment Deliverable";
 
-  const labImgCaption = document.getElementById("lab-img-caption");
-  if (labImgCaption) labImgCaption.textContent = `${currentLab.number} — ${currentLab.title} Screenshot Preview`;
-
-  const viewport = document.getElementById("lab-screenshot-viewport");
-  if (viewport) {
-    viewport.addEventListener("click", () => {
-      openLightbox(currentLab.image, `${currentLab.title}`);
-    });
-  }
-
-  // Objective & Work Details
-  const labObj = document.getElementById("lab-objective");
-  if (labObj) labObj.textContent = currentLab.objective;
-
-  const labContent = document.getElementById("lab-content");
-  if (labContent) labContent.textContent = currentLab.content || currentLab.shortDescription;
-
-  // Render Tableau Tasks & Analysis Questions if Assignment 9
-  const tableauBlock = document.getElementById("lab-tableau-extras");
-  if (tableauBlock) {
-    if (currentLab.id === "assignment-9") {
-      tableauBlock.style.display = "block";
-      const tasksElem = document.getElementById("tableau-tasks");
-      const questionsElem = document.getElementById("tableau-questions");
-      if (tasksElem) tasksElem.innerHTML = currentLab.tableautasks.map(t => `<li class="viz-item"><i class="fa-solid fa-map-location-dot"></i> <span>${t}</span></li>`).join("");
-      if (questionsElem) questionsElem.innerHTML = currentLab.analysisQuestions.map(q => `<div class="insight-card" style="margin-bottom:0.5rem;"><i class="fa-solid fa-circle-question insight-icon"></i><div class="insight-text">${q}</div></div>`).join("");
+  // Render Placeholder Gallery
+  const placeholderContainer = document.getElementById("lab-placeholders-gallery");
+  if (placeholderContainer) {
+    placeholderContainer.innerHTML = "";
+    if (currentLab.placeholders && currentLab.placeholders.length > 0) {
+      currentLab.placeholders.forEach((ph) => {
+        const phBox = document.createElement("div");
+        phBox.className = "styled-screenshot-placeholder detail-ph";
+        phBox.innerHTML = `
+          <i class="fa-solid fa-image placeholder-icon"></i>
+          <span class="placeholder-label">${ph.label} (To be added)</span>
+          <span class="placeholder-target-filename">${ph.filename}</span>
+        `;
+        placeholderContainer.appendChild(phBox);
+      });
     } else {
-      tableauBlock.style.display = "none";
+      placeholderContainer.innerHTML = `
+        <div class="styled-screenshot-placeholder detail-ph">
+          <i class="fa-solid fa-image placeholder-icon"></i>
+          <span class="placeholder-label">Screenshot to be added</span>
+          <span class="placeholder-target-filename">${currentLab.imagePlaceholder}</span>
+        </div>
+      `;
     }
   }
 
-  // Render Chart Categories if Assignment 3
+  // Objective & Overview
+  const labObj = document.getElementById("lab-objective");
+  if (labObj) labObj.textContent = currentLab.objective;
+
+  const labOverview = document.getElementById("lab-overview");
+  if (labOverview) labOverview.textContent = currentLab.overview || currentLab.shortDescription;
+
+  // Render Multi-Activity Subsections if Lab 02
+  const activitiesBlock = document.getElementById("lab-activities-extras");
+  if (activitiesBlock) {
+    if (currentLab.isMultiActivity && currentLab.activities) {
+      activitiesBlock.style.display = "block";
+      const actList = document.getElementById("lab-activities-list");
+      if (actList) {
+        actList.innerHTML = currentLab.activities.map(act => `
+          <div class="activity-subsection-card" style="margin-bottom: 1.25rem; padding: 1.25rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--primary-accent); margin-bottom: 0.5rem;"><i class="fa-solid fa-pen-ruler"></i> ${act.name}</h4>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">${act.desc}</p>
+          </div>
+        `).join("");
+      }
+    } else {
+      activitiesBlock.style.display = "none";
+    }
+  }
+
+  // Render Chart Categories if Lab 03
   const cheatSheetBlock = document.getElementById("lab-cheatsheet-extras");
   if (cheatSheetBlock) {
-    if (currentLab.id === "assignment-3") {
+    if (currentLab.chartCategories) {
       cheatSheetBlock.style.display = "block";
       const catsElem = document.getElementById("cheatsheet-categories");
       if (catsElem) catsElem.innerHTML = currentLab.chartCategories.map(c => `<li class="viz-item"><i class="fa-solid fa-chart-simple"></i> <span>${c}</span></li>`).join("");
@@ -836,23 +992,33 @@ function initLabDetailPage() {
     }
   }
 
-  const labAct = document.getElementById("lab-activity");
-  if (labAct) labAct.textContent = currentLab.activity || "N/A";
+  // Render Tasks Completed
+  const tasksBlock = document.getElementById("lab-tasks-block");
+  const tasksList = document.getElementById("lab-tasks-list");
+  if (tasksList && tasksBlock) {
+    if (currentLab.tasksCompleted && currentLab.tasksCompleted.length > 0) {
+      tasksBlock.style.display = "block";
+      tasksList.innerHTML = currentLab.tasksCompleted.map(t => `<li class="viz-item"><i class="fa-solid fa-check-double"></i> <span>${t}</span></li>`).join("");
+    } else {
+      tasksBlock.style.display = "none";
+    }
+  }
 
-  const labProc = document.getElementById("lab-procedure");
-  if (labProc) labProc.textContent = currentLab.procedure || "N/A";
+  // Workflow / Methodology
+  const labWorkflow = document.getElementById("lab-workflow");
+  if (labWorkflow) labWorkflow.textContent = currentLab.workflow || "Standard analytical workflow executed.";
 
-  const labWork = document.getElementById("lab-work-performed");
-  if (labWork) labWork.textContent = currentLab.workPerformed || "N/A";
-
-  const labOut = document.getElementById("lab-output");
-  if (labOut) labOut.textContent = currentLab.outputPreview || "N/A";
-
-  const labRes = document.getElementById("lab-result");
-  if (labRes) labRes.textContent = currentLab.result || "N/A";
-
-  const labLearn = document.getElementById("lab-learning-outcome");
-  if (labLearn) labLearn.textContent = currentLab.learningOutcome || "N/A";
+  // Skills Demonstrated
+  const skillsBlock = document.getElementById("lab-skills-block");
+  const skillsContainer = document.getElementById("lab-skills-demonstrated");
+  if (skillsContainer && skillsBlock) {
+    if (currentLab.skillsDemonstrated && currentLab.skillsDemonstrated.length > 0) {
+      skillsBlock.style.display = "block";
+      skillsContainer.innerHTML = currentLab.skillsDemonstrated.map(s => `<span class="project-tag" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">${s}</span>`).join(" ");
+    } else {
+      skillsBlock.style.display = "none";
+    }
+  }
 }
 
 // ==========================================================================
