@@ -342,68 +342,62 @@ const dashboardsData = [
     id: "regional-management",
     title: "Regional Management Dashboard",
     category: "Management / Regional Analytics",
-    tool: "Microsoft Excel / Management Analytics",
-    toolClass: "excel",
+    tool: "Tableau",
+    toolClass: "tableau",
     images: [
       {
         src: "images/regional-management-dashboard.png",
-        caption: "Regional Management Dashboard Executive Analytics View"
+        caption: "Regional Management Dashboard Tableau Analytics View"
       }
     ],
-    shortDescription: "Management dashboard analyzing regional sales operations, territory growth, fulfillment efficiency, and regional market distribution.",
-    overview: "This management dashboard tracks multi-regional operational performance across North, South, East, and West territories. It provides corporate leadership with insights into regional revenue contribution, operational fulfillment benchmarks, and territory expansion trends.",
-    objective: "Designed to optimize regional resource allocation, monitor regional sales quotas, evaluate regional logistics fulfillment rates, and identify high-growth territory hubs.",
-    dataset: "Regional management operations database detailing regional sales figures, territory fulfillment rates, regional operating expense ratios, and customer satisfaction indices across 4 primary geographical zones.",
+    shortDescription: "Help regional management compare regional sales, profit, trends, ranking, and category performance.",
+    overview: "This regional management dashboard built in Tableau provides interactive visual analytics to compare regional sales revenue, net profit margins, performance trends, territory rankings, and product category breakdowns.",
+    objective: "Help regional management compare regional sales, profit, trends, ranking, and category performance.",
+    dataset: "Regional management operations database detailing regional sales figures, profit margins, category distributions, and territory performance trends.",
     kpis: [
-      { label: "Total Regional Sales", value: "$1,450,000", sub: "+12.5% YoY Growth" },
-      { label: "Active Territories", value: "4 Zones", sub: "North, South, East, West" },
-      { label: "Fulfillment Rate", value: "94.2%", sub: "Exceeds 90% Target" },
-      { label: "Top Territory", value: "North Zone", sub: "34% Total Revenue Share" }
+      { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
+      { label: "Category", value: "Regional Analytics", sub: "Management Intelligence" },
+      { label: "Analysis Focus", value: "Sales & Profit", sub: "Regional Trends & Ranking" }
     ],
     keyVisualizations: [
-      "Regional Revenue Contribution (Pie Chart): Visual breakdown of sales share across North (34%), West (28%), East (22%), and South (16%).",
-      "Quarterly Territory Sales Growth (Grouped Bar Chart): Comparative quarterly revenue tracking across all 4 operational regions.",
-      "Regional Fulfillment Efficiency Index (Gauge Chart): Operations score tracking fulfillment speed against 90% SLA baseline.",
-      "Territory Expense vs. Revenue Matrix (Bubble Chart): Expense efficiency plot evaluating return on operational expenditure per zone."
+      "Regional Sales & Profit Comparison (Bar & Treemap Chart): Comparative revenue and profit breakdown across regions.",
+      "Territory Ranking & Category Performance Matrix: Multi-variable hierarchy of regional product category performance.",
+      "Regional Sales Trend Trajectory (Line Chart): Temporal tracking of regional sales growth and seasonality."
     ],
     keyInsights: [
-      "North Zone represents the largest regional revenue contributor ($493,000 / 34% share) with consistent quarter-over-quarter expansion.",
-      "Operational fulfillment across all 4 territories averaged 94.2%, comfortably exceeding corporate SLA targets.",
-      "West Zone demonstrated the fastest growth rate (+15.8% YoY), driven by increased market penetration in urban centers."
+      "Enables regional leadership to instantly identify top-performing regions and category growth opportunities.",
+      "Provides clear comparative visibility into regional profit margins, territory rankings, and multi-year sales trends."
     ]
   },
   {
     id: "sales-management",
     title: "Sales Management Dashboard",
     category: "Management / Sales Analytics",
-    tool: "Power BI",
-    toolClass: "power-bi",
+    tool: "Tableau",
+    toolClass: "tableau",
     images: [
       {
         src: "images/sales-management-dashboard.png",
-        caption: "Sales Management Dashboard Executive Performance Overview"
+        caption: "Sales Management Dashboard Tableau Performance Overview"
       }
     ],
-    shortDescription: "Executive sales management scorecard tracking B2B pipeline conversion, deal velocity, sales team quota attainment, and average order size.",
-    overview: "This executive sales management dashboard monitors high-level commercial sales pipelines, sales team performance, win/loss ratios, and customer acquisition costs to guide executive strategy.",
-    objective: "Created to provide sales leadership with real-time visibility into sales funnels, rep quota achievements, deal velocity stages, and enterprise revenue forecasts.",
-    dataset: "Enterprise CRM and sales transaction system records featuring lead sources, deal pipeline stages, contract values, sales rep assignments, and conversion timelines.",
+    shortDescription: "Help sales management monitor sales performance, categories, segments, trends, and top products.",
+    overview: "This sales management dashboard built in Tableau gives commercial sales leaders complete visibility into overall sales performance, category revenue shares, customer market segments, multi-year trends, and top product items.",
+    objective: "Help sales management monitor sales performance, categories, segments, trends, and top products.",
+    dataset: "Commercial sales transaction database tracking product sales revenue, customer market segments, multi-year sales trends, and top product revenue rankings.",
     kpis: [
-      { label: "Total Pipeline Revenue", value: "$3,850,000", sub: "+18.4% YoY Target" },
-      { label: "Pipeline Conversion Rate", value: "28.6%", sub: "+3.2% vs Q3" },
-      { label: "Average Deal Size", value: "$14,200", sub: "Enterprise B2B tier" },
-      { label: "Quota Attainment", value: "108.5%", sub: "Sales Team Total" }
+      { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
+      { label: "Category", value: "Sales Analytics", sub: "Management Intelligence" },
+      { label: "Analysis Focus", value: "Performance & Segments", sub: "Trends & Top Products" }
     ],
     keyVisualizations: [
-      "Sales Funnel Conversion Stages (Funnel Chart): Lead qualification to closed-won stage analysis (Lead -> Qualified -> Proposal -> Closed Won).",
-      "Sales Rep Quota Attainment Leaderboard (Horizontal Bar Chart): Individual rep sales volume measured against quarterly targets.",
-      "Monthly Deal Velocity Trend (Line Chart): Average days to close enterprise accounts plotted across 12 months.",
-      "Revenue by Product Tier (Donut Chart): Enterprise subscriptions (52%), Professional licenses (32%), and Support services (16%)."
+      "Sales Performance by Category & Segment (Stacked Bar Chart): Segment revenue breakdown across product lines.",
+      "Top-Performing Products Ranking (Horizontal Bar Chart): Itemized revenue leaderboard of top enterprise products.",
+      "Multi-Year Sales Trend Trajectory (Time Series Chart): Monthly and annual sales progression across commercial sectors."
     ],
     keyInsights: [
-      "Total sales pipeline revenue surpassed targets at $3.85 Million with a team-wide quota attainment of 108.5%.",
-      "Sales funnel conversion rate improved to 28.6%, driven by optimized lead qualification workflows in Q3.",
-      "Enterprise subscriptions constituted 52% of total contract revenue, yielding an average deal size of $14,200."
+      "Streamlines sales pipeline monitoring by highlighting top-grossing product lines and high-value customer segments.",
+      "Identifies seasonal demand peaks and provides actionable data to optimize sales team resource allocation."
     ]
   },
   {
@@ -415,29 +409,26 @@ const dashboardsData = [
     images: [
       {
         src: "images/finance-management-dashboard.png",
-        caption: "Finance Management Dashboard Executive Capital & Liquidity Overview"
+        caption: "Finance Management Dashboard Tableau Capital & Financial Overview"
       }
     ],
-    shortDescription: "Financial management dashboard analyzing net operating margins, operating cash flows, expense breakdowns, and capital return metrics.",
-    overview: "This financial management intelligence dashboard provides corporate finance executives with dynamic visibility into income statement metrics, operating cash flow health, EBITDA margins, and capital return ratios.",
-    objective: "Designed to track corporate financial health, monitor budget vs. actual operating expenses, evaluate net cash reserves, and maximize Return on Invested Capital (ROIC).",
-    dataset: "General Ledger and corporate financial reporting system containing revenue statements, operating expense items, cash flow logs, and capital investment balance sheets.",
+    shortDescription: "Help finance management analyze sales, profitability, discounts, and relationships between financial measures.",
+    overview: "This finance management dashboard built in Tableau empowers financial executives to analyze sales volumes, net profitability, discount rates, and complex relationships between financial metrics.",
+    objective: "Help finance management analyze sales, profitability, discounts, and relationships between financial measures.",
+    dataset: "Financial reporting database containing sales amounts, net profit figures, discount percentages, and multi-variable financial metric correlations.",
     kpis: [
-      { label: "Net Operating Margin", value: "32.4%", sub: "+2.8% YoY Expansion" },
-      { label: "Net Cash Flow", value: "$840,000", sub: "Positive Operating Balance" },
-      { label: "Operating Expenses", value: "$620,000", sub: "-4.1% Reduced Efficiency" },
-      { label: "Return on Capital (ROIC)", value: "24.8%", sub: "Exceeds Target Goal" }
+      { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
+      { label: "Category", value: "Financial Analytics", sub: "Management Intelligence" },
+      { label: "Analysis Focus", value: "Profit & Discounts", sub: "Financial Metric Relations" }
     ],
     keyVisualizations: [
-      "Operating Income vs. Expense Breakdown (Waterfall Chart): Stepwise fiscal breakdown from gross revenue to net operating income.",
-      "Monthly Net Cash Flow Trend (Area Line Chart): Monthly cash inflow and outflow trajectories over the past fiscal year.",
-      "Operating Expense Distribution (Treemap): Category breakdown of OPEX (R&D: 40%, Marketing: 30%, G&A: 20%, IT Infrastructure: 10%).",
-      "ROIC & Profitability Ratio Gauges (Bullet Charts): Key financial ratio scorecards compared against industry benchmarks."
+      "Sales vs. Profitability Correlation Matrix (Scatter Plot): Multi-measure scatter analysis evaluating profit impact of discount levels.",
+      "Discount Rate & Revenue Margin Impact Chart (Waterfall Chart): Fiscal breakdown of gross revenue after promotional discounts.",
+      "Financial Measure Relationship Dashboard (Bullet Gauges): Comparative scorecards benchmarking financial metrics against targets."
     ],
     keyInsights: [
-      "Net operating margin expanded by 2.8% YoY to reach 32.4%, backed by disciplined cost management across operational units.",
-      "Net cash flow remained strong at $840,000, maintaining robust liquidity for ongoing capital investments.",
-      "Operating expenses were reduced by 4.1% through cloud infrastructure optimizations without impacting development output."
+      "Provides finance executives with deep analytical clarity on how discount rates impact net corporate profitability.",
+      "Reveals key correlations between sales volume and net income to support data-driven capital management decisions."
     ]
   }
 ];
