@@ -737,8 +737,6 @@ function setupNavigation() {
 function initMainPage() {
   renderLabsSection(labsData);
   renderDashboardsGallerySection(dashboardsData);
-  renderProjectsSection(projectsData);
-  renderSkillsSection(skillsData);
 }
 
 // Render Section: 12 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
