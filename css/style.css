@@ -106,24 +106,38 @@ button, input, select {
 }
 
 /* --------------------------------------------------------------------------
-   2. Header & DSVV Branding Navbar
+   2. Compact Floating Header & DSVV Branding Navbar
    -------------------------------------------------------------------------- */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2.5rem);
+  max-width: 1040px;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(11, 19, 41, 0.92) 0%, rgba(15, 23, 42, 0.95) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(15, 23, 42, 0.2);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+}
+
+.navbar.hidden-on-scroll {
+  opacity: 0;
+  transform: translate(-50%, -25px);
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.8rem;
+  height: 3.75rem;
+  padding: 0 1.25rem;
 }
 
 .nav-brand {
@@ -133,34 +147,34 @@ button, input, select {
 }
 
 .dsvv-logo-img {
-  height: 48px;
-  width: auto;
+  height: 40px;
+  width: 40px;
   object-fit: contain;
-  filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.08));
-  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.25s ease;
 }
 
 .dsvv-logo-img:hover {
-  transform: scale(1.03);
+  transform: scale(1.08) rotate(3deg);
 }
 
 .nav-right-group {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .cs-dept-badge {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
   color: #ffffff;
-  padding: 0.45rem 1.1rem;
+  padding: 0.35rem 0.95rem;
   border-radius: var(--radius-full);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -172,35 +186,188 @@ button, input, select {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.4rem;
   list-style: none;
 }
 
 .nav-link {
   font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  padding: 0.5rem 0.85rem;
-  border-radius: var(--radius-sm);
-  transition: 0.15s ease;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  padding: 0.45rem 0.8rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--primary-accent);
-  background-color: var(--bg-accent-light);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
 }
 
 .mobile-menu-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: var(--text-primary);
+  font-size: 1.35rem;
+  color: #f8fafc;
   cursor: pointer;
   padding: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Fixed Scroll Sidebar Navigation
+   -------------------------------------------------------------------------- */
+.scroll-sidebar {
+  position: fixed;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(-30px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+}
+
+.scroll-sidebar.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 0.45rem;
+  background: linear-gradient(135deg, rgba(11, 19, 41, 0.92) 0%, rgba(15, 23, 42, 0.95) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+.sidebar-link {
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+}
+
+.sidebar-link:hover {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.14);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.sidebar-link.active {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.sidebar-tooltip {
+  position: absolute;
+  left: calc(100% + 0.85rem);
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 0.775rem;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.sidebar-tooltip::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #0f172a transparent transparent;
+}
+
+.sidebar-link:hover .sidebar-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   Custom Interactive Pointer Cursor
+   -------------------------------------------------------------------------- */
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease-out, background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+  box-shadow: 0 0 10px #10b981, 0 0 4px #38bdf8;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(56, 189, 248, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.22s ease-out, height 0.22s ease-out, border-color 0.2s ease, background-color 0.2s ease;
+  backdrop-filter: blur(0.5px);
+}
+
+body.cursor-hover .custom-cursor-dot {
+  background-color: #38bdf8;
+  transform: translate(-50%, -50%) scale(1.4);
+  box-shadow: 0 0 14px #38bdf8;
+}
+
+body.cursor-hover .custom-cursor-ring {
+  width: 50px;
+  height: 50px;
+  border-color: rgba(16, 185, 129, 0.85);
+  background-color: rgba(16, 185, 129, 0.08);
+}
+
+@media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor-dot, .custom-cursor-ring {
+    display: none !important;
+  }
 }
 
 /* --------------------------------------------------------------------------

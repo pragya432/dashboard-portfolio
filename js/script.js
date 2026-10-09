@@ -633,24 +633,146 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================================================
-// 4. NAVIGATION & MOBILE MENU HANDLER
+// 4. NAVIGATION, SCROLL SIDEBAR, INTERSECTION OBSERVER & CUSTOM CURSOR
 // ==========================================================================
 function setupNavigation() {
+  const navbar = document.querySelector(".navbar");
+  const scrollSidebar = document.getElementById("scroll-sidebar");
+  const heroSection = document.getElementById("hero");
   const toggleBtn = document.querySelector(".mobile-menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
 
+  // 1. Scroll Handler — Floating Header vs Scroll Sidebar Transition
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const triggerOffset = heroSection ? heroSection.offsetHeight - 120 : 300;
+
+    if (scrollY > triggerOffset) {
+      if (navbar) navbar.classList.add("hidden-on-scroll");
+      if (scrollSidebar) scrollSidebar.classList.add("visible");
+    } else {
+      if (navbar) navbar.classList.remove("hidden-on-scroll");
+      if (scrollSidebar) scrollSidebar.classList.remove("visible");
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+
+  // 2. Active Section Detection using IntersectionObserver
+  const targetSections = document.querySelectorAll("section[id], footer[id]");
+  const headerLinks = document.querySelectorAll(".nav-link[data-section]");
+  const sidebarLinks = document.querySelectorAll(".sidebar-link[data-section]");
+
+  if (targetSections.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px",
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+
+          // Sync active links across Header and Sidebar
+          headerLinks.forEach((link) => {
+            const ds = link.getAttribute("data-section");
+            if (
+              ds === id ||
+              (id === "hero" && (ds === "home" || ds === "about")) ||
+              (id === "labs" && (ds === "labs" || ds === "skills")) ||
+              (id === "dashboards" && (ds === "dashboards" || ds === "projects")) ||
+              (id === "contact" && ds === "contact")
+            ) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+
+          sidebarLinks.forEach((link) => {
+            const ds = link.getAttribute("data-section");
+            if (
+              ds === id ||
+              (id === "hero" && (ds === "home" || ds === "about")) ||
+              (id === "labs" && (ds === "labs" || ds === "skills")) ||
+              (id === "dashboards" && (ds === "dashboards" || ds === "projects")) ||
+              (id === "contact" && ds === "contact")
+            ) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    targetSections.forEach((sec) => sectionObserver.observe(sec));
+  }
+
+  // 3. Mobile Navigation Menu Toggle & Auto-Close
   if (toggleBtn && navMenu) {
     toggleBtn.addEventListener("click", () => {
+      const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+      toggleBtn.setAttribute("aria-expanded", !isExpanded);
       navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        toggleBtn.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
+  // 4. Scroll To Top Button
   const scrollTopBtn = document.querySelector(".btn-scroll-top");
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // 5. Custom Interactive Pointer Cursor
+  initCustomCursor();
+}
+
+function initCustomCursor() {
+  const dot = document.getElementById("cursor-dot");
+  const ring = document.getElementById("cursor-ring");
+
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouch || !dot || !ring) return;
+
+  let mouseX = -100;
+  let mouseY = -100;
+  let ringX = -100;
+  let ringY = -100;
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+    requestAnimationFrame(animateRing);
+  }
+  requestAnimationFrame(animateRing);
+
+  // Hover animation triggers on interactive elements
+  const interactiveSelector = "a, button, .lab-card, .visual-dashboard-card, input, select, textarea, .btn-primary-hero, .btn-secondary-hero";
+  document.querySelectorAll(interactiveSelector).forEach((el) => {
+    el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
+    el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
+  });
 }
 
 // ==========================================================================

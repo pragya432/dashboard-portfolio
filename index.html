@@ -21,12 +21,12 @@
 <body>
 
   <!-- ==========================================================================
-       HEADER / NAVBAR (DSVV Branding Top-Left & Computer Science Top-Right)
+       COMPACT FLOATING HEADER & BRANDING (DSVV Seal Logo)
        ========================================================================== -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="nav-brand" aria-label="Dev Sanskriti Vishwavidyalaya Home">
-        <img src="images/dsvv-logo-transparent.png" alt="Dev Sanskriti Vishwavidyalaya Logo" class="dsvv-logo-img" />
+      <a href="#hero" class="nav-brand" aria-label="Dev Sanskriti Vishwavidyalaya Home">
+        <img src="images/dsvv-logo-seal.svg" alt="Dev Sanskriti Vishwavidyalaya Logo" class="dsvv-logo-img" />
       </a>
 
       <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -37,9 +37,13 @@
       <div class="nav-right-group">
         <nav>
           <ul class="nav-menu">
-            <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="#labs" class="nav-link"><i class="fa-solid fa-flask"></i> Lab Work</a></li>
-            <li><a href="#dashboards" class="nav-link"><i class="fa-solid fa-chart-column"></i> Dashboard Gallery</a></li>
+            <li><a href="#hero" class="nav-link active" data-section="hero"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#labs" class="nav-link" data-section="labs"><i class="fa-solid fa-flask"></i> Lab Work</a></li>
+            <li><a href="#dashboards" class="nav-link" data-section="dashboards"><i class="fa-solid fa-chart-column"></i> Dashboard Gallery</a></li>
+            <li><a href="#dashboards" class="nav-link" data-section="projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+            <li><a href="#labs" class="nav-link" data-section="skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+            <li><a href="#hero" class="nav-link" data-section="about"><i class="fa-solid fa-user"></i> About</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
           </ul>
         </nav>
         <span class="cs-dept-badge">
@@ -48,6 +52,60 @@
       </div>
     </div>
   </header>
+
+  <!-- ==========================================================================
+       FIXED VERTICAL SCROLL SIDEBAR NAVIGATION
+       ========================================================================== -->
+  <nav class="scroll-sidebar" id="scroll-sidebar" aria-label="Quick Navigation Sidebar">
+    <ul class="sidebar-menu">
+      <li>
+        <a href="#hero" class="sidebar-link active" data-section="hero" aria-label="Home">
+          <i class="fa-solid fa-house"></i>
+          <span class="sidebar-tooltip">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#labs" class="sidebar-link" data-section="labs" aria-label="Lab Work">
+          <i class="fa-solid fa-flask"></i>
+          <span class="sidebar-tooltip">Lab Work</span>
+        </a>
+      </li>
+      <li>
+        <a href="#dashboards" class="sidebar-link" data-section="dashboards" aria-label="Dashboard Gallery">
+          <i class="fa-solid fa-chart-column"></i>
+          <span class="sidebar-tooltip">Dashboard Gallery</span>
+        </a>
+      </li>
+      <li>
+        <a href="#dashboards" class="sidebar-link" data-section="projects" aria-label="Projects">
+          <i class="fa-solid fa-folder-open"></i>
+          <span class="sidebar-tooltip">Projects</span>
+        </a>
+      </li>
+      <li>
+        <a href="#labs" class="sidebar-link" data-section="skills" aria-label="Skills">
+          <i class="fa-solid fa-code"></i>
+          <span class="sidebar-tooltip">Skills</span>
+        </a>
+      </li>
+      <li>
+        <a href="#hero" class="sidebar-link" data-section="about" aria-label="About">
+          <i class="fa-solid fa-user"></i>
+          <span class="sidebar-tooltip">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="sidebar-link" data-section="contact" aria-label="Contact">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="sidebar-tooltip">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Custom Pointer Cursor -->
+  <div class="custom-cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
   <main>
     <!-- ==========================================================================
@@ -245,11 +303,11 @@
   <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
-  <footer class="site-footer">
+  <footer class="site-footer" id="contact">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="images/dsvv-logo.png" alt="DSVV Logo" style="height: 36px; border-radius: 4px;" />
+          <img src="images/dsvv-logo-seal.svg" alt="DSVV Logo" style="height: 36px; width: 36px;" />
           <span>Dev Sanskriti Vishwavidyalaya | Department of Computer Science</span>
         </div>
         <div class="footer-copyright">
