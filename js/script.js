@@ -679,13 +679,7 @@ function setupNavigation() {
           // Sync active links across Header and Sidebar
           headerLinks.forEach((link) => {
             const ds = link.getAttribute("data-section");
-            if (
-              ds === id ||
-              (id === "hero" && (ds === "home" || ds === "about")) ||
-              (id === "labs" && (ds === "labs" || ds === "skills")) ||
-              (id === "dashboards" && (ds === "dashboards" || ds === "projects")) ||
-              (id === "contact" && ds === "contact")
-            ) {
+            if (ds === id) {
               link.classList.add("active");
             } else {
               link.classList.remove("active");
@@ -694,13 +688,7 @@ function setupNavigation() {
 
           sidebarLinks.forEach((link) => {
             const ds = link.getAttribute("data-section");
-            if (
-              ds === id ||
-              (id === "hero" && (ds === "home" || ds === "about")) ||
-              (id === "labs" && (ds === "labs" || ds === "skills")) ||
-              (id === "dashboards" && (ds === "dashboards" || ds === "projects")) ||
-              (id === "contact" && ds === "contact")
-            ) {
+            if (ds === id) {
               link.classList.add("active");
             } else {
               link.classList.remove("active");

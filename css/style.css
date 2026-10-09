@@ -377,7 +377,7 @@ body.cursor-hover .custom-cursor-ring {
 
 .hero-section {
   position: relative;
-  padding: 4.5rem 0 4rem 0;
+  padding: 7.75rem 0 4.5rem 0;
   background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
               radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 40%),
               linear-gradient(135deg, #0b1329 0%, #0f172a 50%, #172554 100%);
