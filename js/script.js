@@ -1,181 +1,211 @@
 /**
  * Dev Sanskriti Vishwavidyalaya — Department of Computer Science
- * Central JavaScript File for 10 Labs, 7 Visual Dashboards, Projects, Skills, and Reusable Detail Pages
+ * Central JavaScript File for 10 Real Lab Assignments, 7 Visual Dashboards, Projects, Skills, and Reusable Detail Pages
  */
 
 // ==========================================================================
-// 1. DATA STORE — 10 COMPUTER SCIENCE LAB ASSIGNMENTS REGISTRY
+// 1. DATA STORE — 10 REAL LAB ASSIGNMENTS REGISTRY
 // ==========================================================================
 const labsData = [
   {
-    id: "lab-01",
-    number: "LAB ASSIGNMENT 01",
-    title: "Data Visualization",
-    tool: "Python / Matplotlib & Seaborn",
+    id: "assignment-1",
+    number: "Assignment 1",
+    title: "Assignment 1: Data Visualization",
+    tool: "Python / Data Visualization Software",
     category: "Data Science & Analytics",
     image: "images/lab-01-preview.png",
-    shortDescription: "Fundamentals of exploratory data analysis, plotting univariate & bivariate distributions, line charts, scatter plots, and heatmaps.",
-    objective: "To master foundational data visualization techniques using Python libraries (Matplotlib, Seaborn, Pandas) to convey quantitative insights cleanly.",
-    activity: "Exploratory data analysis on benchmark datasets, generating customized statistical charts with formatted axes, legends, and color palettes.",
-    toolsUsed: "Python 3.x, Matplotlib, Seaborn, Pandas, Jupyter Notebook",
-    procedure: "1. Load raw dataset using Pandas DataFrame.\n2. Clean missing values and format data types.\n3. Construct line charts for trend analysis and scatter plots for correlation.\n4. Apply Seaborn color maps and export high-resolution chart images.",
-    workPerformed: "Constructed multiple statistical plots visualizing variable correlations, distribution spreads, and multi-series line comparisons across quarterly metrics.",
-    outputPreview: "Generated 5 core statistical figures: Distribution Histogram, Correlation Heatmap, Feature Scatter Matrix, and Time-Series Trend Line.",
-    result: "Successfully established automated Python visualization pipelines for academic data science reports.",
-    learningOutcome: "Acquired hands-on proficiency in converting raw tabular data into intuitive visual charts following statistical design best practices."
+    shortDescription: "Learn how to represent data visually and communicate information effectively through chart selection, clear labeling, and trend identification.",
+    objective: "Learn how to represent data visually and communicate information through appropriate charts.",
+    content: "Explores how data visualization helps identify patterns, trends, comparisons, and relationships. Chart selection depends on data type and the specific questions answered. Information is presented using clear labels, titles, legends, and readable formatting.",
+    activity: "Analyzing benchmark datasets to explore patterns, trends, and variable correlations. Selecting appropriate chart types and formatting visual elements.",
+    toolsUsed: "Python (Matplotlib & Seaborn) / Data Visualization Software",
+    procedure: "1. Load raw dataset and inspect data types.\n2. Clean missing values and prepare variable categories.\n3. Construct line charts for trends, bar charts for category comparisons, and scatter plots for relationships.\n4. Apply clear labels, titles, color contrast, and legends before exporting output.",
+    workPerformed: "Constructed multiple statistical plots visualizing variable correlations, distribution spreads, and multi-series line comparisons with formatted axes and legends.",
+    outputPreview: "Generated statistical figures: Distribution Histogram, Correlation Heatmap, Category Comparison Bar Chart, and Time-Series Trend Line.",
+    result: "Successfully demonstrated chart selection principles, visual communication, and data interpretation.",
+    learningOutcome: "Understanding chart selection, visual communication, data interpretation, and the importance of clear presentation."
   },
   {
-    id: "lab-02",
-    number: "LAB ASSIGNMENT 02",
-    title: "Submission of 9th Aug Class Activity Work",
-    tool: "Node.js HTTP & Core Modules",
+    id: "assignment-2",
+    number: "Assignment 2",
+    title: "Assignment 2: Submission of 9th Aug Class Activity Work",
+    tool: "Node.js HTTP & Core Networking",
     category: "Web Protocols & Networking",
     image: "images/lab-02-preview.png",
-    shortDescription: "Practical submission covering asynchronous I/O, custom HTTP server routing, status code handling, and query string parsing.",
-    objective: "To implement low-level HTTP network routing and non-blocking event-driven file operations using native Node.js core modules.",
-    activity: "Building a lightweight HTTP web server from scratch without external frameworks, managing request headers, status codes, and JSON responses.",
-    toolsUsed: "Node.js runtime, V8 Engine, HTTP module, FS module, Path module",
-    procedure: "1. Instantiate HTTP server with http.createServer().\n2. Inspect incoming req.url and req.method properties.\n3. Read static response payload asynchronously via fs.readFile().\n4. Set HTTP response status codes (200, 404) and Content-Type headers.",
+    shortDescription: "Organize and present the practical work completed for the class activity conducted on 9th August covering HTTP networking protocols.",
+    objective: "Organize and present the work completed for the class activity conducted on 9 August.",
+    content: "Presents the class activity instructions, task performed, and purpose of the activity. Displays the actual work submitted including network routing, HTTP status codes, and JSON response formatting.",
+    activity: "Implementing native Node.js HTTP server routing without external frameworks, handling request headers, status codes (200 OK, 404 Not Found), and URL query strings.",
+    toolsUsed: "Node.js runtime, V8 Engine, HTTP core module, FS module, Path module",
+    procedure: "1. Instantiate native HTTP server with http.createServer().\n2. Inspect req.url and req.method request properties.\n3. Read static response payload asynchronously via fs.readFile().\n4. Set HTTP response status codes and Content-Type headers.",
     workPerformed: "Developed a functional server dispatching requests to '/api/status', '/data', and default 404 handlers with non-blocking event loops.",
     outputPreview: "Server started at port 8080. GET /api/status -> 200 OK JSON payload dispatched successfully.",
     result: "Verified low-level HTTP request/response execution and asynchronous event loop handling.",
-    learningOutcome: "Understood client-server request execution cycles, MIME content-type headers, and event-driven Node.js runtime mechanics."
+    learningOutcome: "Organizing class activity submissions, client-server request execution cycles, MIME content-type headers, and event-driven Node.js runtime mechanics."
   },
   {
-    id: "lab-03",
-    number: "LAB ASSIGNMENT 03",
-    title: "Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
-    tool: "Data Visualization & Documentation",
+    id: "assignment-3",
+    number: "Assignment 3",
+    title: "Assignment 3: Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
+    tool: "Data Visualization & Graphic Tools",
     category: "Analytics Guidelines & Design",
     image: "images/lab-03-preview.png",
-    shortDescription: "Designing a comprehensive visual cheat sheet categorizing chart selection guidelines, color theory, and visualization best practices.",
-    objective: "To synthesize data visualization principles into an actionable reference guide for selecting appropriate chart types based on data structures.",
+    shortDescription: "Create a concise reference guide that helps learners select appropriate charts for different data visualization tasks.",
+    objective: "Create a concise reference guide that helps learners select appropriate charts for different data visualization tasks.",
+    content: "Explains the purpose of common chart types, when to use each chart, and the types of comparisons, distributions, trends, or relationships each chart communicates.",
+    chartCategories: [
+      "Bar & Column Charts: Category comparisons and discrete groupings.",
+      "Line Charts: Trends, continuous time-series, and trajectories over time.",
+      "Pie & Donut Charts: Simple part-to-whole compositional proportions.",
+      "Histograms: Frequency distributions and data density spreads.",
+      "Scatter Plots: Relationships and correlations between numerical variables.",
+      "Maps: Geographic distributions and spatial comparisons."
+    ],
     activity: "Curating a structured infographic cheat sheet covering comparative charts, distribution plots, compositional visuals, and relationship diagrams.",
-    toolsUsed: "Figma, Canva, Markdown, Data Visualization Frameworks",
-    procedure: "1. Research visual encoding taxonomy (bar, line, scatter, treemap, heatmap).\n2. Classify charts by analytical objective (Comparison, Distribution, Composition, Relationship).\n3. Define accessibility guidelines (color contrast, typography scale, chart junk reduction).\n4. Export and publish reference cheat sheet.",
-    workPerformed: "Created a 4-section visual guide outlining chart selection decision trees, color palette rules (sequential vs. diverging), and label alignment standards.",
-    outputPreview: "Published 'Data Visualization Cheat Sheet v1.0' featuring quick decision matrix for choosing between bar, line, pie, and scatter charts.",
+    toolsUsed: "Data Visualization Software & Design Documentation Tools",
+    procedure: "1. Research visual encoding taxonomy (bar, line, scatter, histogram, map).\n2. Classify charts by analytical objective (Comparison, Distribution, Composition, Relationship).\n3. Define accessibility guidelines (color contrast, typography scale, chart junk reduction).\n4. Format reference cheat sheet for easy reading and sharing.",
+    workPerformed: "Created a visual guide outlining chart selection decision trees, color palette rules (sequential vs. diverging), and label alignment standards.",
+    outputPreview: "Published 'Data Visualization Cheat Sheet' featuring quick decision matrix for choosing between bar, line, pie, histogram, and scatter charts.",
     result: "Produced a reusable reference standard adopted for departmental data analytics lab reports.",
-    learningOutcome: "Developed strong design intuition for match-to-purpose chart selection and clear visual communication."
+    learningOutcome: "Chart selection, visual literacy, concise documentation, and communicating visualization principles."
   },
   {
-    id: "lab-04",
-    number: "LAB ASSIGNMENT 04",
-    title: "From Learning to LinkedIn",
-    tool: "Professional Branding & Portfolio",
+    id: "assignment-4",
+    number: "Assignment 4",
+    title: "Assignment 4: From Learning to LinkedIn",
+    tool: "LinkedIn & Portfolio Tools",
     category: "Career & Technical Communication",
     image: "images/lab-04-preview.png",
-    shortDescription: "Documenting technical project achievements, structuring technical case studies, and sharing academic portfolio milestones on LinkedIn.",
-    objective: "To bridge academic computer science lab achievements with industry-facing professional portfolio showcases and technical writing.",
-    activity: "Crafting structured project write-ups, highlighting key metrics, tech stacks, GitHub repositories, and publishing professional updates.",
-    toolsUsed: "LinkedIn Platform, Markdown, Git / GitHub, Technical Writing",
-    procedure: "1. Summarize lab technical architecture into executive bullet points.\n2. Prepare code snippets and execution screenshots.\n3. Draft technical posts explaining problem statements, solutions, and key takeaways.\n4. Link GitHub source repositories for peer review.",
+    shortDescription: "Present learning progress or completed computer science practical work professionally through LinkedIn and technical portfolios.",
+    objective: "Present learning progress or completed work professionally through LinkedIn.",
+    content: "Describes the practical subject work documented in the submission, displaying the learning output and explaining key learning points communicated to the professional developer network.",
+    activity: "Summarizing technical lab achievements into structured case studies, detailing technologies used, source code repositories, and sharing updates.",
+    toolsUsed: "LinkedIn Platform, Git / GitHub, Technical Writing Tools",
+    procedure: "1. Summarize lab technical architecture into clear bullet points.\n2. Prepare code snippets and execution screenshots.\n3. Draft technical posts explaining problem statements, solutions, and key takeaways.\n4. Link verified GitHub source repositories for peer review.",
     workPerformed: "Published technical case studies detailing Node.js REST API design and Power BI data dashboards with live repository links.",
-    outputPreview: "Published technical portfolio update with live code links, achieving engagement across academic and peer technical networks.",
-    result: "Successfully built an active digital footprint bridging academic work and industry career readiness.",
-    learningOutcome: "Enhanced technical communication skills, project documentation clarity, and professional developer branding."
+    outputPreview: "Published technical portfolio update with live repository links across professional developer networks.",
+    result: "Successfully established a professional digital footprint bridging academic work and industry readiness.",
+    learningOutcome: "Professional communication, documenting learning progress, presenting work, and building a professional portfolio."
   },
   {
-    id: "lab-05",
-    number: "LAB ASSIGNMENT 05",
-    title: "Learning Activity",
+    id: "assignment-5",
+    number: "Assignment 5",
+    title: "Assignment 5: Learning Activity",
     tool: "JavaScript ES6+ & Asynchronous Promises",
     category: "Core Computer Science Algorithms",
     image: "images/lab-05-preview.png",
-    shortDescription: "Hands-on exercises mastering asynchronous control flow, Callback to Promise conversion, Promise.all concurrency, and async/await.",
-    objective: "To eliminate callback hell, master JavaScript microtask execution timing, and build resilient asynchronous error handling patterns.",
-    activity: "Solving complex asynchronous programming challenges using native ES6 Promises, async/await keywords, and try/catch blocks.",
+    shortDescription: "Document the practical learning activity and demonstrate understanding of asynchronous programming and JavaScript control flow.",
+    objective: "Document the practical learning activity and demonstrate understanding of the concepts covered.",
+    content: "Displays the activity instructions, concepts/techniques practiced in asynchronous control flow, Callback to Promise conversion, Promise.all concurrency, and async/await.",
+    activity: "Solving complex asynchronous programming challenges using native ES6 Promises, async/await keywords, and try/catch error boundaries.",
     toolsUsed: "JavaScript ES6+, Node.js runtime, Chrome DevTools",
-    procedure: "1. Implement mock API calls using setTimeout and Promises.\n2. Benchmark serial await calls against parallel Promise.all() execution.\n3. Add global error handlers to catch unhandled promise rejections.\n4. Log microtask vs macrotask execution orders in console.",
-    workPerformed: "Refactored legacy nested callback functions into clean, readable async/await async pipelines with 45% faster parallel execution.",
+    procedure: "1. Implement asynchronous operations using Promises.\n2. Benchmark serial await calls against parallel Promise.all() execution.\n3. Add global error handlers to catch unhandled promise rejections.\n4. Log microtask vs macrotask execution orders in console.",
+    workPerformed: "Refactored nested callback functions into clean, readable async/await pipelines with improved parallel execution speed.",
     outputPreview: "Promise.all Execution Time: 204ms vs Serial Await Execution Time: 610ms. All tests passed.",
-    result: "Achieved optimal asynchronous runtime performance and clean exception propagation.",
-    learningOutcome: "Mastered the JavaScript event loop microtask queue, concurrency management, and async function architecture."
+    result: "Achieved optimal asynchronous runtime performance and clean exception handling.",
+    learningOutcome: "Applying classroom concepts, following practical instructions, interpreting results, and documenting work."
   },
   {
-    id: "lab-06",
-    number: "LAB ASSIGNMENT 06",
-    title: "Lab Practical",
-    tool: "Node.js / Express / JWT Security",
+    id: "assignment-6",
+    number: "Assignment 6",
+    title: "Assignment 6: Lab Practical",
+    tool: "Node.js / Express / Web Security",
     category: "Web Security & Authentication",
     image: "images/lab-06-preview.png",
-    shortDescription: "Implementation of secure user registration, bcrypt password hashing, JSON Web Token (JWT) issuing, and middleware protection.",
-    objective: "To secure backend Web APIs against unauthorized access using cryptographic hashing and stateless JWT bearer token authentication.",
-    activity: "Building authentication endpoints (/api/register, /api/login) and authorization middleware protecting private API routes.",
-    toolsUsed: "Node.js, Express.js, bcrypt, jsonwebtoken, Postman API Client",
-    procedure: "1. Hash user plaintext passwords using bcrypt with salt factor 10.\n2. Authenticate user credentials and sign JWT payload with secret key.\n3. Intercept requests using Express authorization header middleware.\n4. Validate Bearer token signature before granting access.",
+    shortDescription: "Present the work completed for the assigned laboratory practical on secure user authentication and web security middleware.",
+    objective: "Present the work completed for the assigned laboratory practical.",
+    content: "Shows the practical title and objective, procedure and tasks performed, software tools used, screenshots of completed work, and recorded conclusions.",
+    activity: "Building authentication endpoints (/api/register, /api/login) and authorization middleware protecting private API routes using salted password hashing and JWT tokens.",
+    toolsUsed: "Node.js, Express.js, bcrypt cryptography, jsonwebtoken, Postman",
+    procedure: "1. Hash user plaintext passwords using bcrypt with salt factor 10.\n2. Authenticate credentials and sign JWT payload with secret key.\n3. Intercept requests using Express authorization header middleware.\n4. Validate Bearer token signature before granting access.",
     workPerformed: "Constructed secure authentication flow ensuring zero plain-text password storage and verified token verification on protected routes.",
     outputPreview: "POST /api/login -> 200 OK { token: 'eyJhbGciOi...' }. GET /api/protected (with Bearer Token) -> Access Granted.",
     result: "Successfully deployed robust JWT-based stateless authorization layer for REST APIs.",
-    learningOutcome: "Understood password hashing cryptography, stateless session management, and HTTP security header standards."
+    learningOutcome: "Practical implementation, tool usage, problem-solving, reporting results, and web security principles."
   },
   {
-    id: "lab-07",
-    number: "LAB ASSIGNMENT 07",
-    title: "Hands On Lab Practical - Excel Charts & Dashboard",
-    tool: "Microsoft Excel / Advanced Analytics",
+    id: "assignment-7",
+    number: "Assignment 7",
+    title: "Assignment 7: Hands On Lab Practical - Excel Charts & Dashboard",
+    tool: "Microsoft Excel",
     category: "Data Processing & Excel BI",
     image: "images/lab-07-preview.png",
-    shortDescription: "Building dynamic interactive business dashboards in Excel using PivotTables, Slicers, dynamic chart formulas, and KPI cards.",
-    objective: "To harness advanced Microsoft Excel functions (PivotTables, VLOOKUP/XLOOKUP, Slicers, Conditional Formatting) for business intelligence.",
-    activity: "Transforming raw transactional Excel data into an executive summary dashboard featuring interactive slicers and dynamic charts.",
-    toolsUsed: "Microsoft Excel 365, PivotTables, Dynamic Charts, Conditional Formatting",
+    shortDescription: "Use Microsoft Excel to create charts and assemble a dashboard that presents data in an understandable visual format.",
+    objective: "Use Microsoft Excel to create charts and assemble a dashboard that presents data in an understandable visual format.",
+    content: "Works with the practical dataset, organizing fields for analysis, creating required charts, and arranging elements into an interactive dashboard using meaningful titles, labels, legends, and formatting.",
+    activity: "Transforming raw transactional data into an executive summary dashboard featuring interactive slicers, PivotTables, and dynamic charts.",
+    toolsUsed: "Microsoft Excel (PivotTables, Dynamic Charts, Slicers, Conditional Formatting)",
     procedure: "1. Clean and format raw dataset into structured Excel tables.\n2. Summarize metrics using multiple PivotTables (sales by region, category, month).\n3. Create dynamic bar charts, pie charts, and KPI summary blocks.\n4. Connect interactive timeline slicers for cross-filtering.",
     workPerformed: "Engineered a complete single-page interactive Excel sales dashboard with automated total calculations and regional filters.",
-    outputPreview: "Interactive Excel Dashboard displaying 4 KPI summary cards, 3 dynamic charts, and region/quarter timeline slicers.",
-    result: "Delivered a fully responsive offline spreadsheet analytics tool ready for business reporting.",
-    learningOutcome: "Mastered Excel data modeling, dynamic PivotTable aggregation, dynamic chart formatting, and dashboard layout design."
+    outputPreview: "Interactive Excel Dashboard displaying KPI summary cards, dynamic charts, and region/quarter timeline slicers.",
+    result: "Delivered a fully responsive spreadsheet analytics tool ready for business reporting.",
+    learningOutcome: "Spreadsheet-based data analysis, chart creation, dashboard layout, data presentation, and interpretation of visual results."
   },
   {
-    id: "lab-08",
-    number: "LAB ASSIGNMENT 08",
-    title: "Submit Your Data Studio Report",
+    id: "assignment-8",
+    number: "Assignment 8",
+    title: "Assignment 8: Submit Your Data Studio Report",
     tool: "Google Data Studio / Looker Studio",
     category: "Cloud Data Visualization",
     image: "images/lab-08-preview.png",
-    shortDescription: "Authoring interactive cloud sales analytics dashboards in Looker Studio with real-time data connection, scorecards, and filters.",
-    objective: "To construct interactive cloud-hosted data reports in Looker Studio enabling stakeholder self-service analytics and dynamic filtering.",
+    shortDescription: "Create and submit a report using Google Data Studio (Looker Studio) to communicate data through interactive visualizations.",
+    objective: "Create and submit a report using Google Data Studio, now known as Looker Studio, to communicate data through interactive visualizations.",
+    content: "Identifies the data source used, presents the report's purpose, displays scorecards, tables, filters, and charts, and explains the metrics and observations shown.",
     activity: "Connecting Google Sheets data source to Looker Studio, configuring calculated fields, scorecards, time-series charts, and shareable reports.",
-    toolsUsed: "Google Looker Studio (Data Studio), Google Sheets, Cloud Connectors",
+    toolsUsed: "Google Data Studio / Looker Studio, Google Sheets",
     procedure: "1. Connect sales dataset hosted on Google Sheets to Looker Studio.\n2. Create calculated metrics for net revenue and profit margin %.\n3. Design scorecards, category distribution bar charts, and daily sales trend lines.\n4. Configure interactive date range pickers and category drop-down filters.",
-    workPerformed: "Published a live interactive Looker Studio sales report with real-time dynamic filtering and mobile-friendly responsive layout.",
-    outputPreview: "Looker Studio Report Published: 4 Executive KPI scorecards, 3 interactive charts, and live cloud share URL.",
+    workPerformed: "Published an interactive Looker Studio sales report with dynamic filtering and mobile-friendly responsive layout.",
+    outputPreview: "Looker Studio Report Published: Executive KPI scorecards, interactive charts, and live cloud share URL.",
     result: "Delivered accessible, cloud-native business intelligence report requiring zero software installation.",
-    learningOutcome: "Gained expertise in cloud BI tools, real-time data source connections, metric customization, and dashboard publishing."
+    learningOutcome: "Report building, visual storytelling, metric presentation, dashboard organization, and communicating data-driven observations."
   },
   {
-    id: "lab-09",
-    number: "LAB ASSIGNMENT 09",
-    title: "Lab Work: Tableau Dashboard",
-    tool: "Tableau Desktop / Tableau Public",
-    category: "Enterprise Analytics",
+    id: "assignment-9",
+    number: "Assignment 9",
+    title: "Assignment 9: Lab Work: Tableau Dashboard",
+    tool: "Tableau",
+    category: "Enterprise Analytics & Geographic Mapping",
     image: "images/lab-09-preview.png",
-    shortDescription: "Creating enterprise-grade visual analytics in Tableau Desktop featuring calculated fields, scatter plots, map views, and interactive actions.",
-    objective: "To leverage Tableau's visual query engine to build multi-dimensional interactive dashboards with filter actions and parameter controls.",
-    activity: "Building a multi-sheet Tableau workbook analyzing corporate sales revenue, profit ratios, and regional geographical performance.",
-    toolsUsed: "Tableau Desktop, Sample Superstore Dataset, Tableau Public",
-    procedure: "1. Connect raw Superstore dataset to Tableau Desktop.\n2. Create custom calculated fields for Profit Ratio and YoY Growth.\n3. Build individual worksheets: Sales Map, Category Bar Chart, Monthly Trend Line.\n4. Assemble worksheets on a unified dashboard canvas and add Filter Actions.",
-    workPerformed: "Designed an interactive 4-view Tableau dashboard with cross-highlighting actions, custom tooltips, and regional filter controls.",
-    outputPreview: "Tableau Dashboard published with interactive cross-filtering enabled across category charts and regional maps.",
+    shortDescription: "Use Tableau to build geographic visualizations and dashboards using Superstore_Sales.csv supporting data exploration.",
+    objective: "Use Tableau to build visualizations and dashboards that support data exploration and analysis.",
+    content: "Uses Superstore_Sales.csv to perform map-based visualization tasks including Filled Maps for sales by state, Bubble Maps for profit distribution by city, Heat Maps for order concentration, and Flow Maps for delivery routes.",
+    tableautasks: [
+      "1. Display total sales by state using a Filled Map.",
+      "2. Show profit distribution by city using a Bubble Map.",
+      "3. Identify order concentration using a Heat Map.",
+      "4. Trace delivery routes using a Flow Map."
+    ],
+    analysisQuestions: [
+      "• Which states bring in the highest sales?",
+      "• Which cities or locations stand out in the profit distribution?",
+      "• Where is order concentration highest?",
+      "• What delivery routes or geographic patterns are visible?"
+    ],
+    activity: "Building a multi-sheet Tableau workbook analyzing corporate sales revenue, profit ratios, and regional geographical performance using Superstore_Sales.csv.",
+    toolsUsed: "Tableau Desktop / Tableau Public, Superstore_Sales.csv",
+    procedure: "1. Connect Superstore_Sales.csv dataset to Tableau Desktop.\n2. Build Filled Map for State sales, Bubble Map for City profit, and Heat Map for order density.\n3. Create custom calculated fields for Profit Ratio and YoY Growth.\n4. Assemble worksheets on a unified dashboard canvas and add Filter Actions.",
+    workPerformed: "Designed an interactive Tableau dashboard with map visualizations, cross-highlighting actions, tooltips, and regional filter controls.",
+    outputPreview: "Tableau Dashboard published with interactive geographic maps and regional filter controls.",
     result: "Constructed an executive-ready enterprise dashboard adhering to Tableau visual analytics standards.",
-    learningOutcome: "Mastered Tableau worksheet building, calculated fields, dashboard actions, parameter controls, and story building."
+    learningOutcome: "Geographic visualization, map configuration, visual encoding, dashboard creation, and interpretation of sales and order data."
   },
   {
-    id: "lab-10",
-    number: "LAB ASSIGNMENT 10",
-    title: "Hands-On Practical",
-    tool: "Express.js Framework & MongoDB",
+    id: "assignment-10",
+    number: "Assignment 10",
+    title: "Assignment 10: Hands-On Practical",
+    tool: "Express.js & MongoDB",
     category: "Full-Stack Backend Development",
     image: "images/lab-10-preview.png",
-    shortDescription: "Comprehensive practical synthesis building full RESTful API microservices integrated with MongoDB database persistence.",
-    objective: "To integrate Express.js server routes, Mongoose schema modeling, CRUD controller logic, and error handling into a complete backend.",
-    activity: "Engineering a full-stack backend application handling student data management, grade recording, and automated JSON reporting.",
-    toolsUsed: "Node.js, Express.js, MongoDB Atlas, Mongoose ODM, Postman",
+    shortDescription: "Demonstrate the practical skills developed through assigned hands-on exercises in full-stack backend RESTful microservices.",
+    objective: "Demonstrate the practical skills developed through the assigned hands-on exercise.",
+    content: "Presents the practical title and objective, instructions performed, tools used, submitted work outputs, results, and learning outcomes.",
+    activity: "Engineering a full-stack backend application handling student data management, grade recording, Mongoose validation, and automated JSON reporting.",
+    toolsUsed: "Node.js, Express.js, MongoDB, Mongoose ODM, Postman",
     procedure: "1. Define Mongoose schema with field validation rules (unique, required, min/max).\n2. Create modular API controllers for GET, POST, PUT, DELETE operations.\n3. Implement async middleware error wrapper to handle database validation failures.\n4. Test API endpoints using Postman collection.",
     workPerformed: "Successfully deployed full backend API servicing CRUD operations for 10+ student records with robust input validation.",
     outputPreview: "Full CRUD API verified: GET /api/v1/students -> 200 OK. POST /api/v1/students -> 201 Created.",
     result: "Demonstrated full operational readiness in building scalable Node.js/MongoDB web backend services.",
-    learningOutcome: "Consolidated complete backend engineering workflow: NoSQL modeling, Express routing, REST principles, and API testing."
+    learningOutcome: "Applying practical skills, working through assigned tasks, interpreting outputs, and documenting completed work."
   }
 ];
 
@@ -185,7 +215,8 @@ const labsData = [
 const dashboardsData = [
   {
     id: "paper-leak",
-    title: "Paper Leak Analysis Dashboard",
+    number: "Dashboard 1",
+    title: "Dashboard 1: Paper Leak Analysis Dashboard",
     category: "Academic / Education Analytics",
     tool: "Power BI",
     toolClass: "power-bi",
@@ -199,10 +230,11 @@ const dashboardsData = [
         caption: "Action Taken, Aspirants Affected, Arrests vs Convictions & Confidence Metrics"
       }
     ],
-    shortDescription: "Investigative security dashboard analyzing paper leak incidents across conducting bodies, leak status, affected aspirants, and legal enforcement outcomes.",
-    overview: "This investigative security intelligence dashboard provides a detailed analytical audit of reported exam paper leak incidents across India. It tracks breach frequency across state and central conducting bodies, evaluates legal enforcement actions, and quantifies the impact on millions of student candidates.",
-    objective: "Designed to analyze paper leak incidents across temporal trends, conducting bodies (Vyapam/MPPEB, CBSE, NTA, etc.), breach status, confidence levels, affected aspirants, and legal enforcement outcomes (Arrests, FIRs, Convictions).",
-    dataset: "Incident reports database containing breach records, conducting bodies (State vs Central), era classification (NDA vs UPA), affected candidate counts, and enforcement outcomes (Arrests/FIR, Convictions).",
+    shortDescription: "Present information related to paper leak analysis in a visual dashboard.",
+    objective: "Present information related to paper leak analysis in a visual dashboard.",
+    overview: "This investigative security intelligence dashboard provides a detailed analytical audit of reported exam paper leak incidents across India. It tracks breach frequency across state and central conducting bodies, evaluates legal enforcement actions, and quantifies the impact on student candidates.",
+    audience: "Educational administrators, examination boards, and security policy analysts.",
+    dataset: "Incident reports database containing breach records, conducting bodies (Vyapam/MPPEB, CBSE, NTA, State Boards), era classification (NDA vs UPA), affected candidate counts, and enforcement outcomes (Arrests/FIR, Convictions).",
     kpis: [
       { label: "Confirmed Leaks", value: "89 Cases", sub: "80.91% of total incidents" },
       { label: "High Confidence Flags", value: "81 Flags", sub: "73.64% verified confidence" },
@@ -215,22 +247,19 @@ const dashboardsData = [
       "Conducting Body Breakdown (Horizontal Bar Chart & Treemap): Incident frequency across Vyapam (MPPEB), CBSE, NTA, and State Boards.",
       "State vs. Central Distribution (Pie Chart): State conducting bodies (88 cases / 80%) vs Central bodies (22 cases / 20%).",
       "Era-Wise Incident Comparison (Column Chart): Incident count breakdown comparing NDA (May 2014–present) and UPA (2004–May 2014) eras.",
-      "Action Taken Breakdown (Bar Chart): Enforcement metrics for Arrests-FIR + Paper Cancelled, Retest + Arrest, and Exam Cancelled.",
-      "Arrests vs. Convictions by Conducting Body (Grouped Column Chart): Comparative tracking of arrests and convictions across Bihar, Haryana, Jharkhand, Rajasthan, UP, etc.",
-      "Aspirants Affected (Column Chart): Impact volume per exam reaching up to 5 Million+ candidates in major tests like NEET and UP Police.",
-      "Confidence Level Distribution (Donut Chart): High Confidence (81 / 73.64%) vs Medium Confidence (26 / 23.64%).",
-      "Sum of Convictions by Incident ID (Funnel Chart): Resolution conversion rates across specific case codes (PL-0019, PL-0020, PL-0016, PL-0018)."
+      "Action Taken Breakdown (Bar Chart): Enforcement metrics for Arrests-FIR + Paper Cancelled, Retest + Arrest, and Exam Cancelled."
     ],
+    filtersSlicers: "Interactive slicers for Conducting Body, Era (NDA vs UPA), State vs Central, and Confidence Level.",
     keyInsights: [
       "State conducting bodies account for 80% (88 incidents) of total reported paper leaks, while Central conducting bodies represent 20% (22 incidents).",
       "Confirmed leak cases constitute 80.91% (89 cases) of all logged incidents, with 73.64% (81 cases) evaluated at high verification confidence.",
-      "Paper leak frequency experienced a major surge between 2020 and 2022, directly impacting over 5 Million+ aspirants across competitive examinations.",
-      "Enforcement data shows high initial arrest figures in states like Bihar, Haryana, and Jharkhand, though conviction rates remain low across several incident codes."
+      "Paper leak frequency experienced a major surge between 2020 and 2022, directly impacting over 5 Million+ aspirants across competitive examinations."
     ]
   },
   {
     id: "examination-result",
-    title: "Examination & Result Dashboard",
+    number: "Dashboard 2",
+    title: "Dashboard 2: Examination & Result Dashboard",
     category: "Academic / Student Performance Analytics",
     tool: "Power BI",
     toolClass: "power-bi",
@@ -240,40 +269,38 @@ const dashboardsData = [
         caption: "Examination & Result Analytics Executive Overview Canvas"
       }
     ],
-    shortDescription: "Analyze student academic performance, grade distributions, pass/fail trends, subject-wise scores, and attendance benchmarks.",
+    shortDescription: "Analyze examination performance and student results through a dashboard.",
+    objective: "Analyze examination performance and student results through a dashboard.",
     overview: "This academic performance evaluation dashboard provides institution-level analytics for student cohort evaluation. It measures marks distribution across semesters, subject performance rankings, attendance compliance, and distinction grade ratios.",
-    objective: "Created to evaluate student academic performance across departments, track average marks across semesters and subjects, monitor attendance compliance against target benchmarks, and analyze pass vs. fail grade distributions.",
-    dataset: "Student academic evaluation database containing student IDs, names, semester terms (Sem 1 to Sem 6), course subjects (AI, C Programming, Data Analysis with Python, DBMS, etc.), marks obtained, and attendance percentages.",
+    audience: "Academic department heads, faculty evaluation committees, and university administration.",
+    dataset: "Student academic evaluation database: 14 students, 6 semesters, 266 result records, Average marks: 84.21 / 100, overall cohort attendance: 89.34%.",
     kpis: [
-      { label: "Total Students", value: "14", sub: "Active cohort size" },
+      { label: "Total Students", value: "14 Students", sub: "Active cohort size" },
+      { label: "Semesters Tracked", value: "6 Semesters", sub: "Sem 1 to Sem 6" },
+      { label: "Result Records", value: "266 Records", sub: "Total course evaluations" },
       { label: "Average Marks", value: "84.21 / 100", sub: "Overall aggregate score" },
-      { label: "Average Attendance", value: "89.34%", sub: "Target benchmark: 75.00%" },
-      { label: "Pass Percentage", value: "96.99%", sub: "258 pass records" },
-      { label: "Fail Percentage", value: "3.01%", sub: "8 fail records" }
+      { label: "Pass Rate", value: "96.99%", sub: "258 pass evaluations" }
     ],
     keyVisualizations: [
       "Pass vs. Fail Distribution (Pie Chart): 258 Pass evaluations (96.99%) vs 8 Fail evaluations (3.01%).",
       "Grade Distribution (Donut Chart): 266 total grade evaluations — A Grade: 113 (42.48%), A+: 86 (32.33%), B+: 59 (22.18%).",
-      "Overall Attendance Gauge Chart: Cohort attendance average of 89.34% measured against the 75.00% requirement target.",
-      "Average Marks by Semester (Bar Chart): Semester-over-semester score progression showing peak marks concentration in Semester 6.",
-      "Student-wise Average Performance (Column Chart): Individual student aggregate marks (Shreya K., Pragya Gupta, Gouri, Mikki Jaiswal, etc.).",
-      "Subject Performance Ranking Across Semesters (Stacked Bar Chart): Comparative subject score breakdown across Semesters 1 through 6.",
-      "Average Marks by Subject & Semester (Color-Coded Treemap): Visual area mapping across subjects (Data Analysis with Python, AI, Linux, DBMS, Operating Systems).",
-      "Subject Performance Drilldown (Decomposition Tree): Hierarchical decomposition of average marks (84.21) by top subjects (Data Analysis with Python: 89.50, System Architecture: 87.57).",
-      "Student Performance Roster Matrix: Itemized student scoreboard across Sem 1 to Sem 6 with cumulative total marks (e.g. Gouri: 1,733 total, Ayush Ram Tripathi: 1,638 total, Total 22,400 marks)."
+      "Overall Attendance Gauge Chart: Cohort attendance average of 89.34% measured against 75.00% target.",
+      "Average Marks by Semester (Bar Chart): Semester score progression showing peak performance concentration in Semester 6.",
+      "Subject Performance Roster Matrix: Itemized student scoreboard across Sem 1 to Sem 6 with cumulative total marks."
     ],
+    filtersSlicers: "Slicers for Semester (Sem 1 to Sem 6), Department, Course Subject, and Pass/Fail Status.",
     keyInsights: [
       "The student cohort achieved a 96.99% overall pass rate (258 pass evaluations vs. 8 fail evaluations) with a high average score of 84.21 / 100.",
       "Top distinction grades (A and A+) accounted for 74.81% of all course evaluations (A Grade: 42.48%, A+ Grade: 32.33%).",
-      "Average cohort attendance stood at 89.34%, comfortably exceeding the institutional 75.00% attendance benchmark target.",
-      "Data Analysis with Python recorded the highest average subject score (89.50), while Semester 6 demonstrated the overall highest student score performance."
+      "Average cohort attendance stood at 89.34%, comfortably exceeding the institutional 75.00% attendance benchmark target."
     ]
   },
   {
     id: "sales-by-category",
-    title: "Sales by Category Dashboard",
+    number: "Dashboard 3",
+    title: "Dashboard 3: Sales by Category Dashboard",
     category: "Sales Analytics",
-    tool: "Data Studio / Looker Studio",
+    tool: "Google Data Studio / Looker Studio",
     toolClass: "looker-studio",
     images: [
       {
@@ -281,33 +308,34 @@ const dashboardsData = [
         caption: "Sales by Category Looker Studio Analytics View"
       }
     ],
-    shortDescription: "Sales analytics dashboard tracking category-wise revenue distribution, profit margins, order volumes, and payment channel preferences.",
+    shortDescription: "Present sales performance by product or sales category.",
+    objective: "Present sales performance by product or sales category.",
     overview: "This interactive cloud analytics dashboard monitors category-level sales revenue, profit margin contributions, order volumes, and customer payment method breakdowns across e-commerce channels.",
-    objective: "Designed to monitor category-level sales revenue, evaluate product margin performance, track order volume trends across date ranges (Jan 3 to Mar 28), analyze category profit contributions, and evaluate customer payment method preferences.",
+    audience: "Category sales managers, e-commerce operations leads, and retail analysts.",
     dataset: "E-commerce sales transaction database featuring order IDs, product names, category hierarchies (Electronics, Furniture, Clothing, Beauty), sales amounts, profit figures, order quantities, payment methods (Card, UPI, Cash), and transaction dates.",
     kpis: [
       { label: "Total Sales", value: "$222,100", sub: "Gross sales revenue" },
-      { label: "Total Profit", value: "$29,300", sub: "$29.3k net profit" },
-      { label: "Total Orders", value: "30", sub: "Completed order transactions" },
-      { label: "Total Quantity Sold", value: "47 Units", sub: "Items shipped" }
+      { label: "Total Profit", value: "$29,300", sub: "Net category profit" },
+      { label: "Total Orders", value: "30 Orders", sub: "Completed transactions" },
+      { label: "Quantity Sold", value: "47 Units", sub: "Shipped items" }
     ],
     keyVisualizations: [
       "Sales by Category (Horizontal Bar Chart): Category revenue breakdown showing Electronics (~$120k - Top Category), Furniture (~$60k), Clothing (~$24k), and Beauty (~$15k).",
-      "Sales Trend Over Time (Time Series Chart): Daily sales progression from Jan 3 to Mar 28, featuring a major revenue spike (~$65k) in early February.",
+      "Sales Trend Over Time (Time Series Chart): Daily sales progression from Jan 3 to Mar 28 featuring revenue spikes.",
       "Profit by Category (Vertical Column Chart): Category net profit contributions — Electronics ($14k+), Furniture ($7.5k), Clothing ($4k), and Beauty ($3k).",
-      "Orders by Payment Method (Donut Chart): Card payments (46.7%), UPI payments (43.3%), and Cash payments (10.0%).",
-      "Product & Category Performance Table: Detailed product matrix displaying Product Name, Category, Sales, Quantity, Profit, and Profit Margin % (e.g. Bookcase: 27.68% margin, Headphones: 18.00% margin)."
+      "Orders by Payment Method (Donut Chart): Card payments (46.7%), UPI payments (43.3%), and Cash payments (10.0%)."
     ],
+    filtersSlicers: "Interactive Date Range Picker (Jan 3 - Mar 28), Category Dropdown Filter, and Payment Method Filter.",
     keyInsights: [
-      "Total sales revenue reached $222,100 with a total net profit of $29,300 ($29.3k) generated across 30 orders and 47 units sold.",
+      "Total sales revenue reached $222,100 with a total net profit of $29,300 generated across 30 orders and 47 units sold.",
       "Electronics emerged as the primary revenue and profit driver (~$120k sales, ~$14k+ profit), followed by Furniture (~$60k sales).",
-      "Digital payment methods accounted for 90.0% of all customer orders (Card: 46.7%, UPI: 43.3%), while cash on delivery represented only 10.0%.",
-      "Sales trend analysis revealed a massive revenue demand spike in early February (reaching a peak single-day sales volume of ~$65k)."
+      "Digital payment methods accounted for 90.0% of all customer orders (Card: 46.7%, UPI: 43.3%), while cash represented only 10.0%."
     ]
   },
   {
     id: "sales-performance",
-    title: "Sales Performance Dashboard",
+    number: "Dashboard 4",
+    title: "Dashboard 4: Sales Performance Dashboard",
     category: "Sales / Business Analytics",
     tool: "Tableau",
     toolClass: "tableau",
@@ -317,9 +345,10 @@ const dashboardsData = [
         caption: "Tableau Executive Sales Performance Overview"
       }
     ],
-    shortDescription: "Executive sales dashboard evaluating category revenue, monthly sales seasonality, and multi-year sales and profit trends.",
+    shortDescription: "Present sales performance using interactive visualizations.",
+    objective: "Present sales performance using interactive visualizations.",
     overview: "This enterprise Tableau executive dashboard delivers commercial revenue analysis for Sample Superstore. It analyzes product segment performance, seasonal sales cycles, and multi-year profit growth across sales territories.",
-    objective: "Created to evaluate overall commercial sales growth for Sample Superstore, monitor revenue across product categories (Technology, Furniture, Office Supplies), analyze monthly sales seasonality, and track multi-year sales and profit trends (2023 to 2026).",
+    audience: "VP of Sales, Regional Directors, and Commercial Strategy Teams.",
     dataset: "Enterprise commercial sales database (Sample Superstore) containing multi-year transactions spanning 2023 through 2026, categorized by product segments, order dates, regions (Central, East, South, West), sales revenue, and net profit figures.",
     kpis: [
       { label: "Total Sales", value: "$2,326,534", sub: "Gross store revenue" },
@@ -327,20 +356,20 @@ const dashboardsData = [
     ],
     keyVisualizations: [
       "Sales Profit by Category (Column Bar Chart): Category revenue breakdown featuring Technology ($839,893 - Top Category), Furniture ($754,748), and Office Supplies ($731,893).",
-      "Sales by Month (Line Chart): Monthly revenue trend across Order Dates (Jan to Dec), highlighting major Q4 peaks in November (~$340k) and September (~$310k).",
-      "Sales and Profit by Year (Scatter Circle Comparison Matrix): Annual performance matrix tracking sales volume and net profit growth across 2023, 2024, 2025, and 2026.",
-      "Region Slicers Filter: Interactive regional filters covering Central, East, South, and West sales territories."
+      "Sales by Month (Line Chart): Monthly revenue trend across Order Dates (Jan to Dec), highlighting Q4 peaks in November (~$340k) and September (~$310k).",
+      "Sales and Profit by Year (Scatter Matrix): Annual performance matrix tracking sales volume and net profit growth across 2023, 2024, 2025, and 2026."
     ],
+    filtersSlicers: "Region Slicers (Central, East, South, West), Year Filters (2023-2026), and Category Selection.",
     keyInsights: [
       "Sample Superstore generated $2,326,534 in total gross sales revenue and $292,297 in net profit.",
       "Technology was the highest-performing product category generating $839,893 in sales, followed by Furniture ($754,748) and Office Supplies ($731,893).",
-      "Monthly sales trends demonstrate strong Q4 seasonality, with sales volume peaking significantly in November (~$340k) and September (~$310k).",
-      "Multi-year analysis (2023–2026) reflects steady annual growth in both sales volume and net profitability."
+      "Monthly sales trends demonstrate strong Q4 seasonality, with sales volume peaking significantly in November (~$340k) and September (~$310k)."
     ]
   },
   {
     id: "regional-management",
-    title: "Regional Management Dashboard",
+    number: "Dashboard 5",
+    title: "Dashboard 5: Regional Management Dashboard",
     category: "Management / Regional Analytics",
     tool: "Tableau",
     toolClass: "tableau",
@@ -350,9 +379,10 @@ const dashboardsData = [
         caption: "Regional Management Dashboard Tableau Analytics View"
       }
     ],
-    shortDescription: "Help regional management compare regional sales, profit, trends, ranking, and category performance.",
-    overview: "This regional management dashboard built in Tableau provides interactive visual analytics to compare regional sales revenue, net profit margins, performance trends, territory rankings, and product category breakdowns.",
+    shortDescription: "Provide a regional management view to help compare regional sales, profit, trends, ranking, and category performance.",
     objective: "Help regional management compare regional sales, profit, trends, ranking, and category performance.",
+    overview: "This regional management dashboard built in Tableau provides interactive visual analytics to compare regional sales revenue, net profit margins, performance trends, territory rankings, and product category breakdowns.",
+    audience: "Regional Managers, Operations Leads, and Territory Directors.",
     dataset: "Regional management operations database detailing regional sales figures, profit margins, category distributions, and territory performance trends.",
     kpis: [
       { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
@@ -364,6 +394,7 @@ const dashboardsData = [
       "Territory Ranking & Category Performance Matrix: Multi-variable hierarchy of regional product category performance.",
       "Regional Sales Trend Trajectory (Line Chart): Temporal tracking of regional sales growth and seasonality."
     ],
+    filtersSlicers: "Regional Territory Filters, Category Selectors, and Date Range Controls.",
     keyInsights: [
       "Enables regional leadership to instantly identify top-performing regions and category growth opportunities.",
       "Provides clear comparative visibility into regional profit margins, territory rankings, and multi-year sales trends."
@@ -371,7 +402,8 @@ const dashboardsData = [
   },
   {
     id: "sales-management",
-    title: "Sales Management Dashboard",
+    number: "Dashboard 6",
+    title: "Dashboard 6: Sales Management Dashboard",
     category: "Management / Sales Analytics",
     tool: "Tableau",
     toolClass: "tableau",
@@ -381,9 +413,10 @@ const dashboardsData = [
         caption: "Sales Management Dashboard Tableau Performance Overview"
       }
     ],
-    shortDescription: "Help sales management monitor sales performance, categories, segments, trends, and top products.",
-    overview: "This sales management dashboard built in Tableau gives commercial sales leaders complete visibility into overall sales performance, category revenue shares, customer market segments, multi-year trends, and top product items.",
+    shortDescription: "Present sales-related information relevant to sales management to monitor sales performance, categories, segments, trends, and top products.",
     objective: "Help sales management monitor sales performance, categories, segments, trends, and top products.",
+    overview: "This sales management dashboard built in Tableau gives commercial sales leaders complete visibility into overall sales performance, category revenue shares, customer market segments, multi-year trends, and top product items.",
+    audience: "Sales Managers, Account Executives, and Commercial Strategy Leads.",
     dataset: "Commercial sales transaction database tracking product sales revenue, customer market segments, multi-year sales trends, and top product revenue rankings.",
     kpis: [
       { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
@@ -395,6 +428,7 @@ const dashboardsData = [
       "Top-Performing Products Ranking (Horizontal Bar Chart): Itemized revenue leaderboard of top enterprise products.",
       "Multi-Year Sales Trend Trajectory (Time Series Chart): Monthly and annual sales progression across commercial sectors."
     ],
+    filtersSlicers: "Market Segment Filters, Category Slicers, and Product Line Selectors.",
     keyInsights: [
       "Streamlines sales pipeline monitoring by highlighting top-grossing product lines and high-value customer segments.",
       "Identifies seasonal demand peaks and provides actionable data to optimize sales team resource allocation."
@@ -402,7 +436,8 @@ const dashboardsData = [
   },
   {
     id: "finance-management",
-    title: "Finance Management Dashboard",
+    number: "Dashboard 7",
+    title: "Dashboard 7: Finance Management Dashboard",
     category: "Management / Financial Analytics",
     tool: "Tableau",
     toolClass: "tableau",
@@ -412,9 +447,10 @@ const dashboardsData = [
         caption: "Finance Management Dashboard Tableau Capital & Financial Overview"
       }
     ],
-    shortDescription: "Help finance management analyze sales, profitability, discounts, and relationships between financial measures.",
-    overview: "This finance management dashboard built in Tableau empowers financial executives to analyze sales volumes, net profitability, discount rates, and complex relationships between financial metrics.",
+    shortDescription: "Present financial information relevant to finance management to analyze sales, profitability, discounts, and relationships between financial measures.",
     objective: "Help finance management analyze sales, profitability, discounts, and relationships between financial measures.",
+    overview: "This finance management dashboard built in Tableau empowers financial executives to analyze sales volumes, net profitability, discount rates, and complex relationships between financial metrics.",
+    audience: "CFOs, Financial Controllers, Budget Analysts, and Corporate Planners.",
     dataset: "Financial reporting database containing sales amounts, net profit figures, discount percentages, and multi-variable financial metric correlations.",
     kpis: [
       { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
@@ -426,6 +462,7 @@ const dashboardsData = [
       "Discount Rate & Revenue Margin Impact Chart (Waterfall Chart): Fiscal breakdown of gross revenue after promotional discounts.",
       "Financial Measure Relationship Dashboard (Bullet Gauges): Comparative scorecards benchmarking financial metrics against targets."
     ],
+    filtersSlicers: "Discount Range Sliders, Financial Year Filters, and Measure Selectors.",
     keyInsights: [
       "Provides finance executives with deep analytical clarity on how discount rates impact net corporate profitability.",
       "Reveals key correlations between sales volume and net income to support data-driven capital management decisions."
@@ -483,40 +520,40 @@ const skillsData = [
     category: "Data Analytics & BI Tools",
     icon: "fa-chart-column",
     skills: [
-      { name: "Power BI (DAX, Data Modeling)", level: "Advanced" },
-      { name: "Tableau Desktop & Public", level: "Advanced" },
-      { name: "Google Looker Studio", level: "Intermediate" },
-      { name: "Microsoft Excel (PivotTables, Slicers)", level: "Advanced" }
+      { name: "Power BI (DAX, Data Modeling)", level: "Supported" },
+      { name: "Tableau Desktop & Public", level: "Supported" },
+      { name: "Google Data Studio / Looker Studio", level: "Supported" },
+      { name: "Microsoft Excel (Charts, PivotTables)", level: "Supported" }
     ]
   },
   {
     category: "Web & Backend Engineering",
     icon: "fa-code",
     skills: [
-      { name: "Node.js & Async Runtime", level: "Advanced" },
-      { name: "Express.js REST Framework", level: "Advanced" },
-      { name: "JavaScript ES6+ / HTML5 / CSS3", level: "Advanced" },
-      { name: "Web Protocols & HTTP APIs", level: "Intermediate" }
+      { name: "Node.js & Asynchronous Control Flow", level: "Supported" },
+      { name: "Express.js REST Framework", level: "Supported" },
+      { name: "JavaScript ES6+ / HTML5 / CSS3", level: "Supported" },
+      { name: "Web Protocols & HTTP APIs", level: "Supported" }
     ]
   },
   {
     category: "Database & Cloud Systems",
     icon: "fa-database",
     skills: [
-      { name: "MongoDB & Mongoose ODM", level: "Advanced" },
-      { name: "SQL & Relational Schemas", level: "Intermediate" },
-      { name: "NoSQL Document Modeling", level: "Advanced" },
-      { name: "Git & Version Control", level: "Advanced" }
+      { name: "MongoDB & Mongoose ODM", level: "Supported" },
+      { name: "SQL & Relational Schemas", level: "Supported" },
+      { name: "NoSQL Document Modeling", level: "Supported" },
+      { name: "Git & Version Control", level: "Supported" }
     ]
   },
   {
     category: "Security & Methods",
     icon: "fa-shield-halved",
     skills: [
-      { name: "JWT Bearer Token Auth", level: "Advanced" },
-      { name: "bcrypt Password Cryptography", level: "Advanced" },
-      { name: "Data Viz Best Practices", level: "Advanced" },
-      { name: "Technical Documentation", level: "Advanced" }
+      { name: "JWT Bearer Token Auth", level: "Supported" },
+      { name: "bcrypt Password Cryptography", level: "Supported" },
+      { name: "Data Viz Best Practices", level: "Supported" },
+      { name: "Technical Documentation", level: "Supported" }
     ]
   }
 ];
@@ -569,7 +606,7 @@ function initMainPage() {
   renderSkillsSection(skillsData);
 }
 
-// Render Section: 10 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
+// Render Section: 10 REAL ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
 function renderLabsSection(labs) {
   const labsGrid = document.getElementById("labs-grid");
   if (!labsGrid) return;
@@ -629,7 +666,7 @@ function renderDashboardsGallerySection(dashboards) {
 
     card.innerHTML = `
       <div class="dash-thumb-container">
-        <img src="${thumbSrc}" alt="${dash.title} Large Screenshot Preview" class="dash-thumb-img" loading="lazy">
+        <img src="${thumbSrc}" alt="${dash.title} Screenshot Preview" class="dash-thumb-img" loading="lazy">
         <span class="dash-tool-badge ${dash.toolClass}">
           <i class="fa-solid fa-layer-group"></i> ${dash.tool}
         </span>
@@ -727,7 +764,7 @@ function initLabDetailPage() {
 
   const currentLab = labsData.find((l) => l.id === labId) || labsData[0];
 
-  document.title = `${currentLab.number}: ${currentLab.title} — Computer Science Labs | DSVV`;
+  document.title = `${currentLab.title} — Computer Science Labs | DSVV`;
 
   // Header Tags
   const labNumTag = document.getElementById("lab-number-tag");
@@ -753,22 +790,51 @@ function initLabDetailPage() {
   const labImg = document.getElementById("lab-img");
   if (labImg) {
     labImg.src = currentLab.image;
-    labImg.alt = `${currentLab.title} Execution Output`;
+    labImg.alt = `${currentLab.title} Output Preview`;
   }
 
   const labImgCaption = document.getElementById("lab-img-caption");
-  if (labImgCaption) labImgCaption.textContent = `${currentLab.number} — ${currentLab.title} Execution Preview`;
+  if (labImgCaption) labImgCaption.textContent = `${currentLab.number} — ${currentLab.title} Screenshot Preview`;
 
   const viewport = document.getElementById("lab-screenshot-viewport");
   if (viewport) {
     viewport.addEventListener("click", () => {
-      openLightbox(currentLab.image, `${currentLab.number}: ${currentLab.title}`);
+      openLightbox(currentLab.image, `${currentLab.title}`);
     });
   }
 
   // Objective & Work Details
   const labObj = document.getElementById("lab-objective");
   if (labObj) labObj.textContent = currentLab.objective;
+
+  const labContent = document.getElementById("lab-content");
+  if (labContent) labContent.textContent = currentLab.content || currentLab.shortDescription;
+
+  // Render Tableau Tasks & Analysis Questions if Assignment 9
+  const tableauBlock = document.getElementById("lab-tableau-extras");
+  if (tableauBlock) {
+    if (currentLab.id === "assignment-9") {
+      tableauBlock.style.display = "block";
+      const tasksElem = document.getElementById("tableau-tasks");
+      const questionsElem = document.getElementById("tableau-questions");
+      if (tasksElem) tasksElem.innerHTML = currentLab.tableautasks.map(t => `<li class="viz-item"><i class="fa-solid fa-map-location-dot"></i> <span>${t}</span></li>`).join("");
+      if (questionsElem) questionsElem.innerHTML = currentLab.analysisQuestions.map(q => `<div class="insight-card" style="margin-bottom:0.5rem;"><i class="fa-solid fa-circle-question insight-icon"></i><div class="insight-text">${q}</div></div>`).join("");
+    } else {
+      tableauBlock.style.display = "none";
+    }
+  }
+
+  // Render Chart Categories if Assignment 3
+  const cheatSheetBlock = document.getElementById("lab-cheatsheet-extras");
+  if (cheatSheetBlock) {
+    if (currentLab.id === "assignment-3") {
+      cheatSheetBlock.style.display = "block";
+      const catsElem = document.getElementById("cheatsheet-categories");
+      if (catsElem) catsElem.innerHTML = currentLab.chartCategories.map(c => `<li class="viz-item"><i class="fa-solid fa-chart-simple"></i> <span>${c}</span></li>`).join("");
+    } else {
+      cheatSheetBlock.style.display = "none";
+    }
+  }
 
   const labAct = document.getElementById("lab-activity");
   if (labAct) labAct.textContent = currentLab.activity || "N/A";
@@ -799,7 +865,7 @@ function initDashboardDetailPage() {
   const currentDashboard =
     dashboardsData.find((d) => d.id === dashboardId) || dashboardsData[0];
 
-  document.title = `${currentDashboard.title} — Analytics Portfolio`;
+  document.title = `${currentDashboard.title} — Analytics Portfolio | DSVV`;
 
   // Title & Tool Badges
   const detailTitle = document.getElementById("detail-title");
@@ -841,15 +907,21 @@ function initDashboardDetailPage() {
     }
   }
 
-  // Overview, Objective & Dataset
+  // Overview, Objective & Audience
   const overviewElem = document.getElementById("detail-overview");
   if (overviewElem) overviewElem.textContent = currentDashboard.overview || currentDashboard.shortDescription;
 
   const objElem = document.getElementById("detail-objective");
   if (objElem) objElem.textContent = currentDashboard.objective;
 
+  const audElem = document.getElementById("detail-audience");
+  if (audElem) audElem.textContent = currentDashboard.audience || "Management and Business Stakeholders";
+
   const datasetElem = document.getElementById("detail-dataset");
   if (datasetElem) datasetElem.textContent = currentDashboard.dataset;
+
+  const filtersElem = document.getElementById("detail-filters");
+  if (filtersElem) filtersElem.textContent = currentDashboard.filtersSlicers || "Interactive filters and slice controls available on canvas.";
 
   // KPIs Block Rendering
   const kpiBlock = document.getElementById("detail-kpi-block");
