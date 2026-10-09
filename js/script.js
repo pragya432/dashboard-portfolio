@@ -1,346 +1,313 @@
 /**
  * Dev Sanskriti Vishwavidyalaya — Department of Computer Science
- * Central JavaScript File for 12 Lab Assignments, 7 Visual Dashboards, Projects, Skills, and Detail Views
+ * Central JavaScript File for 10 Lab Assignments, 7 Visual Dashboards, and Detail Views
  */
 
 // ==========================================================================
-// 1. DATA STORE — 12 LAB ASSIGNMENTS REGISTRY (Lab 01 to Lab 12)
+// 1. DATA STORE — 10 LAB ASSIGNMENTS REGISTRY (DOCUMENT SOURCE OF TRUTH)
 // ==========================================================================
 const labsData = [
   {
-    id: "lab-01",
-    number: "Lab 01",
-    title: "Lab 01 — Paper Leak Dashboard",
-    tool: "Power BI / Dashboard Analytics",
-    category: "Dashboard Design",
-    imagePlaceholder: "lab-01-paper-leak-dashboard-01.png",
-    shortDescription: "Analyze examination paper leak data and present findings through an interactive analytical dashboard.",
-    objective: "Analyze examination paper leak-related data and present the findings through an interactive dashboard.",
-    overview: "An analytical dashboard examining examination paper leak data across conducting bodies, breach frequency, legal enforcement, and aspirant impact.",
-    tasksCompleted: [
-      "Dataset overview and relevant field organization.",
-      "Data preparation and structural cleaning.",
-      "Identification of breach patterns and temporal trends.",
-      "Visual representation of key metrics and comparisons.",
-      "Dashboard design and interpretation of findings."
+    id: "assignment-1",
+    number: "LAB ASSIGNMENT 1",
+    title: "Data Visualization",
+    subtitle: "Paper Leak Analysis Dashboard",
+    tool: "Power BI",
+    category: "Data Visualization / Security Analytics",
+    image: "images/lab-01-paper-leak-1.png",
+    images: [
+      {
+        src: "images/lab-01-paper-leak-1.png",
+        caption: "Paper Leak Incident Trends, Conducting Body & Status Distribution Canvas"
+      },
+      {
+        src: "images/lab-01-paper-leak-2.png",
+        caption: "Action Taken, Aspirants Affected & Legal Enforcement Metrics Overview"
+      }
     ],
-    workflow: "1. Import paper leak incident database.\n2. Clean fields (conducting body, era, leak status, affected candidates).\n3. Build KPI cards for confirmed leaks and state vs central share.\n4. Construct donut charts for leak status and bar charts for conducting bodies.\n5. Assemble unified dashboard layout for security analysis.",
-    placeholders: [
-      { label: "Dashboard Overview", filename: "lab-01-paper-leak-dashboard-01.png" },
-      { label: "Individual Charts", filename: "lab-01-paper-leak-dashboard-02.png" },
-      { label: "Final Dashboard", filename: "lab-01-paper-leak-dashboard-03.png" }
+    shortDescription: "Analyze examination paper leak-related data using an interactive Power BI dashboard tracking breach frequency, conducting bodies, and legal enforcement actions.",
+    objective: "Analyze paper-leak related information using an interactive dashboard.",
+    overview: "This investigative security intelligence dashboard provides a detailed analytical audit of reported exam paper leak incidents across India. It tracks breach frequency across state and central conducting bodies, evaluates legal enforcement actions, and quantifies the impact on student candidates.",
+    workPerformed: "1. Imported paper leak incident dataset into Power BI Desktop.\n2. Organized data fields including conducting bodies, breach eras (NDA vs UPA), leak status, and candidate metrics.\n3. Constructed interactive visual charts: temporal line trend of leaks, donut chart of confirmed vs. alleged cases, and horizontal bar charts of conducting bodies.\n4. Formatted visual canvas with slicers for state vs. central conducting bodies.",
+    results: [
+      "State conducting bodies account for 80% (88 incidents) of total reported paper leaks, while Central bodies represent 20% (22 incidents).",
+      "Confirmed leak cases constitute 80.91% (89 cases) of all logged incidents, with 73.64% evaluated at high verification confidence.",
+      "Paper leak frequency experienced a major surge between 2020 and 2022, directly impacting over 5 Million+ aspirants across competitive examinations."
     ],
-    skillsDemonstrated: ["Data Analysis", "Dashboard Design", "Data Visualization", "Insight Communication"],
-    deliverable: "Completed Paper Leak Analysis Dashboard."
+    skillsDemonstrated: ["Data Analysis", "Dashboard Design", "Power BI Analytics", "Security Insight Communication"],
+    deliverable: "Completed Paper Leak Analysis Power BI Dashboard File."
   },
   {
-    id: "lab-02",
-    number: "Lab 02",
-    title: "Lab 02 — Visualize Your World",
-    tool: "Visual Thinking & Manual Sketching",
-    category: "Visual Storytelling",
-    imagePlaceholder: "lab-02-draw-your-day-01.png",
-    shortDescription: "Represent daily routines, energy curves, and real-world data visualization examples across three practical activities.",
-    objective: "Explore personal data visualization through daily activity timelines, energy curves, and real-world visualization analysis.",
-    overview: "A 3-part exploratory lab analyzing personal daily time distribution, energy fluctuations, and real-world visualization applications.",
+    id: "assignment-2",
+    number: "LAB ASSIGNMENT 2",
+    title: "Submission of 9th Aug Class Activity Work",
+    subtitle: "Draw Your Day & Energy Curve Visualizations",
+    tool: "Hand-drawn Visual Diagrams",
+    category: "Visual Storytelling & Data Journaling",
+    image: "images/lab-02-your-day-1.png",
+    images: [
+      {
+        src: "images/lab-02-your-day-1.png",
+        caption: "Activity A: Draw Your Day — Daily Time Distribution Wheel Diagram"
+      },
+      {
+        src: "images/lab-02-your-day-2.png",
+        caption: "Activity A: Daily Routine & Activity Blocks Timeline Sketch"
+      },
+      {
+        src: "images/lab-02-your-day-3.png",
+        caption: "Activity A: Categorized Time Allocation Visual Chart"
+      },
+      {
+        src: "images/lab-02-energy-curve.png",
+        caption: "Activity B: Draw Your Energy Curve — Diurnal Energy Level Line Graph"
+      }
+    ],
+    shortDescription: "Represent daily routine activities, time allocation, and personal energy level fluctuations throughout the day using hand-drawn visual diagrams and energy curves.",
+    objective: "Represent daily routine activities and personal energy level changes throughout the day to understand personal time management and high-energy productivity windows.",
+    overview: "A 2-part exploratory practical activity analyzing personal daily time distribution across routines and tracking hourly subjective energy levels (scale 1-10) across morning, afternoon, and evening phases.",
     isMultiActivity: true,
     activities: [
       {
         name: "Activity A: Draw Your Day",
-        desc: "Represent daily activities through a visual timeline or diagram showing time distribution across daily routines to make habits easy to understand."
+        desc: "Represent daily activities through a visual timeline or diagram showing time distribution across daily routines (study, fitness, leisure, rest) to make personal habits easy to understand."
       },
       {
         name: "Activity B: Draw Your Energy Curve",
-        desc: "Represent changes in personal energy levels throughout the day using a line graph or energy curve to identify peak productive periods."
-      },
-      {
-        name: "Activity C: Explore Data Visualization in the Real World",
-        desc: "Examine real-world data visualizations in news, business, and education, explaining visual design choices and audience communication impact."
+        desc: "Represent changes in personal energy levels throughout the day using a line graph or energy curve to identify peak productive periods and focus recovery windows."
       }
     ],
-    workflow: "1. Log 24-hour activity distribution into categories.\n2. Track hourly subjective energy levels (scale 1-10).\n3. Draw activity timeline and smooth energy curve graph.\n4. Collect and analyze real-world infographic examples.",
-    placeholders: [
-      { label: "Activity A: Draw Your Day Timeline", filename: "lab-02-draw-your-day-01.png" },
-      { label: "Activity B: Energy Curve Graph", filename: "lab-02-energy-curve-01.png" },
-      { label: "Activity C: Real-World Visualization Examples", filename: "lab-02-real-world-viz-01.png" }
+    workPerformed: "1. Logged 24-hour daily activities and categorized time spent across study, rest, fitness, and leisure.\n2. Sketched 'Draw Your Day' visual diagrams illustrating time distribution wheel and daily routine timeline.\n3. Tracked hourly energy levels throughout the day and plotted the 'Draw Your Energy Curve' line graph.\n4. Identified peak performance windows and low-energy recovery periods.",
+    results: [
+      "Visualizing daily activities highlighted time allocation patterns and helped identify non-essential time sinks.",
+      "The Energy Curve demonstrated peak cognitive performance during mid-morning hours (9 AM - 12 PM) followed by a secondary focus recovery around 5 PM."
     ],
-    skillsDemonstrated: ["Visual Thinking", "Basic Chart Interpretation", "Storytelling", "Real-World Visualization Analysis"],
-    deliverable: "Visualized personal journal & real-world visualization review."
+    skillsDemonstrated: ["Visual Thinking", "Basic Chart Interpretation", "Personal Data Journaling", "Storytelling"],
+    deliverable: "Visualized personal journal & energy curve report."
   },
   {
-    id: "lab-03",
-    number: "Lab 03",
-    title: "Lab 03 — Types of Data Visualization: Charts, Graphs & Maps — LinkedIn Post",
-    tool: "LinkedIn & Visual Documentation",
-    category: "Professional Presentation",
-    imagePlaceholder: "lab-03-linkedin-post-01.png",
-    shortDescription: "Understand different types of data visualization (charts, graphs, maps) and communicate their appropriate use cases in a LinkedIn post.",
-    objective: "Understand different types of data visualization and communicate their uses through a LinkedIn post.",
-    overview: "A public-facing technical communication deliverable classifying chart types, map encodings, and visual selection rules.",
+    id: "assignment-3",
+    number: "LAB ASSIGNMENT 3",
+    title: "Visualize It! — Create & Share Your Data Visualization Cheat Sheet",
+    subtitle: "Types of Data Visualization: Charts, Graphs & Maps — LinkedIn Post",
+    tool: "Data Visualization Reference Guide & LinkedIn",
+    category: "Professional Publishing & Reference",
+    image: "images/lab-03-cheatsheet-linkedin.png",
+    images: [
+      {
+        src: "images/lab-03-cheatsheet-linkedin.png",
+        caption: "Types of Data Visualization: Charts, Graphs & Maps — Published LinkedIn Post & Visual Cheat Sheet Guide"
+      }
+    ],
+    shortDescription: "Create and share a comprehensive visual cheat sheet classifying chart types (Bar, Line, Pie, Scatter, Maps, Gauges) and post it on LinkedIn to guide effective chart selection.",
+    objective: "Understand different types of data visualization (charts, graphs, maps) and communicate their appropriate use cases through a public LinkedIn post and visual guide.",
+    overview: "A public-facing technical communication deliverable classifying chart types by analytical goal (Comparison, Distribution, Composition, Relationship, Spatial) to aid decision-making in business intelligence reporting.",
     chartCategories: [
       "Bar & Column Charts: Category comparisons and discrete groupings.",
-      "Line Charts: Trends, continuous time-series, and trajectories over time.",
+      "Line & Area Charts: Trends, continuous time-series, and trajectories over time.",
       "Pie & Donut Charts: Simple part-to-whole compositional proportions.",
-      "Histograms: Frequency distributions and data density spreads.",
-      "Scatter Plots: Relationships and correlations between numerical variables.",
-      "Maps: Geographic distributions and spatial comparisons."
+      "Scatter Plots & Bubble Charts: Relationships and correlations between numerical variables.",
+      "Maps & Spatial Visuals: Geographic distributions and regional comparisons.",
+      "Gauges & Scorecards: Single-value KPIs and performance targets."
     ],
-    workflow: "1. Research visual encoding taxonomy (bar, line, scatter, histogram, map).\n2. Classify charts by analytical objective (Comparison, Distribution, Composition, Relationship).\n3. Define accessibility guidelines (color contrast, typography scale, chart junk reduction).\n4. Draft and publish professional LinkedIn post.",
-    placeholders: [
-      { label: "Published LinkedIn Post", filename: "lab-03-linkedin-post-01.png" },
-      { label: "Supporting Infographic Guide", filename: "lab-03-chart-types-guide-01.png" }
+    workPerformed: "1. Researched visual encoding taxonomy (bar, line, scatter, histogram, map, bullet gauge).\n2. Categorized charts by analytical objective: Comparison (Bar/Column), Trend (Line/Area), Proportion (Pie/Donut), Correlation (Scatter), and Location (Choropleth Maps).\n3. Drafted accessibility rules focusing on contrast, clean typography, and chart clutter reduction.\n4. Published a professional LinkedIn post sharing the cheat sheet guide with the tech community.",
+    results: [
+      "Visual cheat sheets significantly improve chart selection accuracy for complex business analytics reports.",
+      "Choosing the appropriate chart type reduces cognitive load for business stakeholders and executive readers."
     ],
     skillsDemonstrated: ["Chart Selection", "Visual Communication", "Content Creation", "Professional Presentation"],
-    deliverable: "LinkedIn Post discussing charts, graphs, and maps."
+    deliverable: "Published LinkedIn Cheat Sheet Guide Post."
   },
   {
-    id: "lab-04",
-    number: "Lab 04",
-    title: "Lab 04 — Data Visualization: Turning Data into Meaningful Stories — LinkedIn Blog",
-    tool: "LinkedIn Blog & Storytelling",
-    category: "Data Storytelling",
-    imagePlaceholder: "lab-04-linkedin-blog-01.png",
-    shortDescription: "Explore how data visualization turns raw data into meaningful insights and narrative stories through a LinkedIn blog post.",
-    objective: "Explore how data visualization can turn raw data into meaningful insights and stories.",
-    overview: "A technical article detailing data storytelling techniques, connecting data, visuals, and narrative context to engage target audiences.",
-    tasksCompleted: [
-      "Introduction to data storytelling concepts.",
-      "Examining the relationship between data, visuals, and narrative.",
-      "Identifying key insights from raw datasets.",
-      "Selecting charts that support a central narrative message.",
-      "Addressing audience context and clear communication."
+    id: "assignment-4",
+    number: "LAB ASSIGNMENT 4",
+    title: "From Learning to LinkedIn",
+    subtitle: "Data Visualization: Turning Data into Meaningful Stories — LinkedIn Blog",
+    tool: "LinkedIn Publishing & Content Strategy",
+    category: "Data Storytelling & Content Strategy",
+    image: "images/lab-04-linkedin-blog.png",
+    images: [
+      {
+        src: "images/lab-04-linkedin-blog.png",
+        caption: "Data Visualization: Turning Data into Meaningful Stories — Published LinkedIn Blog Article"
+      }
     ],
-    workflow: "1. Select dataset with clear narrative message.\n2. Extract top 3 analytical takeaways.\n3. Design charts highlighting key insights.\n4. Write structured LinkedIn article linking data, visuals, and business context.",
-    placeholders: [
-      { label: "LinkedIn Blog Article", filename: "lab-04-linkedin-blog-01.png" },
-      { label: "Article Cover & Data Visuals", filename: "lab-04-blog-cover-visuals-01.png" }
+    shortDescription: "Publish an in-depth article on LinkedIn detailing how data visualization converts complex raw datasets into meaningful stories and executive insights.",
+    objective: "Explore how data visualization turns raw data into meaningful business insights and narrative stories through a structured LinkedIn blog post.",
+    overview: "A published technical article examining the triadic relationship between Data, Visuals, and Narrative, explaining how contextual framing drives actionable business outcomes.",
+    workPerformed: "1. Analyzed raw transactional datasets to extract 3 core business insights.\n2. Designed clean visualization mockups supporting the central analytical narrative.\n3. Authored a structured LinkedIn article titled 'Data Visualization: Turning Data into Meaningful Stories'.\n4. Highlighted key strategies for visual hierarchy, audience context, and actionable recommendations.",
+    results: [
+      "Effective data storytelling bridges the gap between raw data analysis and strategic decision-making.",
+      "Combining clear visual charts with concise context narrative increases reader comprehension and engagement."
     ],
     skillsDemonstrated: ["Data Storytelling", "Analytical Thinking", "Technical Writing", "Insight Communication"],
     deliverable: "Published LinkedIn Blog Article on Data Storytelling."
   },
   {
-    id: "lab-05",
-    number: "Lab 05",
-    title: "Lab 05 — Tableau Notes",
-    tool: "Tableau",
+    id: "assignment-5",
+    number: "LAB ASSIGNMENT 5",
+    title: "Learning Activity",
+    subtitle: "Tableau Notes & Core Concepts",
+    tool: "Tableau Desktop",
     category: "Tableau Fundamentals",
-    imagePlaceholder: "lab-05-tableau-notes-01.png",
-    shortDescription: "Document foundational Tableau concepts, data connections, dimensions vs. measures, worksheets, dashboards, and maps.",
-    objective: "Document foundational Tableau concepts and practical learning.",
-    overview: "A comprehensive reference guide and practical documentation of core Tableau Desktop functionality and workflow procedures.",
-    tasksCompleted: [
-      "Connecting to flat files and database sources.",
-      "Understanding Dimensions vs Measures and Discrete vs Continuous fields.",
-      "Building worksheets, interactive dashboards, and story points.",
-      "Creating bar charts, line graphs, pie charts, and maps.",
-      "Configuring filters, sorting, tooltips, marks card, and formatting."
+    image: "images/lab-05-tableau-notes.png",
+    images: [
+      {
+        src: "images/lab-05-tableau-notes.png",
+        caption: "Tableau Practical Notes & Data Concepts Technical Documentation"
+      }
     ],
-    workflow: "1. Connect Tableau to sample dataset.\n2. Classify fields into Dimensions and Measures.\n3. Build individual worksheets with proper marks card configuration.\n4. Assemble worksheets into unified dashboard with filter actions.\n5. Document step-by-step procedures and key concepts.",
-    placeholders: [
-      { label: "Tableau Notes Document", filename: "lab-05-tableau-notes-01.png" },
-      { label: "Tableau Interface Overview", filename: "lab-05-tableau-interface-01.png" },
-      { label: "Practical Worksheet Examples", filename: "lab-05-practical-examples-01.png" }
+    shortDescription: "Document foundational Tableau Desktop concepts including flat file connections, dimensions vs. measures, discrete vs. continuous fields, and worksheet building.",
+    objective: "Document foundational Tableau concepts, data connections, field classifications, and practical learning steps for reference.",
+    overview: "A structured technical notebook documenting core Tableau functionality, workspace navigation, Marks card formatting, field aggregations, and worksheet setup.",
+    workPerformed: "1. Connected Tableau Desktop to sample datasets (Excel, CSV).\n2. Categorized dataset fields into Dimensions (categorical) and Measures (numerical).\n3. Differentiated between Discrete (blue) and Continuous (green) field behaviors.\n4. Documented worksheet creation, sorting, filtering, and custom tooltip formatting.\n5. Summarized best practices for assembling worksheets into cohesive dashboards.",
+    results: [
+      "Understanding field roles (Dimensions vs. Measures) is essential for accurate aggregation and chart building in Tableau.",
+      "Utilizing calculated fields and parameters expands Tableau's analytical flexibility."
     ],
     skillsDemonstrated: ["Tableau Fundamentals", "Data Preparation", "Chart Creation", "Technical Documentation"],
-    deliverable: "Organized Tableau Notes Document for revision and reference."
+    deliverable: "Organized Tableau Notes Reference Document."
   },
   {
-    id: "lab-06",
-    number: "Lab 06",
-    title: "Lab 06 — Understanding Audience and Context",
-    tool: "Design & Contextual Analytics",
-    category: "Design Theory",
-    imagePlaceholder: "lab-06-audience-context-01.png",
-    shortDescription: "Analyze how target audience requirements, literacy levels, and viewing context influence visual design choices.",
-    objective: "Understand how audience requirements and context influence data visualization decisions.",
-    overview: "An exploration of audience-centric visualization design, focusing on visual clarity, context framing, and responsible data presentation.",
-    tasksCompleted: [
-      "Identifying target audience profiles and data literacy needs.",
-      "Defining the specific analytical purpose of visualizations.",
-      "Evaluating viewing context (desktop dashboard vs mobile vs presentation).",
-      "Selecting appropriate chart detail and level of aggregation.",
-      "Using titles, labels, legends, and annotations effectively.",
-      "Avoiding misleading visual scales and chart clutter."
+    id: "assignment-6",
+    number: "LAB ASSIGNMENT 6",
+    title: "Lab Practical",
+    subtitle: "Understanding Audience and Context",
+    tool: "Data Storytelling & UX Context Design",
+    category: "Visual Design & Contextual Analytics",
+    image: "images/lab-06-audience-context.png",
+    images: [
+      {
+        src: "images/lab-06-audience-context.png",
+        caption: "Understanding Audience and Context — Visual Design Principles Study"
+      }
     ],
-    workflow: "1. Define target audience personas and decision goals.\n2. Analyze viewing context constraints.\n3. Select chart types matched to audience data literacy.\n4. Apply formatting, clear titles, and annotations.",
-    placeholders: [
-      { label: "Audience Analysis Framework", filename: "lab-06-audience-context-01.png" },
-      { label: "Context Design Examples", filename: "lab-06-context-examples-01.png" },
-      { label: "Completed Deliverable", filename: "lab-06-completed-deliverable-01.png" }
+    shortDescription: "Analyze how target audience requirements, data literacy levels, and viewing context dictate visualization layout, chart selection, and detail levels.",
+    objective: "Understand how audience requirements, viewing environment, and decision context influence data visualization choices.",
+    overview: "An audience-centric design evaluation examining visual clarity, contextual framing, cognitive load management, and visual ethics in business intelligence.",
+    workPerformed: "1. Developed audience persona profiles (executives, operational managers, domain analysts).\n2. Mapped visual requirements based on viewing context (mobile phone, desktop dashboard, presentation slide).\n3. Evaluated cognitive load factors, removing chart clutter and unnecessary gridlines.\n4. Designed clear titles, subtitle callouts, and explanatory annotations tailored to user literacy.",
+    results: [
+      "Tailoring visualization complexity to user data literacy ensures faster insight adoption.",
+      "Executive dashboards require high-level KPI cards, whereas operational views require detailed data tables and granular filters."
     ],
     skillsDemonstrated: ["Audience Analysis", "Contextual Design", "Visual Communication", "Responsible Data Presentation"],
-    deliverable: "Audience & Context Visualization Study."
+    deliverable: "Audience & Context Visualization Study Report."
   },
   {
-    id: "lab-07",
-    number: "Lab 07",
-    title: "Lab 07 — Excel Charts & Dashboard",
-    tool: "Microsoft Excel",
-    category: "Spreadsheet Analytics",
-    imagePlaceholder: "lab-07-excel-dashboard-01.png",
-    shortDescription: "Organize transactional datasets in Microsoft Excel, build PivotTables and dynamic charts, and assemble an interactive dashboard.",
-    objective: "Use Microsoft Excel to organize data, create charts, and assemble a dashboard.",
-    overview: "A spreadsheet-based business intelligence project creating an executive Excel dashboard using PivotTables and slicers.",
-    tasksCompleted: [
-      "Importing and structuring raw Excel data tables.",
-      "Cleaning missing fields and formatting data types.",
-      "Creating PivotTables for summary aggregations.",
-      "Constructing bar, column, and pie charts with custom labels.",
-      "Arranging charts into a unified dashboard layout with timeline slicers."
+    id: "assignment-7",
+    number: "LAB ASSIGNMENT 7",
+    title: "Hands On Lab Practical - Excel Charts & Dashboard",
+    subtitle: "Excel Charts & Interactive Business Dashboard",
+    tool: "Microsoft Excel (PivotTables & PivotCharts)",
+    category: "Spreadsheet Analytics & Dashboarding",
+    image: "images/lab-07-excel-charts.png",
+    images: [
+      {
+        src: "images/lab-07-excel-charts.png",
+        caption: "Excel Charts & Interactive Business Dashboard Canvas"
+      }
     ],
-    workflow: "1. Format raw data into structured Excel Table.\n2. Generate PivotTables for sales by region, category, and month.\n3. Insert PivotCharts paired with each PivotTable.\n4. Link interactive slicers across all charts.\n5. Apply clean dashboard styling and layout alignment.",
-    placeholders: [
-      { label: "Source Dataset Table", filename: "lab-07-excel-source-data-01.png" },
-      { label: "Individual Excel Charts", filename: "lab-07-excel-charts-01.png" },
-      { label: "Completed Excel Dashboard", filename: "lab-07-excel-dashboard-01.png" }
+    shortDescription: "Organize raw business data in Microsoft Excel, build summary PivotTables and PivotCharts, and construct an interactive dashboard with dynamic slicers.",
+    objective: "Use Microsoft Excel to clean data, build summary PivotTables, generate PivotCharts, and assemble an interactive business dashboard.",
+    overview: "A practical spreadsheet analytics project converting raw sales transaction tables into an interactive Excel dashboard with linked slicers.",
+    workPerformed: "1. Formatted raw transactional dataset into an official Excel Table.\n2. Built PivotTables summarizing sales by category, region, and monthly order dates.\n3. Generated corresponding PivotCharts (Bar, Line, Donut charts).\n4. Created interactive Slicers (Category, Region, Year) linked across all PivotCharts.\n5. Styled dashboard layout with aligned cards and custom color themes.",
+    results: [
+      "Excel PivotTables and linked slicers provide rapid, low-code interactive reporting for small-to-medium datasets.",
+      "Combining PivotCharts on a single dashboard canvas streamlines multi-variable sales monitoring."
     ],
     skillsDemonstrated: ["Spreadsheet Analysis", "Chart Creation", "Data Organization", "Dashboard Design"],
     deliverable: "Interactive Excel Dashboard File."
   },
   {
-    id: "lab-08",
-    number: "Lab 08",
-    title: "Lab 08 — Import, Clean, Transform and Visualize Web Data Using Power BI",
-    tool: "Power BI Desktop / Power Query",
-    category: "ETL & Power BI",
-    imagePlaceholder: "lab-08-power-bi-web-data-01.png",
-    shortDescription: "Connect Power BI to a web data source, clean and transform data in Power Query Editor, and create map and pie chart visuals.",
-    objective: "Connect Power BI Desktop to a web data source, import relevant data, prepare it in Power Query, and create visualizations.",
-    overview: "A end-to-end Power BI ETL and visualization exercise importing web data, executing transformations in Power Query, and building report pages.",
-    tasksCompleted: [
-      "Connecting Power BI Desktop to web data URL.",
-      "Navigating and selecting target data tables.",
-      "Importing data into Power Query Editor.",
-      "Inspecting column data types, headers, and data quality.",
-      "Applying cleaning, split, and type transformation steps.",
-      "Loading prepared data model into Power BI canvas.",
-      "Building geographic map visualizations and pie charts."
+    id: "assignment-8",
+    number: "LAB ASSIGNMENT 8",
+    title: "Submit Your Data Studio Report",
+    subtitle: "Import, Clean, Transform and Visualize Web Data using Power BI",
+    tool: "Microsoft Power BI & Power Query",
+    category: "Web ETL & Power BI Reporting",
+    image: "images/lab-08-powerbi-web-data.png",
+    images: [
+      {
+        src: "images/lab-08-powerbi-web-data.png",
+        caption: "Import, Clean, Transform and Visualize Web Data using Power BI Report Canvas"
+      }
     ],
-    workflow: "1. Launch Power BI Desktop -> Get Data -> Web.\n2. Enter Web Data URL and select HTML table in Navigator.\n3. Click Transform Data to open Power Query Editor.\n4. Promote headers, change data types, and remove null rows.\n5. Click Close & Apply.\n6. Add Map visual for geographic fields and Pie chart for category breakdown.\n7. Format report layout and titles.",
-    placeholders: [
-      { label: "1. Web Data Connection", filename: "lab-08-web-connection-01.png" },
-      { label: "2. Table Selection & Import", filename: "lab-08-table-selection-01.png" },
-      { label: "3. Power Query Editor", filename: "lab-08-power-query-editor-01.png" },
-      { label: "4. Applied Transformations", filename: "lab-08-applied-steps-01.png" },
-      { label: "5. Map Visualization", filename: "lab-08-map-visualization-01.png" },
-      { label: "6. Pie Chart Visual", filename: "lab-08-pie-chart-01.png" },
-      { label: "7. Final Power BI Report", filename: "lab-08-power-bi-web-data-01.png" }
+    shortDescription: "Import web data into Power BI Desktop, execute data cleaning and ETL transformations in Power Query Editor, and build geographic map and pie chart visuals.",
+    objective: "Connect Power BI Desktop to a web data source, import data, clean and transform it in Power Query, and create interactive visualizations.",
+    overview: "An end-to-end web ETL workflow connecting Power BI Desktop to web data URLs, cleaning nulls and headers in Power Query, and creating geographic map and category visuals.",
+    workPerformed: "1. Connected Power BI Desktop to web data URL via Get Data -> Web.\n2. Selected target HTML data table in Navigator and launched Power Query Editor.\n3. Promoted headers, removed null rows, split columns, and set explicit data types.\n4. Loaded clean data model into Power BI Desktop canvas.\n5. Built a geographic Map visual for location fields and a Pie Chart for category breakdowns.",
+    results: [
+      "Power Query Editor simplifies web data extraction and structural cleaning without manual copy-pasting.",
+      "Geographic map visuals in Power BI effectively highlight spatial distributions from transformed web data."
     ],
-    skillsDemonstrated: ["Web Data Import", "Data Cleaning", "Power Query Transformation", "Geographic Visualization", "Pie Charts", "Report Formatting"],
+    skillsDemonstrated: ["Web Data Import", "Data Cleaning", "Power Query Transformation", "Geographic Visualization", "Pie Charts"],
     deliverable: "Power BI Web Data Analytics Report."
   },
   {
-    id: "lab-09",
-    number: "Lab 09",
-    title: "Lab 09 — Data Studio Report",
-    tool: "Looker Studio",
-    category: "Cloud BI & Reporting",
-    imagePlaceholder: "lab-09-data-studio-report-01.png",
-    shortDescription: "Create an interactive report in Google Data Studio (Looker Studio) using scorecards, time series graphs, and interactive filters.",
-    objective: "Create a report using Google Data Studio, now known as Looker Studio, to communicate information through interactive visualizations.",
-    overview: "A cloud-native data reporting project connecting Google Sheets data sources to Looker Studio to deliver dynamic stakeholder reports.",
-    tasksCompleted: [
-      "Connecting data source to Looker Studio.",
-      "Configuring dimensions, calculated fields, and metrics.",
-      "Creating scorecards, bar charts, time-series graphs, and tables.",
-      "Organizing elements into a clean multi-visual report.",
-      "Applying interactive date range controls and category dropdown filters."
+    id: "assignment-9",
+    number: "LAB ASSIGNMENT 9",
+    title: "Lab Work: Tableau Dashboard",
+    subtitle: "Data Studio Report & Tableau Analytics",
+    tool: "Google Looker Studio / Tableau",
+    category: "Cloud BI & Visual Analytics",
+    image: "images/lab-09-data-studio-report.png",
+    images: [
+      {
+        src: "images/lab-09-data-studio-report.png",
+        caption: "Data Studio Report & Tableau Dashboard Analytics View"
+      }
     ],
-    workflow: "1. Create blank report in Looker Studio.\n2. Add data connector (Google Sheets / CSV).\n3. Add scorecards for top KPIs.\n4. Create time-series line chart for trends.\n5. Add interactive date range picker and category controls.\n6. Publish report.",
-    placeholders: [
-      { label: "Data Source Configuration", filename: "lab-09-data-source-config-01.png" },
-      { label: "Individual Report Charts", filename: "lab-09-individual-charts-01.png" },
-      { label: "Completed Looker Studio Report", filename: "lab-09-data-studio-report-01.png" }
+    shortDescription: "Build an interactive Data Studio (Looker Studio) report and Tableau dashboard featuring scorecards, category bar charts, and date range filters.",
+    objective: "Create a report using Google Data Studio (Looker Studio) and Tableau to communicate information through interactive dashboard visuals.",
+    overview: "A cloud business intelligence assignment connecting structured data sources to Google Looker Studio and Tableau to generate stakeholder scorecards and trend graphs.",
+    workPerformed: "1. Connected Looker Studio / Tableau to Google Sheets dataset.\n2. Created KPI Scorecards for total revenue, profit margin, and order volume.\n3. Built vertical bar charts for category performance and time-series line graphs for sales trends.\n4. Added interactive Date Range pickers and Category dropdown slicers.\n5. Formatted layout canvas for clean multi-device viewing.",
+    results: [
+      "Cloud BI platforms like Looker Studio enable instant shareability and real-time data sync.",
+      "Interactive date range pickers allow stakeholders to analyze historical trends dynamically."
     ],
-    skillsDemonstrated: ["Report Building", "Data Visualization", "Layout Design", "Interactive Reporting"],
-    deliverable: "Interactive Looker Studio Cloud Report."
+    skillsDemonstrated: ["Report Building", "Data Visualization", "Layout Design", "Interactive Cloud Reporting"],
+    deliverable: "Interactive Looker Studio & Tableau Dashboard."
   },
   {
-    id: "lab-10",
-    number: "Lab 10",
-    title: "Lab 10 — Tableau Dashboard",
-    tool: "Tableau",
-    category: "Tableau Analytics",
-    imagePlaceholder: "lab-10-tableau-dashboard-01.png",
-    shortDescription: "Create a Tableau dashboard combining multiple worksheets into a coherent analytical view with interactive filter actions.",
-    objective: "Create a dashboard in Tableau by combining relevant visualizations into a coherent analytical view.",
-    overview: "A Tableau dashboard composition lab building individual analytical worksheets and combining them into an interactive dashboard canvas.",
-    tasksCompleted: [
-      "Connecting dataset to Tableau Desktop.",
-      "Preparing fields, custom parameters, and calculated fields.",
-      "Creating individual worksheets (charts, trends, comparisons).",
-      "Combining worksheets on a unified dashboard canvas.",
-      "Formatting titles, legends, tooltips, and color palettes.",
-      "Adding dashboard filter actions for interactive cross-highlighting."
+    id: "assignment-10",
+    number: "LAB ASSIGNMENT 10",
+    title: "Hands-On Practical",
+    subtitle: "Tableau Dashboard & Geospatial Visualization (Sample Superstore)",
+    tool: "Tableau Desktop & GIS Spatial Mapping",
+    category: "Advanced Tableau & Geospatial Analytics",
+    image: "images/lab-10-tableau-dashboard-1.png",
+    images: [
+      {
+        src: "images/lab-10-tableau-dashboard-1.png",
+        caption: "Tableau Dashboard Executive Overview Canvas"
+      },
+      {
+        src: "images/lab-10-tableau-dashboard-2.png",
+        caption: "Sample Superstore Dataset Sales & Profit Worksheets"
+      },
+      {
+        src: "images/lab-10-tableau-dashboard-3.png",
+        caption: "Tableau Multi-Worksheet Dashboard Composition View"
+      },
+      {
+        src: "images/lab-10-tableau-dashboard-4.png",
+        caption: "Sample Superstore Regional & Segment Performance Dashboard"
+      },
+      {
+        src: "images/lab-10-geospatial-viz.png",
+        caption: "Geospatial Visualization & State Filled Map Analysis"
+      }
     ],
-    workflow: "1. Load dataset into Tableau Desktop.\n2. Build Worksheet 1 (Sales Bar Chart), Worksheet 2 (Monthly Line Graph), Worksheet 3 (Segment Treemap).\n3. Create new Dashboard.\n4. Drag worksheets onto dashboard grid.\n5. Add Dashboard Filter Actions.",
-    placeholders: [
-      { label: "Data Source Connection", filename: "lab-10-data-source-01.png" },
-      { label: "Worksheet Views", filename: "lab-10-worksheets-01.png" },
-      { label: "Dashboard Composition Layout", filename: "lab-10-dashboard-layout-01.png" },
-      { label: "Final Tableau Dashboard", filename: "lab-10-tableau-dashboard-01.png" }
+    shortDescription: "Build advanced Tableau dashboards using the Sample Superstore dataset, combining sales scorecards, segment charts, and state-level filled maps.",
+    objective: "Analyze the Sample Superstore dataset using Tableau to create comprehensive multi-worksheet dashboards and state-level filled maps.",
+    overview: "A capstone practical assignment utilizing Tableau Desktop and the Sample Superstore dataset to construct Filled Maps, Scatter Plots, Segment Treemaps, and unified interactive sales dashboards.",
+    workPerformed: "1. Loaded Sample Superstore dataset into Tableau Desktop.\n2. Built State-level Filled Map (colored by SUM(Sales)) and City Bubble Map (sized by SUM(Profit)).\n3. Created category profit bar charts and multi-year time-series trend line graphs.\n4. Assembled worksheets into a unified Tableau dashboard canvas.\n5. Configured interactive Dashboard Filter Actions for seamless cross-filtering.",
+    results: [
+      "Filled state maps in Tableau quickly highlight geographic high-revenue clusters and underperforming regional markets.",
+      "Interactive dashboard filter actions enable deep exploratory analysis without switching worksheets."
     ],
-    skillsDemonstrated: ["Worksheet Creation", "Dashboard Composition", "Data Analysis", "Visual Design"],
-    deliverable: "Completed Tableau Dashboard Workbook."
-  },
-  {
-    id: "lab-11",
-    number: "Lab 11",
-    title: "Lab 11 — Tableau Dashboard: Sample Superstore Dataset",
-    tool: "Tableau & Superstore Dataset",
-    category: "Geographic & Sales Analytics",
-    imagePlaceholder: "lab-11-superstore-dashboard-01.png",
-    shortDescription: "Analyze the Sample Superstore dataset using Tableau maps to reveal sales, profit, geographic, and order concentration patterns.",
-    objective: "Analyze the Sample Superstore dataset using Tableau and create visualizations that reveal sales, profit, geographic, and order-related patterns.",
-    overview: "A geographic analytics lab utilizing Tableau and Sample Superstore dataset to construct map visualizations and comparative sales dashboards.",
-    tasksCompleted: [
-      "Connecting Tableau to Sample Superstore dataset.",
-      "Examining dimensions, measures, and geographic roles.",
-      "Creating Filled Map for Total Sales by State.",
-      "Creating Bubble Map for Profit Distribution by City.",
-      "Creating Heat Map for Order Concentration density.",
-      "Exploring optional Flow Map for delivery routes.",
-      "Assembling worksheets into a unified sales dashboard."
-    ],
-    workflow: "1. Load Sample Superstore.csv.\n2. Double-click State -> Change mark to Filled Map -> Color by SUM(Sales).\n3. New sheet -> Double-click City -> Change mark to Circle -> Size by SUM(Profit).\n4. New sheet -> Heat Map for order concentration.\n5. Assemble into dashboard canvas.",
-    placeholders: [
-      { label: "1. Sample Superstore Data Source", filename: "lab-11-superstore-datasource-01.png" },
-      { label: "2. Sales by State Filled Map", filename: "lab-11-filled-map-sales-01.png" },
-      { label: "3. Profit by City Bubble Map", filename: "lab-11-bubble-map-profit-01.png" },
-      { label: "4. Order Concentration Heat Map", filename: "lab-11-heat-map-orders-01.png" },
-      { label: "5. Delivery Routes Flow Map (Optional)", filename: "lab-11-flow-map-routes-01.png" },
-      { label: "6. Final Tableau Dashboard", filename: "lab-11-superstore-dashboard-01.png" }
-    ],
-    skillsDemonstrated: ["Geographic Analysis", "Sales Analysis", "Map Creation", "Heat Maps", "Dashboard Composition", "Business Insight Communication"],
+    skillsDemonstrated: ["Geographic Analysis", "Sales Analysis", "State Filled Maps", "Tableau Dashboard Composition"],
     deliverable: "Superstore Sales Geographic Tableau Dashboard."
-  },
-  {
-    id: "lab-12",
-    number: "Lab 12",
-    title: "Lab 12 — Geospatial Visualization",
-    tool: "Geospatial Analytics Tools",
-    category: "Geospatial Visualization",
-    imagePlaceholder: "lab-12-geospatial-visualization-01.png",
-    shortDescription: "Explore how geographic data can be represented visually to reveal spatial patterns, distributions, and territorial relationships.",
-    objective: "Explore how geographic data can be represented visually to reveal spatial patterns, distributions, and relationships.",
-    overview: "A specialized geospatial visualization lab exploring coordinate mapping, spatial hierarchy, geographic encoding, and spatial data limitations.",
-    tasksCompleted: [
-      "Introduction to geospatial data concepts.",
-      "Understanding location fields, coordinates, and spatial boundaries.",
-      "Preparing location information for spatial mapping.",
-      "Selecting appropriate map projections and map types.",
-      "Plotting geographic distributions and spatial clusters.",
-      "Documenting spatial limitations such as unmapped location values."
-    ],
-    workflow: "1. Inspect dataset location fields (latitude, longitude, zip codes).\n2. Geocode missing location data.\n3. Choose spatial map projection.\n4. Render choropleth or symbol map visual.\n5. Analyze spatial density and patterns.",
-    placeholders: [
-      { label: "Source Geographic Data", filename: "lab-12-source-data-01.png" },
-      { label: "Map Configuration", filename: "lab-12-map-config-01.png" },
-      { label: "Geospatial Visualizations", filename: "lab-12-geospatial-viz-01.png" },
-      { label: "Final Geospatial Result", filename: "lab-12-geospatial-visualization-01.png" }
-    ],
-    skillsDemonstrated: ["Geographic Data Handling", "Spatial Analysis", "Map Selection", "Visual Interpretation"],
-    deliverable: "Geospatial Visualization Study."
   }
 ];
 
@@ -518,21 +485,20 @@ const dashboardsData = [
     objective: "Help regional management compare regional sales, profit, trends, ranking, and category performance.",
     overview: "This regional management dashboard built in Tableau provides interactive visual analytics to compare regional sales revenue, net profit margins, performance trends, territory rankings, and product category breakdowns.",
     audience: "Regional Managers, Operations Leads, and Territory Directors.",
-    dataset: "Regional management operations database detailing regional sales figures, profit margins, category distributions, and territory performance trends.",
+    dataset: "Regional commercial sales performance database tracking territory sales, profit metrics, product category distributions, and regional performance rankings.",
     kpis: [
       { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
       { label: "Category", value: "Regional Analytics", sub: "Management Intelligence" },
-      { label: "Analysis Focus", value: "Sales & Profit", sub: "Regional Trends & Ranking" }
+      { label: "Analysis Focus", value: "Sales & Profit", sub: "Regional Trends & Rankings" }
     ],
     keyVisualizations: [
-      "Regional Sales & Profit Comparison (Bar & Treemap Chart): Comparative revenue and profit breakdown across regions.",
-      "Territory Ranking & Category Performance Matrix: Multi-variable hierarchy of regional product category performance.",
-      "Regional Sales Trend Trajectory (Line Chart): Temporal tracking of regional sales growth and seasonality."
+      "Regional Sales & Profit Comparison (Grouped Bar Chart): Comparative territory performance evaluating total revenue and net profit.",
+      "Regional Performance Leaderboard (Horizontal Bar Chart): Itemized territory rankings highlighting top-performing regions.",
+      "Category Sales Breakdown by Region (Stacked Column Chart): Segment revenue distribution across Central, East, South, and West regions."
     ],
-    filtersSlicers: "Regional Territory Filters, Category Selectors, and Date Range Controls.",
     keyInsights: [
-      "Enables regional leadership to instantly identify top-performing regions and category growth opportunities.",
-      "Provides clear comparative visibility into regional profit margins, territory rankings, and multi-year sales trends."
+      "Provides regional leadership with clear visibility into high-performing vs underperforming sales territories.",
+      "Highlights category revenue variations across regions to guide targeted sales strategy and resource allocation."
     ]
   },
   {
@@ -548,10 +514,10 @@ const dashboardsData = [
         caption: "Sales Management Dashboard Tableau Performance Overview"
       }
     ],
-    shortDescription: "Present sales-related information relevant to sales management to monitor sales performance, categories, segments, trends, and top products.",
+    shortDescription: "Help sales management monitor sales performance, categories, segments, trends, and top products.",
     objective: "Help sales management monitor sales performance, categories, segments, trends, and top products.",
     overview: "This sales management dashboard built in Tableau gives commercial sales leaders complete visibility into overall sales performance, category revenue shares, customer market segments, multi-year trends, and top product items.",
-    audience: "Sales Managers, Account Executives, and Commercial Strategy Leads.",
+    audience: "Sales Directors, Operations Leads, and Product Managers.",
     dataset: "Commercial sales transaction database tracking product sales revenue, customer market segments, multi-year sales trends, and top product revenue rankings.",
     kpis: [
       { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
@@ -563,7 +529,6 @@ const dashboardsData = [
       "Top-Performing Products Ranking (Horizontal Bar Chart): Itemized revenue leaderboard of top enterprise products.",
       "Multi-Year Sales Trend Trajectory (Time Series Chart): Monthly and annual sales progression across commercial sectors."
     ],
-    filtersSlicers: "Market Segment Filters, Category Slicers, and Product Line Selectors.",
     keyInsights: [
       "Streamlines sales pipeline monitoring by highlighting top-grossing product lines and high-value customer segments.",
       "Identifies seasonal demand peaks and provides actionable data to optimize sales team resource allocation."
@@ -582,10 +547,10 @@ const dashboardsData = [
         caption: "Finance Management Dashboard Tableau Capital & Financial Overview"
       }
     ],
-    shortDescription: "Present financial information relevant to finance management to analyze sales, profitability, discounts, and relationships between financial measures.",
+    shortDescription: "Help finance management analyze sales, profitability, discounts, and relationships between financial measures.",
     objective: "Help finance management analyze sales, profitability, discounts, and relationships between financial measures.",
     overview: "This finance management dashboard built in Tableau empowers financial executives to analyze sales volumes, net profitability, discount rates, and complex relationships between financial metrics.",
-    audience: "CFOs, Financial Controllers, Budget Analysts, and Corporate Planners.",
+    audience: "CFOs, Financial Controllers, and Corporate Analysts.",
     dataset: "Financial reporting database containing sales amounts, net profit figures, discount percentages, and multi-variable financial metric correlations.",
     kpis: [
       { label: "Tool Used", value: "Tableau", sub: "Enterprise Visual Analytics" },
@@ -597,7 +562,6 @@ const dashboardsData = [
       "Discount Rate & Revenue Margin Impact Chart (Waterfall Chart): Fiscal breakdown of gross revenue after promotional discounts.",
       "Financial Measure Relationship Dashboard (Bullet Gauges): Comparative scorecards benchmarking financial metrics against targets."
     ],
-    filtersSlicers: "Discount Range Sliders, Financial Year Filters, and Measure Selectors.",
     keyInsights: [
       "Provides finance executives with deep analytical clarity on how discount rates impact net corporate profitability.",
       "Reveals key correlations between sales volume and net income to support data-driven capital management decisions."
@@ -606,95 +570,7 @@ const dashboardsData = [
 ];
 
 // ==========================================================================
-// 3. DATA STORE — PROJECTS REGISTRY
-// ==========================================================================
-const projectsData = [
-  {
-    id: "proj-01",
-    title: "Node.js Microservices REST API Suite",
-    category: "Backend Engineering",
-    icon: "fa-server",
-    description: "Modular microservices architecture built with Node.js, Express, and JWT stateless authentication for high-throughput API routing.",
-    tags: ["Node.js", "Express.js", "JWT", "REST API", "Web Security"],
-    link: "https://github.com/pragya432/dashboard-portfolio"
-  },
-  {
-    id: "proj-02",
-    title: "Enterprise Business Intelligence & Sales Analytics",
-    category: "Data Analytics & BI",
-    icon: "fa-chart-pie",
-    description: "Multi-platform executive dashboard suite built using Power BI, Looker Studio, and Tableau to track commercial revenue and student cohorts.",
-    tags: ["Power BI", "Tableau", "Looker Studio", "DAX", "Data Modeling"],
-    link: "https://github.com/pragya432/dashboard-portfolio"
-  },
-  {
-    id: "proj-03",
-    title: "NoSQL Student Evaluation Database Manager",
-    category: "Database Systems",
-    icon: "fa-database",
-    description: "Schema-validated MongoDB database persistence layer with custom Mongoose schemas, async queries, and aggregate statistical pipelines.",
-    tags: ["MongoDB", "Mongoose", "NoSQL", "Express", "Async/Await"],
-    link: "https://github.com/pragya432/dashboard-portfolio"
-  },
-  {
-    id: "proj-04",
-    title: "Exploratory Data Science & Visual Analytics Engine",
-    category: "Data Science",
-    icon: "fa-brain",
-    description: "Statistical analysis toolkit in Python evaluating correlation matrices, distribution spreads, and machine learning outcome predictors.",
-    tags: ["Python", "Matplotlib", "Seaborn", "Pandas", "Scikit-Learn"],
-    link: "https://github.com/pragya432/dashboard-portfolio"
-  }
-];
-
-// ==========================================================================
-// 4. DATA STORE — SKILLS REGISTRY
-// ==========================================================================
-const skillsData = [
-  {
-    category: "Data Analytics & BI Tools",
-    icon: "fa-chart-column",
-    skills: [
-      { name: "Power BI (DAX, Data Modeling)", level: "Supported" },
-      { name: "Tableau Desktop & Public", level: "Supported" },
-      { name: "Google Data Studio / Looker Studio", level: "Supported" },
-      { name: "Microsoft Excel (Charts, PivotTables)", level: "Supported" }
-    ]
-  },
-  {
-    category: "Web & Backend Engineering",
-    icon: "fa-code",
-    skills: [
-      { name: "Node.js & Asynchronous Control Flow", level: "Supported" },
-      { name: "Express.js REST Framework", level: "Supported" },
-      { name: "JavaScript ES6+ / HTML5 / CSS3", level: "Supported" },
-      { name: "Web Protocols & HTTP APIs", level: "Supported" }
-    ]
-  },
-  {
-    category: "Database & Cloud Systems",
-    icon: "fa-database",
-    skills: [
-      { name: "MongoDB & Mongoose ODM", level: "Supported" },
-      { name: "SQL & Relational Schemas", level: "Supported" },
-      { name: "NoSQL Document Modeling", level: "Supported" },
-      { name: "Git & Version Control", level: "Supported" }
-    ]
-  },
-  {
-    category: "Security & Methods",
-    icon: "fa-shield-halved",
-    skills: [
-      { name: "JWT Bearer Token Auth", level: "Supported" },
-      { name: "bcrypt Password Cryptography", level: "Supported" },
-      { name: "Data Viz Best Practices", level: "Supported" },
-      { name: "Technical Documentation", level: "Supported" }
-    ]
-  }
-];
-
-// ==========================================================================
-// 5. MAIN INITIALIZATION & ROUTER
+// 3. MAIN INITIALIZATION & ROUTER
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   setupNavigation();
@@ -711,7 +587,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================================================
-// 6. NAVIGATION & MOBILE MENU HANDLER
+// 4. NAVIGATION & MOBILE MENU HANDLER
 // ==========================================================================
 function setupNavigation() {
   const toggleBtn = document.querySelector(".mobile-menu-toggle");
@@ -732,14 +608,14 @@ function setupNavigation() {
 }
 
 // ==========================================================================
-// 7. MAIN HOMEPAGE RENDERER (`index.html`)
+// 5. MAIN HOMEPAGE RENDERER (`index.html`)
 // ==========================================================================
 function initMainPage() {
   renderLabsSection(labsData);
   renderDashboardsGallerySection(dashboardsData);
 }
 
-// Render Section: 12 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
+// Render Section: 10 LAB ASSIGNMENTS GRID (3 cols Desktop, 2 Tablet, 1 Mobile)
 function renderLabsSection(labs) {
   const labsGrid = document.getElementById("labs-grid");
   if (!labsGrid) return;
@@ -753,11 +629,7 @@ function renderLabsSection(labs) {
 
     card.innerHTML = `
       <div class="lab-image-wrapper">
-        <div class="styled-screenshot-placeholder">
-          <i class="fa-solid fa-image placeholder-icon"></i>
-          <span class="placeholder-label">Screenshot to be added</span>
-          <span class="placeholder-target-filename">${lab.imagePlaceholder}</span>
-        </div>
+        <img src="${lab.image}" alt="${lab.title} Screenshot Preview" class="lab-image" loading="lazy">
         <span class="lab-number-badge">${lab.number}</span>
         <span class="lab-tool-badge"><i class="fa-solid fa-code"></i> ${lab.tool}</span>
       </div>
@@ -766,7 +638,7 @@ function renderLabsSection(labs) {
         <h3 class="lab-card-title">${lab.title}</h3>
         <p class="lab-card-description">${lab.shortDescription}</p>
         <div class="lab-card-footer">
-          <span class="btn-view-lab">View Details <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="btn-view-lab">View Assignment <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </div>
     `;
@@ -834,89 +706,39 @@ function renderDashboardsGallerySection(dashboards) {
   });
 }
 
-// Render Section: PROJECTS GRID
-function renderProjectsSection(projects) {
-  const projGrid = document.getElementById("projects-grid");
-  if (!projGrid) return;
-  projGrid.innerHTML = "";
-
-  projects.forEach((proj) => {
-    const card = document.createElement("article");
-    card.className = "project-card";
-
-    const tagsHtml = proj.tags.map(t => `<span class="project-tag">${t}</span>`).join("");
-
-    card.innerHTML = `
-      <div class="project-icon-wrap">
-        <i class="fa-solid ${proj.icon}"></i>
-      </div>
-      <div class="project-card-body">
-        <span class="project-category">${proj.category}</span>
-        <h3 class="project-title">${proj.title}</h3>
-        <p class="project-desc">${proj.description}</p>
-        <div class="project-tags">${tagsHtml}</div>
-        <a href="${proj.link}" target="_blank" rel="noopener" class="project-link">
-          View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
-      </div>
-    `;
-    projGrid.appendChild(card);
-  });
-}
-
-// Render Section: SKILLS GRID
-function renderSkillsSection(skillsCategories) {
-  const skillsGrid = document.getElementById("skills-grid");
-  if (!skillsGrid) return;
-  skillsGrid.innerHTML = "";
-
-  skillsCategories.forEach((cat) => {
-    const card = document.createElement("div");
-    card.className = "skill-category-card";
-
-    const itemsHtml = cat.skills.map(s => `
-      <div class="skill-item">
-        <span class="skill-name">${s.name}</span>
-        <span class="skill-level">${s.level}</span>
-      </div>
-    `).join("");
-
-    card.innerHTML = `
-      <div class="skill-cat-header">
-        <i class="fa-solid ${cat.icon}"></i>
-        <h3>${cat.category}</h3>
-      </div>
-      <div class="skill-items-list">${itemsHtml}</div>
-    `;
-    skillsGrid.appendChild(card);
-  });
-}
-
 // ==========================================================================
-// 8. LAB DETAIL PAGE LOGIC (`lab.html`)
+// 6. REUSABLE DETAIL PAGE HANDLER (`lab.html`)
 // ==========================================================================
 function initLabDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
-  const labId = urlParams.get("id");
+  const labId = urlParams.get("id") || "assignment-1";
 
   const currentLab = labsData.find((l) => l.id === labId) || labsData[0];
 
-  document.title = `${currentLab.title} — Computer Science Labs | DSVV`;
+  // Update Header Meta & Badges
+  const numTag = document.getElementById("lab-number-tag");
+  if (numTag) numTag.textContent = currentLab.number;
 
-  // Header Tags
-  const labNumTag = document.getElementById("lab-number-tag");
-  if (labNumTag) labNumTag.textContent = currentLab.number;
+  const toolTag = document.getElementById("lab-tool-tag");
+  if (toolTag) toolTag.innerHTML = `<i class="fa-solid fa-screwdriver-wrench"></i> ${currentLab.tool}`;
 
-  const labToolTag = document.getElementById("lab-tool-tag");
-  if (labToolTag) labToolTag.innerHTML = `<i class="fa-solid fa-code"></i> ${currentLab.tool}`;
+  const catTag = document.getElementById("lab-category-tag");
+  if (catTag) catTag.textContent = currentLab.category;
 
-  const labCatTag = document.getElementById("lab-category-tag");
-  if (labCatTag) labCatTag.textContent = currentLab.category;
+  const titleElem = document.getElementById("lab-title");
+  if (titleElem) {
+    titleElem.textContent = currentLab.title;
+    if (currentLab.subtitle) {
+      const subSpan = document.createElement("div");
+      subSpan.style.fontSize = "1.2rem";
+      subSpan.style.color = "var(--text-secondary)";
+      subSpan.style.marginTop = "0.35rem";
+      subSpan.textContent = currentLab.subtitle;
+      titleElem.appendChild(subSpan);
+    }
+  }
 
-  const labTitleElem = document.getElementById("lab-title");
-  if (labTitleElem) labTitleElem.textContent = currentLab.title;
-
-  // Sidebar Specs
+  // Update Sidebar Specs
   const sideNum = document.getElementById("sidebar-lab-num");
   if (sideNum) sideNum.textContent = currentLab.number;
 
@@ -926,29 +748,24 @@ function initLabDetailPage() {
   const sideDeliverable = document.getElementById("sidebar-lab-deliverable");
   if (sideDeliverable) sideDeliverable.textContent = currentLab.deliverable || "Completed Assignment Deliverable";
 
-  // Render Placeholder Gallery
-  const placeholderContainer = document.getElementById("lab-placeholders-gallery");
-  if (placeholderContainer) {
-    placeholderContainer.innerHTML = "";
-    if (currentLab.placeholders && currentLab.placeholders.length > 0) {
-      currentLab.placeholders.forEach((ph) => {
-        const phBox = document.createElement("div");
-        phBox.className = "styled-screenshot-placeholder detail-ph";
-        phBox.innerHTML = `
-          <i class="fa-solid fa-image placeholder-icon"></i>
-          <span class="placeholder-label">${ph.label} (To be added)</span>
-          <span class="placeholder-target-filename">${ph.filename}</span>
+  // Render Real Images Gallery
+  const galleryContainer = document.getElementById("lab-placeholders-gallery");
+  if (galleryContainer) {
+    galleryContainer.innerHTML = "";
+    if (currentLab.images && currentLab.images.length > 0) {
+      currentLab.images.forEach((imgObj) => {
+        const item = document.createElement("div");
+        item.className = "screenshot-item";
+        item.title = "Click to view full screen";
+        item.innerHTML = `
+          <img src="${imgObj.src}" alt="${imgObj.caption || currentLab.title}" loading="lazy" />
+          <div class="screenshot-caption">${imgObj.caption || currentLab.title}</div>
         `;
-        placeholderContainer.appendChild(phBox);
+        item.addEventListener("click", () => {
+          openLightbox(imgObj.src, imgObj.caption || currentLab.title);
+        });
+        galleryContainer.appendChild(item);
       });
-    } else {
-      placeholderContainer.innerHTML = `
-        <div class="styled-screenshot-placeholder detail-ph">
-          <i class="fa-solid fa-image placeholder-icon"></i>
-          <span class="placeholder-label">Screenshot to be added</span>
-          <span class="placeholder-target-filename">${currentLab.imagePlaceholder}</span>
-        </div>
-      `;
     }
   }
 
@@ -959,7 +776,7 @@ function initLabDetailPage() {
   const labOverview = document.getElementById("lab-overview");
   if (labOverview) labOverview.textContent = currentLab.overview || currentLab.shortDescription;
 
-  // Render Multi-Activity Subsections if Lab 02
+  // Multi-Activity Subsections (Lab 2)
   const activitiesBlock = document.getElementById("lab-activities-extras");
   if (activitiesBlock) {
     if (currentLab.isMultiActivity && currentLab.activities) {
@@ -978,7 +795,7 @@ function initLabDetailPage() {
     }
   }
 
-  // Render Chart Categories if Lab 03
+  // Chart Categories (Lab 3)
   const cheatSheetBlock = document.getElementById("lab-cheatsheet-extras");
   if (cheatSheetBlock) {
     if (currentLab.chartCategories) {
@@ -990,21 +807,21 @@ function initLabDetailPage() {
     }
   }
 
-  // Render Tasks Completed
+  // Work Performed / Procedure
+  const labWorkflow = document.getElementById("lab-workflow");
+  if (labWorkflow) labWorkflow.textContent = currentLab.workPerformed || "Standard analytical workflow executed.";
+
+  // Results / Findings
   const tasksBlock = document.getElementById("lab-tasks-block");
   const tasksList = document.getElementById("lab-tasks-list");
   if (tasksList && tasksBlock) {
-    if (currentLab.tasksCompleted && currentLab.tasksCompleted.length > 0) {
+    if (currentLab.results && currentLab.results.length > 0) {
       tasksBlock.style.display = "block";
-      tasksList.innerHTML = currentLab.tasksCompleted.map(t => `<li class="viz-item"><i class="fa-solid fa-check-double"></i> <span>${t}</span></li>`).join("");
+      tasksList.innerHTML = currentLab.results.map(t => `<li class="viz-item"><i class="fa-solid fa-check-double"></i> <span>${t}</span></li>`).join("");
     } else {
       tasksBlock.style.display = "none";
     }
   }
-
-  // Workflow / Methodology
-  const labWorkflow = document.getElementById("lab-workflow");
-  if (labWorkflow) labWorkflow.textContent = currentLab.workflow || "Standard analytical workflow executed.";
 
   // Skills Demonstrated
   const skillsBlock = document.getElementById("lab-skills-block");
@@ -1020,137 +837,109 @@ function initLabDetailPage() {
 }
 
 // ==========================================================================
-// 9. DASHBOARD DETAIL PAGE LOGIC (`dashboard.html`)
+// 7. DASHBOARD DETAIL PAGE HANDLER (`dashboard.html`)
 // ==========================================================================
 function initDashboardDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
-  const dashboardId = urlParams.get("id");
+  const dashId = urlParams.get("id") || "paper-leak";
 
-  const currentDashboard =
-    dashboardsData.find((d) => d.id === dashboardId) || dashboardsData[0];
+  const currentDash = dashboardsData.find((d) => d.id === dashId) || dashboardsData[0];
 
-  document.title = `${currentDashboard.title} — Analytics Portfolio | DSVV`;
+  const numTag = document.getElementById("dash-number-tag");
+  if (numTag) numTag.textContent = currentDash.number;
 
-  // Title & Tool Badges
-  const detailTitle = document.getElementById("detail-title");
-  if (detailTitle) detailTitle.textContent = currentDashboard.title;
-
-  const toolBadgeElem = document.getElementById("detail-tool");
-  if (toolBadgeElem) {
-    toolBadgeElem.className = `detail-tool-tag ${currentDashboard.toolClass}`;
-    toolBadgeElem.innerHTML = `<i class="fa-solid fa-screwdriver-wrench"></i> ${currentDashboard.tool}`;
+  const toolTag = document.getElementById("dash-tool-tag");
+  if (toolTag) {
+    toolTag.className = `detail-tool-tag ${currentDash.toolClass}`;
+    toolTag.innerHTML = `<i class="fa-solid fa-layer-group"></i> ${currentDash.tool}`;
   }
 
-  const catElem = document.getElementById("detail-category");
-  if (catElem) catElem.textContent = currentDashboard.category;
+  const catTag = document.getElementById("dash-category-tag");
+  if (catTag) catTag.textContent = currentDash.category;
 
-  const sideTool = document.getElementById("sidebar-tool");
-  if (sideTool) sideTool.textContent = currentDashboard.tool;
+  const titleElem = document.getElementById("dash-title");
+  if (titleElem) titleElem.textContent = currentDash.title;
 
-  // Screenshot Gallery Rendering
-  const galleryContainer = document.getElementById("screenshots-gallery-grid");
-  if (galleryContainer) {
-    galleryContainer.innerHTML = "";
-    if (currentDashboard.images && currentDashboard.images.length > 0) {
-      currentDashboard.images.forEach((imgObj, idx) => {
-        const itemDiv = document.createElement("div");
-        itemDiv.className = "screenshot-item";
-        itemDiv.setAttribute("title", "Click to view full screen");
+  const sideNum = document.getElementById("sidebar-dash-num");
+  if (sideNum) sideNum.textContent = currentDash.number;
 
-        itemDiv.innerHTML = `
-          <img src="${imgObj.src}" alt="${currentDashboard.title} Screenshot ${idx+1}" loading="lazy">
-          ${imgObj.caption ? `<div class="screenshot-caption">${imgObj.caption}</div>` : ""}
-        `;
+  const sideTool = document.getElementById("sidebar-dash-tool");
+  if (sideTool) sideTool.textContent = currentDash.tool;
 
-        itemDiv.addEventListener("click", () => {
-          openLightbox(imgObj.src, `${currentDashboard.title} — ${imgObj.caption || 'Screenshot ' + (idx+1)}`);
-        });
+  const sideCat = document.getElementById("sidebar-dash-category");
+  if (sideCat) sideCat.textContent = currentDash.category;
 
-        galleryContainer.appendChild(itemDiv);
-      });
-    }
+  // Single or Multi Screenshot Image View
+  const dashImg = document.getElementById("dash-img");
+  if (dashImg && currentDash.images && currentDash.images.length > 0) {
+    dashImg.src = currentDash.images[0].src;
+    dashImg.alt = `${currentDash.title} Full View`;
   }
 
-  // Overview, Objective & Audience
-  const overviewElem = document.getElementById("detail-overview");
-  if (overviewElem) overviewElem.textContent = currentDashboard.overview || currentDashboard.shortDescription;
-
-  const objElem = document.getElementById("detail-objective");
-  if (objElem) objElem.textContent = currentDashboard.objective;
-
-  const audElem = document.getElementById("detail-audience");
-  if (audElem) audElem.textContent = currentDashboard.audience || "Management and Business Stakeholders";
-
-  const datasetElem = document.getElementById("detail-dataset");
-  if (datasetElem) datasetElem.textContent = currentDashboard.dataset;
-
-  const filtersElem = document.getElementById("detail-filters");
-  if (filtersElem) filtersElem.textContent = currentDashboard.filtersSlicers || "Interactive filters and slice controls available on canvas.";
-
-  // KPIs Block Rendering
-  const kpiBlock = document.getElementById("detail-kpi-block");
-  const kpiGrid = document.getElementById("detail-kpis");
-  if (kpiGrid && kpiBlock) {
-    kpiGrid.innerHTML = "";
-    if (currentDashboard.kpis && currentDashboard.kpis.length > 0) {
-      kpiBlock.style.display = "block";
-      currentDashboard.kpis.forEach((kpi) => {
-        const card = document.createElement("div");
-        card.className = "kpi-metric-card";
-        card.innerHTML = `
-          <span class="kpi-metric-label">${kpi.label}</span>
-          <span class="kpi-metric-value">${kpi.value}</span>
-          ${kpi.sub ? `<span class="kpi-metric-sub">${kpi.sub}</span>` : ""}
-        `;
-        kpiGrid.appendChild(card);
-      });
-    } else {
-      kpiBlock.style.display = "none";
-    }
+  const dashCaption = document.getElementById("dash-img-caption");
+  if (dashCaption && currentDash.images && currentDash.images.length > 0) {
+    dashCaption.textContent = currentDash.images[0].caption;
   }
 
-  // Key Visualizations List
-  const vizBlock = document.getElementById("detail-viz-block");
-  const vizList = document.getElementById("detail-visualizations");
-  if (vizList && vizBlock) {
-    vizList.innerHTML = "";
-    if (currentDashboard.keyVisualizations && currentDashboard.keyVisualizations.length > 0) {
-      vizBlock.style.display = "block";
-      currentDashboard.keyVisualizations.forEach((viz) => {
-        const li = document.createElement("li");
-        li.className = "viz-item";
-        li.innerHTML = `<i class="fa-solid fa-chart-pie"></i> <span>${viz}</span>`;
-        vizList.appendChild(li);
-      });
-    } else {
-      vizBlock.style.display = "none";
-    }
+  const viewport = document.getElementById("dashboard-screenshot-viewport");
+  if (viewport && currentDash.images && currentDash.images.length > 0) {
+    viewport.addEventListener("click", () => {
+      openLightbox(currentDash.images[0].src, currentDash.images[0].caption);
+    });
   }
 
-  // Key Insights List
-  const insightsBlock = document.getElementById("detail-insights-block");
-  const insightsList = document.getElementById("detail-insights");
-  if (insightsList && insightsBlock) {
-    insightsList.innerHTML = "";
-    if (currentDashboard.keyInsights && currentDashboard.keyInsights.length > 0) {
-      insightsBlock.style.display = "block";
-      currentDashboard.keyInsights.forEach((insight) => {
-        const div = document.createElement("div");
-        div.className = "insight-card";
-        div.innerHTML = `
-          <i class="fa-solid fa-lightbulb insight-icon"></i>
-          <div class="insight-text">${insight}</div>
-        `;
-        insightsList.appendChild(div);
-      });
-    } else {
-      insightsBlock.style.display = "none";
-    }
+  const dashObj = document.getElementById("dash-objective");
+  if (dashObj) dashObj.textContent = currentDash.objective;
+
+  const dashOverview = document.getElementById("dash-overview");
+  if (dashOverview) dashOverview.textContent = currentDash.overview;
+
+  const dashAudience = document.getElementById("dash-audience");
+  if (dashAudience) dashAudience.textContent = currentDash.audience || "Business leadership and operational teams.";
+
+  const dashDataset = document.getElementById("dash-dataset");
+  if (dashDataset) dashDataset.textContent = currentDash.dataset || "Enterprise business transaction dataset.";
+
+  const dashFilters = document.getElementById("dash-filters");
+  if (dashFilters) dashFilters.textContent = currentDash.filtersSlicers || "Interactive slicers and date controls.";
+
+  // Render KPI Metrics Cards
+  const kpiGrid = document.getElementById("dash-kpis-grid");
+  if (kpiGrid && currentDash.kpis) {
+    kpiGrid.innerHTML = currentDash.kpis.map(kpi => `
+      <div class="kpi-metric-card">
+        <span class="kpi-metric-label">${kpi.label}</span>
+        <span class="kpi-metric-value">${kpi.value}</span>
+        <span class="kpi-metric-sub">${kpi.sub}</span>
+      </div>
+    `).join("");
+  }
+
+  // Render Visualizations List
+  const vizList = document.getElementById("dash-visualizations-list");
+  if (vizList && currentDash.keyVisualizations) {
+    vizList.innerHTML = currentDash.keyVisualizations.map(viz => `
+      <li class="viz-item">
+        <i class="fa-solid fa-chart-simple"></i>
+        <span>${viz}</span>
+      </li>
+    `).join("");
+  }
+
+  // Render Key Insights List
+  const insightsList = document.getElementById("dash-insights-list");
+  if (insightsList && currentDash.keyInsights) {
+    insightsList.innerHTML = currentDash.keyInsights.map(insight => `
+      <div class="insight-card">
+        <i class="fa-solid fa-lightbulb insight-icon"></i>
+        <div class="insight-text">${insight}</div>
+      </div>
+    `).join("");
   }
 }
 
 // ==========================================================================
-// 10. LIGHTBOX FULLSCREEN MODAL HANDLER
+// 8. LIGHTBOX MODAL HANDLER
 // ==========================================================================
 function setupLightbox() {
   const modal = document.getElementById("lightbox-modal");
@@ -1158,36 +947,33 @@ function setupLightbox() {
 
   if (!modal) return;
 
-  const closeModal = () => {
-    modal.classList.remove("active");
-  };
-
   if (closeBtn) {
-    closeBtn.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
   }
 
   modal.addEventListener("click", (e) => {
-    if (e.target === modal || e.target.classList.contains("lightbox-img-container")) {
-      closeModal();
+    if (e.target === modal) {
+      modal.classList.remove("active");
     }
   });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("active")) {
-      closeModal();
+      modal.classList.remove("active");
     }
   });
 }
 
-function openLightbox(imgSrc, titleText) {
+function openLightbox(src, captionText) {
   const modal = document.getElementById("lightbox-modal");
   const modalImg = document.getElementById("lightbox-img");
   const modalTitle = document.getElementById("lightbox-title");
 
   if (modal && modalImg) {
-    modalImg.src = imgSrc;
-    modalImg.alt = `${titleText} Fullscreen`;
-    if (modalTitle) modalTitle.textContent = titleText;
+    modalImg.src = src;
+    if (modalTitle) modalTitle.textContent = captionText || "Screenshot Preview";
     modal.classList.add("active");
   }
 }
