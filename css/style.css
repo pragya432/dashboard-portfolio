@@ -112,11 +112,11 @@ button, input, select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 19, 41, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
@@ -136,12 +136,12 @@ button, input, select {
   height: 48px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.08));
   transition: transform 0.2s ease;
 }
 
 .dsvv-logo-img:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .nav-right-group {
@@ -151,7 +151,7 @@ button, input, select {
 }
 
 .cs-dept-badge {
-  background: rgba(30, 41, 59, 0.85);
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   color: #ffffff;
   padding: 0.45rem 1.1rem;
   border-radius: var(--radius-full);
@@ -162,58 +162,45 @@ button, input, select {
   align-items: center;
   gap: 0.5rem;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .cs-dept-badge i {
-  color: #38bdf8;
+  color: var(--dsvv-gold);
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
 .nav-link {
   font-weight: 600;
   font-size: 0.95rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   padding: 0.5rem 0.85rem;
   border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
+  transition: 0.15s ease;
   display: flex;
   align-items: center;
   gap: 0.45rem;
 }
 
-.nav-link:hover {
-  color: #38bdf8;
-  background-color: rgba(56, 189, 248, 0.12);
-}
-
-.nav-link.active {
-  color: #38bdf8;
-  background-color: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-accent);
+  background-color: var(--bg-accent-light);
 }
 
 .mobile-menu-toggle {
   display: none;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-sm);
-  font-size: 1.35rem;
-  color: #ffffff;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
   cursor: pointer;
-  padding: 0.4rem 0.75rem;
-  transition: 0.2s ease;
-}
-
-.mobile-menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #38bdf8;
+  padding: 0.5rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -1604,14 +1591,13 @@ button, input, select {
     top: 4.8rem;
     left: 0;
     width: 100%;
-    background-color: #0f172a;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
     flex-direction: column;
     padding: 1.5rem;
     gap: 1rem;
     display: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-md);
   }
 
   .nav-menu.active {
